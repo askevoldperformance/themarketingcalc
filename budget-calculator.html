@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marketing Budget Calculator — Estimate Reach, Clicks & Conversions | TheMarketingCalc</title>
+  <title>Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc</title>
   <meta name="description" content="Advanced marketing budget calculator. Select market, channel mix, and objective to estimate campaign results or required budget.">
   <link rel="canonical" href="https://themarketingcalc.com/budget-calculator">
-  <meta property="og:title" content="Marketing Budget Calculator — Estimate Reach, Clicks & Conversions | TheMarketingCalc">
+  <meta property="og:title" content="Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc">
   <meta property="og:description" content="Advanced marketing budget calculator. Select market, channel mix, and objective to estimate campaign results or required budget.">
   <meta property="og:url" content="https://themarketingcalc.com/budget-calculator">
   <meta property="og:image" content="https://themarketingcalc.com/logo.png">
@@ -14,92 +14,75 @@
   <link rel="icon" href="/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXXXX');</script>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <div class="nav-links"><a href="/">Marketing Calculators</a><a href="/budget-calculator" class="active">Budget Calculator</a><div class="nav-dropdown"><button class="nav-btn">Guides ▾</button><div class="nav-dropdown-menu"><a href="/guides">All Guides</a><a href="/guides/how-to-calculate-campaign-budget">How to Calculate Campaign Budget</a><a href="/guides/what-is-cpm">What is CPM?</a><a href="/guides/what-is-roas">What is ROAS?</a><a href="/guides/cpm-vs-ecpm">CPM vs eCPM</a><a href="/guides/what-is-ctr">What is CTR?</a><a href="/guides/what-is-poas">What is POAS?</a><a href="/guides/marketing-budget-benchmarks">Marketing Budget Benchmarks</a></div></div></div>
+    <div class="nav-links"><a href="/">Home</a><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator" class="active">Budget Calculator</a><a href="/guides">Guides</a></div>
     <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
   </div>
-</nav>
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <p class="hero-eyebrow">Advanced tool</p>
-      <h1>Marketing <span class="accent">Budget Calculator</span></h1>
-      <p class="hero-sub">Estimate campaign results or required budget across channels — with benchmarks per market.</p>
-    </div>
-  </section>
-
-  <section class="budget-section">
-    <div class="container">
-      <div class="budget-card">
-        <div class="budget-step">
-          <h3>1. Select market &amp; currency</h3>
-          <div class="market-grid">
-            <button class="market-btn active" data-market="US" data-currency="USD">🇺🇸 US <span>USD</span></button>
-            <button class="market-btn" data-market="UK" data-currency="GBP">🇬🇧 UK <span>GBP</span></button>
-            <button class="market-btn" data-market="NO" data-currency="NOK">🇳🇴 Norway <span>NOK</span></button>
-            <button class="market-btn" data-market="SE" data-currency="SEK">🇸🇪 Sweden <span>SEK</span></button>
-            <button class="market-btn" data-market="DK" data-currency="DKK">🇩🇰 Denmark <span>DKK</span></button>
-            <button class="market-btn" data-market="EU" data-currency="EUR">🇪🇺 EU <span>EUR</span></button>
-            <button class="market-btn" data-market="AU" data-currency="AUD">🇦🇺 Australia <span>AUD</span></button>
-          </div>
-        </div>
-
-        <div class="budget-step">
-          <h3>2. Select channel(s)</h3>
-          <div class="channel-grid">
-            <button class="channel-btn active" data-channel="meta">Meta</button>
-            <button class="channel-btn" data-channel="google">Google Ads</button>
-            <button class="channel-btn" data-channel="linkedin">LinkedIn</button>
-            <button class="channel-btn" data-channel="tiktok">TikTok</button>
-            <button class="channel-btn" data-channel="snapchat">Snapchat</button>
-            <button class="channel-btn" data-channel="reddit">Reddit</button>
-            <button class="channel-btn" data-channel="x">X (Twitter)</button>
-          </div>
-        </div>
-
-        <div class="budget-step">
-          <h3>3. Objective</h3>
-          <div class="objective-toggle">
-            <button class="obj-btn active" data-obj="reach">Reach / Awareness</button>
-            <button class="obj-btn" data-obj="clicks">Traffic / Clicks</button>
-            <button class="obj-btn" data-obj="conversions">Conversions</button>
-          </div>
-        </div>
-
-        <div class="budget-step">
-          <h3>4. Calculate</h3>
-          <div class="calc-direction-toggle">
-            <button class="dir-btn active" data-dir="budget-to-results">Budget → Results</button>
-            <button class="dir-btn" data-dir="goals-to-budget">Goals → Budget</button>
-          </div>
-          <div id="budget-to-results-inputs">
-            <div class="input-group"><label>Total Budget (<span class="currency-label">USD</span>)</label><input type="number" id="b2r-budget" placeholder="e.g. 5000" min="0"></div>
-          </div>
-          <div id="goals-to-budget-inputs" class="hidden">
-            <div class="input-group"><label id="goal-label">Target Impressions</label><input type="number" id="g2b-goal" placeholder="e.g. 500000" min="0"></div>
-          </div>
-          <button class="calc-btn" onclick="calcBudget()">Estimate</button>
-          <div class="calc-result hidden" id="budget-result"></div>
-        </div>
-
-        <div class="budget-benchmarks">
-          <h3>Channel benchmarks <span class="badge" id="benchmark-market">US</span></h3>
-          <div id="benchmark-table"></div>
+</nav><main>
+  <section class="page-hero"><div class="container">
+    <p class="hero-eyebrow">Advanced tool</p>
+    <h1>Marketing <span class="accent">Budget Calculator</span></h1>
+    <p class="hero-sub">Estimate campaign results or required budget across channels - with benchmarks per market.</p>
+  </div></section>
+  <section class="budget-section"><div class="container">
+    <div class="budget-card">
+      <div class="budget-step"><h3>1. Select market and currency</h3>
+        <div class="market-grid">
+          <button class="market-btn active" data-market="US" data-currency="USD">US <span>USD</span></button>
+          <button class="market-btn" data-market="UK" data-currency="GBP">UK <span>GBP</span></button>
+          <button class="market-btn" data-market="NO" data-currency="NOK">Norway <span>NOK</span></button>
+          <button class="market-btn" data-market="SE" data-currency="SEK">Sweden <span>SEK</span></button>
+          <button class="market-btn" data-market="DK" data-currency="DKK">Denmark <span>DKK</span></button>
+          <button class="market-btn" data-market="EU" data-currency="EUR">EU <span>EUR</span></button>
+          <button class="market-btn" data-market="AU" data-currency="AUD">Australia <span>AUD</span></button>
         </div>
       </div>
+      <div class="budget-step"><h3>2. Select channel(s)</h3>
+        <div class="channel-grid">
+          <button class="channel-btn active" data-channel="meta">Meta</button>
+          <button class="channel-btn" data-channel="google">Google Ads</button>
+          <button class="channel-btn" data-channel="linkedin">LinkedIn</button>
+          <button class="channel-btn" data-channel="tiktok">TikTok</button>
+          <button class="channel-btn" data-channel="snapchat">Snapchat</button>
+          <button class="channel-btn" data-channel="reddit">Reddit</button>
+          <button class="channel-btn" data-channel="x">X (Twitter)</button>
+        </div>
+      </div>
+      <div class="budget-step"><h3>3. Objective</h3>
+        <div class="objective-toggle">
+          <button class="obj-btn active" data-obj="reach">Reach / Awareness</button>
+          <button class="obj-btn" data-obj="clicks">Traffic / Clicks</button>
+          <button class="obj-btn" data-obj="conversions">Conversions</button>
+        </div>
+      </div>
+      <div class="budget-step"><h3>4. Calculate</h3>
+        <div class="calc-direction-toggle">
+          <button class="dir-btn active" data-dir="budget-to-results">Budget to Results</button>
+          <button class="dir-btn" data-dir="goals-to-budget">Goals to Budget</button>
+        </div>
+        <div id="budget-to-results-inputs">
+          <div class="input-group"><label>Total Budget (<span class="currency-label">USD</span>)</label><input type="number" id="b2r-budget" placeholder="e.g. 5000" min="0"></div>
+        </div>
+        <div id="goals-to-budget-inputs" class="hidden">
+          <div class="input-group"><label id="goal-label">Target Impressions</label><input type="number" id="g2b-goal" placeholder="e.g. 500000" min="0"></div>
+        </div>
+        <button class="calc-btn" onclick="calcBudget()">Estimate</button>
+        <div class="calc-result hidden" id="budget-result"></div>
+      </div>
+      <div class="budget-benchmarks">
+        <h3>Channel benchmarks <span class="badge" id="benchmark-market">US</span></h3>
+        <div id="benchmark-table"></div>
+      </div>
     </div>
-  </section>
+  </div></section>
 </main>
-
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -107,8 +90,11 @@
       <span>TheMarketingCalc.com</span>
     </div>
     <nav class="footer-links">
-      <a href="/guides">Guides</a>
+      <a href="/cpm-calculator">CPM Calculator</a>
+      <a href="/ctr-calculator">CTR Calculator</a>
+      <a href="/roas-calculator">ROAS Calculator</a>
       <a href="/budget-calculator">Budget Calculator</a>
+      <a href="/guides">Guides</a>
       <a href="/privacy-policy">Privacy Policy</a>
     </nav>
     <p class="footer-copy">&copy; 2025 TheMarketingCalc.com</p>

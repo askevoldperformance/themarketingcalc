@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPC Calculator - Calculate Cost Per Click, Budget and Clicks | TheMarketingCalc</title>
+  <meta name="description" content="Free CPC calculator. Calculate cost per click, total campaign cost, or number of clicks. Includes channel benchmarks and max CPC guidance.">
+  <link rel="canonical" href="https://themarketingcalc.com/cpc-calculator">
+  <meta property="og:title" content="CPC Calculator - Calculate Cost Per Click, Budget and Clicks | TheMarketingCalc">
+  <meta property="og:description" content="Free CPC calculator. Calculate cost per click, total campaign cost, or number of clicks. Includes channel benchmarks and max CPC guidance.">
+  <meta property="og:url" content="https://themarketingcalc.com/cpc-calculator">
+  <meta property="og:image" content="https://themarketingcalc.com/logo.png">
+  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXXXX');</script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+    <div class="nav-links"><a href="/">Home</a><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator" class="active">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a><a href="/guides">Guides</a></div>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<main>
+  <section class="calc-hero">
+    <div class="container">
+      
+<div class="calc-card">
+  <div class="calc-header">
+    <h1>CPC Calculator</h1>
+    <p class="calc-desc">Calculate cost per click, total cost, or number of clicks. Enter any two values to find the third.</p>
+  </div>
+  <div class="calc-mode-toggle"><button class="mode-btn active" data-mode="cpc-cpc">Find CPC</button><button class="mode-btn" data-mode="cpc-cost">Find Cost</button><button class="mode-btn" data-mode="cpc-clicks">Find Clicks</button></div>
+  <div class="calc-inputs">
+        <div class="input-group" id="field-cpc-cost">
+          <label>Total Cost ($)</label>
+          <input type="number" id="cpc-cost" placeholder="e.g. 500" min="0">
+        </div>
+        <div class="input-group" id="field-cpc-clicks">
+          <label>Clicks</label>
+          <input type="number" id="cpc-clicks" placeholder="e.g. 1000" min="0">
+        </div>
+        <div class="input-group hidden" id="field-cpc-cpc-val">
+          <label>CPC ($)</label>
+          <input type="number" id="cpc-cpc-val" placeholder="e.g. 0.50" min="0">
+        </div></div>
+  <button class="calc-btn" onclick="calc_cpc()">Calculate</button>
+  <div class="calc-result hidden" id="cpc-result"></div>
+  <div class="calc-formula">
+    <span class="formula-label">Formula</span>
+    <code>CPC = Cost / Clicks</code>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="calc-content">
+    <div class="container prose">
+      
+<h2>What is CPC and how is it calculated?</h2>
+<p>CPC (Cost Per Click) is the amount you pay each time someone clicks your ad. It is calculated as: CPC = Total Cost / Clicks. If you spend $400 and receive 800 clicks, your CPC is $0.50.</p>
+
+<h2>How do I calculate how many clicks I can get from my budget?</h2>
+<p>Clicks = Budget / CPC. With a $1,000 budget and a $2 CPC, you can expect 500 clicks. Use the "Find Clicks" mode in the calculator above to model this instantly.</p>
+
+<h2>What is a good CPC for paid search?</h2>
+<p>Google Search CPC varies enormously by industry. Legal, finance, and insurance keywords can exceed $50 per click for competitive terms. E-commerce and retail typically see $0.50 to $3. SaaS and B2B software ranges from $3 to $15. The only benchmark that matters for your business is the maximum CPC you can afford given your conversion rate and customer value.</p>
+
+<h2>What is a good CPC for paid social?</h2>
+<p>Meta Ads typically deliver CPC between $0.30 and $1.50 for most e-commerce verticals. LinkedIn is significantly higher at $5 to $15 due to the professional audience. TikTok ranges from $0.20 to $0.80. These are averages - your actual CPC depends heavily on audience size, creative quality, and bidding strategy.</p>
+
+<h2>What is the maximum CPC I should bid?</h2>
+<p>Max CPC = (Average Order Value x Conversion Rate) / Target ROAS. If your AOV is $100, your site converts at 2%, and you need a 3x ROAS, your max CPC is ($100 x 0.02) / 3 = $0.67. Bidding above this means you are paying more per click than your economics support. Use our <a href="/roas-calculator">ROAS calculator</a> alongside this to model break-even points.</p>
+
+<h2>Why is my CPC increasing?</h2>
+<p>CPC increases when auction competition rises. Common causes: competitors increasing budgets, seasonal demand spikes (Q4, peak retail periods), audience size shrinking due to narrow targeting, or declining relevance scores from stale creative. If your CTR drops while CPM stays flat, your effective CPC will rise even without a bid change.</p>
+
+<h2>How does CPC relate to CPM and CTR?</h2>
+<p>CPC = CPM / (CTR x 10). This means CPC is directly determined by how much you pay per impression and how often people click. Improving CTR is the most efficient way to reduce CPC without reducing bids. A creative with double the CTR effectively halves your CPC at the same CPM.</p>
+
+<h2>Should I use CPC or CPM bidding?</h2>
+<p>CPC bidding makes sense when you want to pay only for engaged users and your goal is traffic or conversions. CPM bidding is better for reach and awareness goals where you want maximum exposure regardless of clicks. Most modern platforms use automated bidding that optimises for your stated objective, making the manual CPC vs CPM choice less relevant - but understanding both helps you audit performance and set realistic targets.</p>
+
+<h2>How do I reduce my CPC?</h2>
+<p>The most effective levers are: improving creative quality to increase CTR (higher CTR = lower effective CPC), broadening audience targeting to reduce auction competition, testing landing page quality to improve quality scores, running campaigns outside peak demand windows, and using broad match or broad audiences to let platform algorithms find efficient traffic.</p>
+
+<h2>How do I forecast campaign cost from a CPC?</h2>
+<p>Total Cost = Target Clicks x CPC. If you need 2,000 clicks to hit your conversion target and your expected CPC is $1.20, budget $2,400. Always add a 15% to 20% buffer for CPC volatility, especially in competitive or seasonal categories. Use our <a href="/budget-calculator">budget calculator</a> to build full channel forecasts.</p>
+
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/logo.png" alt="The Marketing Calc" width="28" height="28">
+      <span>TheMarketingCalc.com</span>
+    </div>
+    <nav class="footer-links">
+      <a href="/cpm-calculator">CPM Calculator</a>
+      <a href="/ctr-calculator">CTR Calculator</a>
+      <a href="/roas-calculator">ROAS Calculator</a>
+      <a href="/budget-calculator">Budget Calculator</a>
+      <a href="/guides">Guides</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 TheMarketingCalc.com</p>
+  </div>
+</footer>
+<script src="/cookie_banner.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

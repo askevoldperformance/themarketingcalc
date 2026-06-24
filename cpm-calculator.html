@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPM Calculator - Calculate Cost Per Mille, Impressions and Budget | TheMarketingCalc</title>
+  <meta name="description" content="Free CPM calculator. Calculate CPM, total campaign cost, or impressions from any two values. Includes benchmarks, formulas, and answers to the most common CPM questions.">
+  <link rel="canonical" href="https://themarketingcalc.com/cpm-calculator">
+  <meta property="og:title" content="CPM Calculator - Calculate Cost Per Mille, Impressions and Budget | TheMarketingCalc">
+  <meta property="og:description" content="Free CPM calculator. Calculate CPM, total campaign cost, or impressions from any two values. Includes benchmarks, formulas, and answers to the most common CPM questions.">
+  <meta property="og:url" content="https://themarketingcalc.com/cpm-calculator">
+  <meta property="og:image" content="https://themarketingcalc.com/logo.png">
+  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXXXX');</script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+    <div class="nav-links"><a href="/">Home</a><a href="/cpm-calculator" class="active">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a><a href="/guides">Guides</a></div>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<main>
+  <section class="calc-hero">
+    <div class="container">
+      
+<div class="calc-card">
+  <div class="calc-header">
+    <h1>CPM Calculator</h1>
+    <p class="calc-desc">Calculate CPM, total cost, or impressions. Enter any two values to find the third.</p>
+  </div>
+  <div class="calc-mode-toggle"><button class="mode-btn active" data-mode="cpm-cpm">Find CPM</button><button class="mode-btn" data-mode="cpm-cost">Find Cost</button><button class="mode-btn" data-mode="cpm-imp">Find Impressions</button></div>
+  <div class="calc-inputs">
+        <div class="input-group" id="field-cpm-cost">
+          <label>Total Cost ($)</label>
+          <input type="number" id="cpm-cost" placeholder="e.g. 500" min="0">
+        </div>
+        <div class="input-group" id="field-cpm-impressions">
+          <label>Impressions</label>
+          <input type="number" id="cpm-impressions" placeholder="e.g. 100000" min="0">
+        </div>
+        <div class="input-group hidden" id="field-cpm-cpm-val">
+          <label>CPM ($)</label>
+          <input type="number" id="cpm-cpm-val" placeholder="e.g. 5.00" min="0">
+        </div></div>
+  <button class="calc-btn" onclick="calc_cpm()">Calculate</button>
+  <div class="calc-result hidden" id="cpm-result"></div>
+  <div class="calc-formula">
+    <span class="formula-label">Formula</span>
+    <code>CPM = (Cost / Impressions) x 1,000</code>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="calc-content">
+    <div class="container prose">
+      
+<h2>What is CPM and how is it calculated?</h2>
+<p>CPM stands for Cost Per Mille, where "mille" is Latin for thousand. It is the price an advertiser pays for 1,000 impressions of an ad. CPM is the standard pricing model for display advertising, social media reach campaigns, and programmatic buying.</p>
+<p>The formula is straightforward: CPM = (Total Cost / Impressions) x 1,000. If you spend $500 and receive 200,000 impressions, your CPM is $2.50.</p>
+
+<h2>How do I calculate how many impressions I will get for my budget?</h2>
+<p>Rearrange the CPM formula: Impressions = (Budget / CPM) x 1,000. With a $1,000 budget and a $10 CPM, you can expect 100,000 impressions. Use the calculator above in "Find Impressions" mode to do this instantly.</p>
+
+<h2>How do I calculate the cost of a campaign from a CPM rate?</h2>
+<p>Cost = (CPM / 1,000) x Impressions. If your CPM is $8 and you want 500,000 impressions, your campaign cost will be $4,000. Switch the calculator to "Find Cost" mode and enter your CPM and target impressions.</p>
+
+<h2>What is a good CPM?</h2>
+<p>CPM benchmarks vary significantly by platform, audience, and objective. As rough reference points for 2024 to 2025: Meta Ads typically range from $6 to $14, Google Display from $2 to $5, LinkedIn from $30 to $80, and TikTok from $8 to $15. Niche B2B audiences and retargeting audiences will always command higher CPMs than broad prospecting.</p>
+
+<h2>Why is my CPM high?</h2>
+<p>Several factors push CPM up: a small, competitive audience (like senior decision-makers on LinkedIn), a high-demand period (Q4, holidays), low relevance scores or quality scores on your creative, aggressive bidding from competitors in the same auction, and narrow geographic targeting. Broad audiences, strong creative quality scores, and avoiding peak seasons all help reduce CPM.</p>
+
+<h2>What is the difference between CPM and eCPM?</h2>
+<p>CPM is the rate you agreed to pay when buying media. eCPM (effective CPM) is calculated retroactively from actual spend and impressions, and is used to compare efficiency across campaigns or ad units that may have been bought on different models - CPC, CPA, or CPM. See our <a href="/guides/cpm-vs-ecpm">CPM vs eCPM guide</a> for a full breakdown.</p>
+
+<h2>Does a lower CPM always mean a better campaign?</h2>
+<p>Not necessarily. A very low CPM usually means a broad, low-quality audience. What matters is cost per outcome - whether that is a click, a lead, or a purchase. A $20 CPM that delivers a 3% CTR is more efficient than a $5 CPM with a 0.3% CTR if your goal is traffic. Always evaluate CPM in context with CTR and conversion rate.</p>
+
+<h2>How do CPM campaigns compare to CPC campaigns?</h2>
+<p>CPM campaigns charge per impression regardless of whether anyone clicks. CPC campaigns charge only when someone clicks. CPM is typically better for awareness and reach goals where broad exposure matters. CPC is better when you want to pay only for engaged users. You can compare the two by calculating eCPM: if your CPC is $0.50 and your CTR is 1%, your effective CPM is $5. Use our <a href="/cpc-calculator">CPC calculator</a> alongside this one to model both scenarios.</p>
+
+<h2>What CPM should I use when planning a campaign budget?</h2>
+<p>Use platform benchmark data as a starting point, then adjust based on your own historical data. If you have run similar campaigns before, your actual CPM is the best predictor. If you are planning a new campaign, use the conservative end of the benchmark range to avoid overestimating reach. Our <a href="/budget-calculator">budget calculator</a> uses channel-specific benchmarks to estimate reach from a given budget.</p>
+
+<h2>How does audience size affect CPM?</h2>
+<p>Smaller audiences tend to have higher CPMs because more advertisers are competing for fewer impressions. A retargeting audience of 10,000 people will almost always have a higher CPM than a prospecting audience of 2 million. This is why scaling a retargeting campaign is disproportionately expensive compared to top-of-funnel reach campaigns.</p>
+
+<h2>Can CPM be used to compare performance across channels?</h2>
+<p>Yes, but with caution. A LinkedIn impression and a TikTok impression are not the same thing in terms of attention or context. CPM is useful for comparing efficiency within a channel or between similar placements. Cross-channel CPM comparisons are best used as a rough efficiency indicator, not a definitive ranking.</p>
+
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/logo.png" alt="The Marketing Calc" width="28" height="28">
+      <span>TheMarketingCalc.com</span>
+    </div>
+    <nav class="footer-links">
+      <a href="/cpm-calculator">CPM Calculator</a>
+      <a href="/ctr-calculator">CTR Calculator</a>
+      <a href="/roas-calculator">ROAS Calculator</a>
+      <a href="/budget-calculator">Budget Calculator</a>
+      <a href="/guides">Guides</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 TheMarketingCalc.com</p>
+  </div>
+</footer>
+<script src="/cookie_banner.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequency Calculator - Calculate Ad Frequency, Reach and Impressions | TheMarketingCalc</title>
+  <meta name="description" content="Free ad frequency calculator. Calculate frequency, total impressions, or reach. Includes guidance on optimal frequency ranges and how to avoid ad fatigue.">
+  <link rel="canonical" href="https://themarketingcalc.com/frequency-calculator">
+  <meta property="og:title" content="Frequency Calculator - Calculate Ad Frequency, Reach and Impressions | TheMarketingCalc">
+  <meta property="og:description" content="Free ad frequency calculator. Calculate frequency, total impressions, or reach. Includes guidance on optimal frequency ranges and how to avoid ad fatigue.">
+  <meta property="og:url" content="https://themarketingcalc.com/frequency-calculator">
+  <meta property="og:image" content="https://themarketingcalc.com/logo.png">
+  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXXXX');</script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+    <div class="nav-links"><a href="/">Home</a><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator" class="active">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a><a href="/guides">Guides</a></div>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<main>
+  <section class="calc-hero">
+    <div class="container">
+      
+<div class="calc-card">
+  <div class="calc-header">
+    <h1>Frequency Calculator</h1>
+    <p class="calc-desc">Calculate ad frequency, total impressions, or reach. Enter any two values to find the third.</p>
+  </div>
+  <div class="calc-mode-toggle"><button class="mode-btn active" data-mode="freq-freq">Find Frequency</button><button class="mode-btn" data-mode="freq-imp">Find Impressions</button><button class="mode-btn" data-mode="freq-reach">Find Reach</button></div>
+  <div class="calc-inputs">
+        <div class="input-group" id="field-freq-imp">
+          <label>Impressions</label>
+          <input type="number" id="freq-imp" placeholder="e.g. 500000" min="0">
+        </div>
+        <div class="input-group" id="field-freq-reach">
+          <label>Reach (unique people)</label>
+          <input type="number" id="freq-reach" placeholder="e.g. 100000" min="0">
+        </div>
+        <div class="input-group hidden" id="field-freq-freq-val">
+          <label>Frequency</label>
+          <input type="number" id="freq-freq-val" placeholder="e.g. 5" min="0">
+        </div></div>
+  <button class="calc-btn" onclick="calc_freq()">Calculate</button>
+  <div class="calc-result hidden" id="freq-result"></div>
+  <div class="calc-formula">
+    <span class="formula-label">Formula</span>
+    <code>Frequency = Impressions / Reach</code>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="calc-content">
+    <div class="container prose">
+      
+<h2>What is frequency in advertising and how is it calculated?</h2>
+<p>Frequency is the average number of times a unique person sees your ad within a given time period. Frequency = Impressions / Reach. If your campaign reaches 100,000 unique people with 400,000 impressions, the average frequency is 4. This means each person saw your ad four times on average.</p>
+
+<h2>How do I calculate total impressions from reach and frequency?</h2>
+<p>Impressions = Reach x Frequency. If you want to reach 200,000 people at a frequency of 5, you need 1,000,000 impressions. Use the "Find Impressions" mode in the calculator above to plan campaign scale. This is especially useful when forecasting reach campaign delivery from a fixed budget.</p>
+
+<h2>What is a good frequency for Facebook and Instagram ads?</h2>
+<p>For cold prospecting campaigns, a frequency of 1.5 to 3 over a 7-day period is typically healthy. Above 4 to 5, ad fatigue begins to show up as rising CPMs and falling CTR. For retargeting campaigns, slightly higher frequency is acceptable - 3 to 6 over a 14-day window - because the audience is warmer and more receptive. For brand awareness campaigns with strong creative, 3 to 7 over a month can work without fatigue.</p>
+
+<h2>What is ad frequency fatigue?</h2>
+<p>Ad fatigue occurs when the same audience sees the same ad too many times. The symptoms are predictable: CTR starts declining, CPM starts rising (because the algorithm needs to work harder to deliver to a saturated audience), and conversion rate drops. Fatigue is not always about the absolute frequency number - it is about creative wear-out. Refreshing creative can reset fatigue even without changing the audience.</p>
+
+<h2>How do I control frequency on Meta?</h2>
+<p>In Reach and Frequency buying (available to larger accounts), you can set a frequency cap directly. In auction-based buying, you control frequency indirectly through audience size (larger audiences = lower frequency at the same budget), budget size relative to audience, and campaign duration. Shorter flight dates with larger budgets will always produce higher frequency than the same budget over a longer period.</p>
+
+<h2>What is the minimum effective frequency?</h2>
+<p>The concept of minimum effective frequency comes from traditional media - the idea that a brand message needs to be seen a certain number of times before it registers. Research varies widely, but 3 to 5 exposures is often cited as a baseline for new brand messages. For performance campaigns focused on direct response, even a single high-quality exposure can drive action if the creative and audience match is strong.</p>
+
+<h2>How does frequency relate to reach?</h2>
+<p>Reach and frequency are inversely related at a fixed impression volume. At 1,000,000 impressions: reaching 1,000,000 people = frequency 1, reaching 500,000 people = frequency 2, reaching 200,000 people = frequency 5. Broad targeting maximises reach at low frequency. Narrow targeting concentrates impressions on fewer people, increasing frequency. Neither is inherently better - it depends on your objective.</p>
+
+<h2>What is the difference between reach and impressions?</h2>
+<p>Reach counts unique people. Impressions count total ad views, including multiple views by the same person. A campaign with 500,000 impressions and 200,000 reach has a frequency of 2.5 - each person saw the ad 2.5 times on average. Reach is the more important metric for awareness campaigns. Impressions matter more when you are trying to increase message repetition or frequency.</p>
+
+<h2>How does frequency affect CPM?</h2>
+<p>As frequency rises within a fixed audience, CPM typically increases because the algorithm must serve the same people repeatedly rather than finding fresh audiences. This is sometimes called "audience saturation premium." When you see CPM rising over the course of a campaign without changes to targeting or creative, increasing frequency is usually the first thing to check.</p>
+
+<h2>How do I balance reach and frequency for a brand awareness campaign?</h2>
+<p>A common framework: maximise reach first (get your message to as many people as possible at frequency 1 to 2), then build frequency selectively with retargeting or lookalike audiences to reinforce the message among people most likely to engage. This two-stage approach is more efficient than trying to achieve both high reach and high frequency with a single campaign structure.</p>
+
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/logo.png" alt="The Marketing Calc" width="28" height="28">
+      <span>TheMarketingCalc.com</span>
+    </div>
+    <nav class="footer-links">
+      <a href="/cpm-calculator">CPM Calculator</a>
+      <a href="/ctr-calculator">CTR Calculator</a>
+      <a href="/roas-calculator">ROAS Calculator</a>
+      <a href="/budget-calculator">Budget Calculator</a>
+      <a href="/guides">Guides</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 TheMarketingCalc.com</p>
+  </div>
+</footer>
+<script src="/cookie_banner.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

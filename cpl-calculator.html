@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPL Calculator - Calculate Cost Per Lead, Budget and Leads | TheMarketingCalc</title>
+  <meta name="description" content="Free CPL calculator. Calculate cost per lead, total budget, or number of leads. Includes benchmarks by channel and guidance on max CPL targets.">
+  <link rel="canonical" href="https://themarketingcalc.com/cpl-calculator">
+  <meta property="og:title" content="CPL Calculator - Calculate Cost Per Lead, Budget and Leads | TheMarketingCalc">
+  <meta property="og:description" content="Free CPL calculator. Calculate cost per lead, total budget, or number of leads. Includes benchmarks by channel and guidance on max CPL targets.">
+  <meta property="og:url" content="https://themarketingcalc.com/cpl-calculator">
+  <meta property="og:image" content="https://themarketingcalc.com/logo.png">
+  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXXXX');</script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+    <div class="nav-links"><a href="/">Home</a><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator" class="active">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a><a href="/guides">Guides</a></div>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<main>
+  <section class="calc-hero">
+    <div class="container">
+      
+<div class="calc-card">
+  <div class="calc-header">
+    <h1>CPL Calculator</h1>
+    <p class="calc-desc">Calculate cost per lead, total cost, or number of leads. Enter any two values to find the third.</p>
+  </div>
+  <div class="calc-mode-toggle"><button class="mode-btn active" data-mode="cpl-cpl">Find CPL</button><button class="mode-btn" data-mode="cpl-cost">Find Cost</button><button class="mode-btn" data-mode="cpl-leads">Find Leads</button></div>
+  <div class="calc-inputs">
+        <div class="input-group" id="field-cpl-cost">
+          <label>Total Cost ($)</label>
+          <input type="number" id="cpl-cost" placeholder="e.g. 1000" min="0">
+        </div>
+        <div class="input-group" id="field-cpl-leads">
+          <label>Leads</label>
+          <input type="number" id="cpl-leads" placeholder="e.g. 50" min="0">
+        </div>
+        <div class="input-group hidden" id="field-cpl-cpl-val">
+          <label>CPL ($)</label>
+          <input type="number" id="cpl-cpl-val" placeholder="e.g. 20" min="0">
+        </div></div>
+  <button class="calc-btn" onclick="calc_cpl()">Calculate</button>
+  <div class="calc-result hidden" id="cpl-result"></div>
+  <div class="calc-formula">
+    <span class="formula-label">Formula</span>
+    <code>CPL = Cost / Leads</code>
+  </div>
+</div>
+    </div>
+  </section>
+  <section class="calc-content">
+    <div class="container prose">
+      
+<h2>What is CPL and how is it calculated?</h2>
+<p>CPL (Cost Per Lead) is the amount you pay to acquire a single lead - a person who has shown interest by filling in a form, requesting a callback, signing up for a trial, or taking another qualifying action. CPL = Total Cost / Number of Leads. Spending $2,000 to generate 80 leads gives a CPL of $25.</p>
+
+<h2>How do I calculate how many leads I can get from my budget?</h2>
+<p>Leads = Budget / CPL. With a $5,000 budget and a target CPL of $40, you can expect approximately 125 leads. Use the "Find Leads" mode in the calculator above to model this. Note that CPL targets should be informed by your close rate and customer lifetime value, not just historical averages.</p>
+
+<h2>What is a good CPL?</h2>
+<p>It depends entirely on what a lead is worth to your business. A B2B SaaS company with a $50,000 annual contract value can afford a CPL of $500 or more if the close rate is reasonable. A local service business generating $300 jobs might need a CPL below $30 to be profitable. Calculate your maximum CPL as: Max CPL = (Average Contract Value x Close Rate x Gross Margin).</p>
+
+<h2>What is CPL for different channels?</h2>
+<p>CPL benchmarks vary widely by industry and channel. LinkedIn Lead Gen Forms often see CPL between $50 and $200 for B2B audiences. Meta lead generation campaigns typically range from $5 to $50 depending on the industry and form complexity. Google Search lead campaigns range from $20 to $100 for most service categories. High-intent keywords in legal, finance, and medical can produce CPLs of $100 to $500.</p>
+
+<h2>How do I reduce CPL?</h2>
+<p>CPL has two components: CPC and conversion rate. To lower CPL you need to either pay less per click (improve creative CTR, tighten audience, improve quality scores) or convert more of those clicks into leads (improve landing page, reduce form friction, strengthen the offer). The fastest wins usually come from landing page optimisation - small improvements in conversion rate have a large impact on CPL.</p>
+
+<h2>What is the difference between CPL and CPA?</h2>
+<p>CPL specifically measures the cost of acquiring a lead - a person who has expressed interest but not yet converted into a customer. CPA (Cost Per Acquisition) measures the cost of a completed conversion, which could be a purchase, a subscription, or a signed contract. In lead gen funnels, CPA = CPL / Close Rate. If your CPL is $40 and you close 20% of leads, your CPA is $200.</p>
+
+<h2>How does lead quality affect CPL benchmarks?</h2>
+<p>A low CPL is meaningless if the leads do not convert. Optimising purely for CPL often leads to low-quality leads - people who filled in a form without real intent. The better metric is cost per qualified lead or cost per opportunity. When reporting CPL, always pair it with lead-to-opportunity rate to give a complete picture of funnel efficiency.</p>
+
+<h2>Should I use lead gen forms or landing pages for CPL campaigns?</h2>
+<p>Native lead gen forms (Meta Lead Ads, LinkedIn Lead Gen Forms) typically produce lower CPL because they reduce friction - the user never leaves the platform. However, the lead quality is often lower because the bar to submit is lower. Landing pages produce fewer but higher-quality leads because the person actively navigated to a new page and completed a form. The right choice depends on your sales process and how quickly you can qualify leads.</p>
+
+<h2>How do I forecast CPL for a new campaign?</h2>
+<p>Use this chain: estimated CPC from benchmarks, estimated landing page conversion rate (typically 2% to 8% for lead gen), then CPL = CPC / Conversion Rate. A $2 CPC with a 4% conversion rate gives a $50 CPL. Use our <a href="/budget-calculator">budget calculator</a> to build full channel forecasts including CPL estimates.</p>
+
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/logo.png" alt="The Marketing Calc" width="28" height="28">
+      <span>TheMarketingCalc.com</span>
+    </div>
+    <nav class="footer-links">
+      <a href="/cpm-calculator">CPM Calculator</a>
+      <a href="/ctr-calculator">CTR Calculator</a>
+      <a href="/roas-calculator">ROAS Calculator</a>
+      <a href="/budget-calculator">Budget Calculator</a>
+      <a href="/guides">Guides</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 TheMarketingCalc.com</p>
+  </div>
+</footer>
+<script src="/cookie_banner.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

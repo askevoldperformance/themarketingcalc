@@ -316,3 +316,58 @@ code {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ── Remove number input spinners ── */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; appearance: textfield; }
+
+/* ── Calculator hero (calc pages) ── */
+.calc-hero { padding: 40px 0 0; }
+.calc-hero .calc-card { margin-bottom: 0; }
+
+/* ── Calc content section ── */
+.calc-content { padding: 48px 0 80px; }
+
+/* ── Inner tabs (ROAS page) ── */
+.calc-tabs-inner { margin-bottom: 24px; }
+.calc-tabs-inner .calc-tab {
+  background: var(--bg2); color: var(--text-muted);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 18px; font-size: 0.875rem; font-weight: 600;
+  cursor: pointer; transition: all 0.15s; text-decoration: none;
+}
+.calc-tabs-inner .calc-tab:hover { color: var(--text); border-color: var(--accent); }
+.calc-tabs-inner .calc-tab.active {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+
+/* ── Index metric grid ── */
+.index-content { padding: 40px 0 0; }
+.index-content h2 {
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 700;
+  margin-bottom: 16px;
+}
+.index-content > p { color: var(--text-muted); margin-bottom: 14px; max-width: 720px; line-height: 1.75; }
+.metric-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px; margin-top: 28px;
+}
+.metric-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 18px 16px; text-decoration: none; color: var(--text);
+  display: flex; flex-direction: column; gap: 5px;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.metric-card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.metric-abbr {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--accent);
+}
+.metric-name { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.metric-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; margin-top: 2px; }
+
+/* ── Nav overflow: scrollable on small screens ── */
+@media (max-width: 900px) {
+  .nav-links { overflow-x: auto; flex-wrap: nowrap; }
+  .nav-links a { white-space: nowrap; }
+}

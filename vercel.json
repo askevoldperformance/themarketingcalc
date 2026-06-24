@@ -2,6 +2,12 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/cpm-calculator", "destination": "/cpm-calculator.html" },
+    { "source": "/ctr-calculator", "destination": "/ctr-calculator.html" },
+    { "source": "/cpc-calculator", "destination": "/cpc-calculator.html" },
+    { "source": "/roas-calculator", "destination": "/roas-calculator.html" },
+    { "source": "/cpl-calculator", "destination": "/cpl-calculator.html" },
+    { "source": "/frequency-calculator", "destination": "/frequency-calculator.html" },
     { "source": "/budget-calculator", "destination": "/budget-calculator.html" },
     { "source": "/guides", "destination": "/guides.html" },
     { "source": "/privacy-policy", "destination": "/privacy-policy.html" },

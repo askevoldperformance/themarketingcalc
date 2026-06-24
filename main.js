@@ -319,3 +319,10 @@ if (hamburger && navLinks) {
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 if (document.getElementById('benchmark-table')) renderBenchmarks();
+
+// ── FAQ accordion ─────────────────────────────────────────────────────────────
+document.addEventListener('click', e => {
+  const q = e.target.closest('.faq-q');
+  if (!q) return;
+  q.closest('.faq-item').classList.toggle('open');
+});

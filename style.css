@@ -122,14 +122,18 @@ code {
 /* ── Calculator tabs ── */
 .calcs-section { padding: 0 0 64px; }
 .calc-tabs-nav {
-  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; padding: 0 4px;
+  display: flex; flex-wrap: nowrap; gap: 6px; margin-bottom: 28px; padding: 0 4px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.calc-tabs-nav::-webkit-scrollbar { display: none; }
 .calc-tab {
-  padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+  padding: 8px 18px; border-radius: 8px; font-size: 0.875rem; font-weight: 600;
   background: var(--bg2); color: var(--text-muted); border: 1px solid var(--border);
-  cursor: pointer; transition: all 0.15s;
+  cursor: pointer; transition: all 0.15s; white-space: nowrap; flex-shrink: 0;
+  text-decoration: none; display: inline-block;
 }
-.calc-tab:hover { color: var(--text); border-color: var(--accent); }
+.calc-tab:hover { color: var(--text); border-color: var(--accent); text-decoration: none; }
 .calc-tab.active {
   background: var(--accent); color: #fff; border-color: var(--accent);
 }
@@ -307,8 +311,7 @@ code {
     gap: 2px; z-index: 200;
   }
   .site-nav { position: relative; }
-  .calc-tabs-nav { gap: 4px; }
-  .calc-tab { font-size: 0.8rem; padding: 7px 11px; }
+  .calc-tabs-nav { gap: 4px; padding-bottom: 4px; }
   .calc-card { padding: 20px 16px; }
   .budget-card { padding: 20px 16px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -371,3 +374,87 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   .nav-links { overflow-x: auto; flex-wrap: nowrap; }
   .nav-links a { white-space: nowrap; }
 }
+
+/* ── Ad placements (hidden until AdSense approved) ── */
+.ad-leaderboard {
+  display: none; /* remove when AdSense approved */
+  width: 100%; max-width: 728px; height: 90px;
+  margin: 0 auto 24px; background: var(--bg2);
+  border: 1px dashed var(--border); border-radius: 6px;
+}
+.ad-inline {
+  display: none; /* remove when AdSense approved */
+  width: 100%; margin: 32px 0;
+  background: var(--bg2); border: 1px dashed var(--border);
+  border-radius: 6px; min-height: 250px;
+}
+.ad-sidebar {
+  display: none; /* remove when AdSense approved */
+  width: 160px; min-height: 600px;
+  background: var(--bg2); border: 1px dashed var(--border); border-radius: 6px;
+}
+.page-with-sidebar {
+  display: flex; gap: 24px; align-items: flex-start;
+}
+.page-with-sidebar .sidebar-left,
+.page-with-sidebar .sidebar-right {
+  flex-shrink: 0; position: sticky; top: 80px;
+}
+.page-with-sidebar .main-col { flex: 1; min-width: 0; }
+@media (max-width: 900px) {
+  .ad-sidebar { display: none !important; }
+  .page-with-sidebar { display: block; }
+}
+
+/* ── Affiliate boxes ── */
+.affiliate-box {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 22px;
+  margin: 32px 0; display: flex; align-items: flex-start; gap: 16px;
+}
+.affiliate-box .aff-icon {
+  font-size: 1.5rem; flex-shrink: 0; margin-top: 2px;
+}
+.affiliate-box .aff-body { flex: 1; }
+.affiliate-box .aff-label {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--text-muted); font-weight: 600; margin-bottom: 4px;
+}
+.affiliate-box .aff-title {
+  font-family: var(--font-display); font-size: 0.95rem;
+  font-weight: 700; margin-bottom: 4px; color: var(--text);
+}
+.affiliate-box .aff-desc {
+  font-size: 0.83rem; color: var(--text-muted); line-height: 1.5;
+}
+.affiliate-box .aff-cta {
+  display: inline-block; margin-top: 10px; background: var(--accent);
+  color: #fff; font-size: 0.8rem; font-weight: 600; padding: 7px 14px;
+  border-radius: 6px; text-decoration: none; transition: background 0.15s;
+}
+.affiliate-box .aff-cta:hover { background: var(--accent-h); text-decoration: none; }
+.affiliate-disclaimer {
+  font-size: 0.72rem; color: #4A5568; margin-top: 8px;
+}
+
+/* ── FAQ section ── */
+.faq-section { margin-top: 48px; }
+.faq-section h2 {
+  font-family: var(--font-display); font-size: 1.2rem;
+  font-weight: 700; margin-bottom: 16px; color: var(--text);
+}
+.faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  font-weight: 600; font-size: 0.92rem; color: var(--text);
+  cursor: pointer; display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 12px; list-style: none;
+  padding: 0; background: none; border: none; width: 100%; text-align: left;
+}
+.faq-q::after { content: '+'; color: var(--accent); font-size: 1.1rem; flex-shrink: 0; }
+.faq-item.open .faq-q::after { content: '-'; }
+.faq-a {
+  display: none; font-size: 0.875rem; color: var(--text-muted);
+  line-height: 1.75; padding-top: 10px;
+}
+.faq-item.open .faq-a { display: block; }

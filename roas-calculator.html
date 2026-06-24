@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROAS Calculator - Calculate Return on Ad Spend, POAS and Break-even ROAS | TheMarketingCalc</title>
-  <meta name="description" content="Free ROAS, POAS and break-even ROAS calculator. Understand the difference between revenue-based and profit-based optimisation, and find your campaign floor.">
+  <title>ROAS Calculator - ROAS, POAS and Break-even ROAS | TheMarketingCalc</title>
+  <meta name="description" content="Free ROAS, POAS and break-even ROAS calculator. Understand the difference between revenue and profit-based optimisation.">
   <link rel="canonical" href="https://themarketingcalc.com/roas-calculator">
-  <meta property="og:title" content="ROAS Calculator - Calculate Return on Ad Spend, POAS and Break-even ROAS | TheMarketingCalc">
-  <meta property="og:description" content="Free ROAS, POAS and break-even ROAS calculator. Understand the difference between revenue-based and profit-based optimisation, and find your campaign floor.">
+  <meta property="og:title" content="ROAS Calculator - ROAS, POAS and Break-even ROAS | TheMarketingCalc">
+  <meta property="og:description" content="Free ROAS, POAS and break-even ROAS calculator. Understand the difference between revenue and profit-based optimisation.">
   <meta property="og:url" content="https://themarketingcalc.com/roas-calculator">
   <meta property="og:image" content="https://themarketingcalc.com/logo.png">
   <meta name="google-adsense-account" content="ca-pub-4789906927045850">
@@ -29,6 +29,7 @@
 <main>
   <section class="calc-hero">
     <div class="container">
+      <div class="ad-leaderboard" aria-hidden="true"></div>
       
 <div class="calc-card">
   <div class="calc-tabs-nav calc-tabs-inner" role="tablist">
@@ -36,12 +37,8 @@
     <button class="calc-tab" data-tab="poas">POAS</button>
     <button class="calc-tab" data-tab="beroas">Break-even ROAS</button>
   </div>
-
   <div class="calc-panel active" id="tab-roas">
-    <div class="calc-header">
-      <h1>ROAS Calculator</h1>
-      <p class="calc-desc">Return on Ad Spend. Calculate ROAS, revenue, or ad spend - enter any two values to find the third.</p>
-    </div>
+    <div class="calc-header"><h1>ROAS Calculator</h1><p class="calc-desc">Return on Ad Spend. Calculate ROAS, revenue, or ad spend from any two values.</p></div>
     <div class="calc-mode-toggle">
       <button class="mode-btn active" data-mode="roas-roas">Find ROAS</button>
       <button class="mode-btn" data-mode="roas-rev">Find Revenue</button>
@@ -56,12 +53,8 @@
     <div class="calc-result hidden" id="roas-result"></div>
     <div class="calc-formula"><span class="formula-label">Formula</span><code>ROAS = Revenue / Ad Spend</code></div>
   </div>
-
   <div class="calc-panel" id="tab-poas">
-    <div class="calc-header">
-      <h2>POAS Calculator</h2>
-      <p class="calc-desc">Profit on Ad Spend. Uses gross profit instead of revenue - a more accurate measure of true campaign profitability.</p>
-    </div>
+    <div class="calc-header"><h2>POAS Calculator</h2><p class="calc-desc">Profit on Ad Spend - uses gross profit instead of revenue for a more accurate picture of campaign profitability.</p></div>
     <div class="calc-mode-toggle">
       <button class="mode-btn active" data-mode="poas-poas">Find POAS</button>
       <button class="mode-btn" data-mode="poas-profit">Find Profit</button>
@@ -76,12 +69,8 @@
     <div class="calc-result hidden" id="poas-result"></div>
     <div class="calc-formula"><span class="formula-label">Formula</span><code>POAS = Gross Profit / Ad Spend</code></div>
   </div>
-
   <div class="calc-panel" id="tab-beroas">
-    <div class="calc-header">
-      <h2>Break-even ROAS Calculator</h2>
-      <p class="calc-desc">Find the minimum ROAS your campaigns need to cover costs and break even on ad spend.</p>
-    </div>
+    <div class="calc-header"><h2>Break-even ROAS Calculator</h2><p class="calc-desc">Find the minimum ROAS your campaigns need to cover costs and break even on ad spend.</p></div>
     <div class="calc-inputs">
       <div class="input-group"><label>Average Order Value ($)</label><input type="number" id="be-aov" placeholder="e.g. 100" min="0"></div>
       <div class="input-group"><label>COGS per order ($)</label><input type="number" id="be-cogs" placeholder="e.g. 40" min="0"></div>
@@ -92,42 +81,45 @@
     <div class="calc-formula"><span class="formula-label">Formula</span><code>Break-even ROAS = AOV / (AOV - COGS - Other Costs)</code></div>
   </div>
 </div>
-
     </div>
   </section>
   <section class="calc-content">
-    <div class="container prose">
-      
-<h2>What is ROAS and how is it calculated?</h2>
-<p>ROAS (Return on Ad Spend) measures how much revenue you generate for every dollar spent on advertising. The formula is: ROAS = Revenue / Ad Spend. If you spend $2,000 and generate $10,000 in revenue, your ROAS is 5x (or 500%).</p>
+    <div class="container">
+      <div class="page-with-sidebar">
+        <div class="sidebar-left"><div class="ad-sidebar" aria-hidden="true"></div></div>
+        <div class="main-col prose">
+          
+<h2>What is ROAS?</h2>
+<p>ROAS (Return on Ad Spend) measures how much revenue you generate for every dollar spent on advertising. ROAS = Revenue / Ad Spend. Spending $2,000 and generating $10,000 in revenue gives a ROAS of 5x. It is the primary performance benchmark for e-commerce campaigns on Meta, Google Ads, and most paid channels.</p>
 
-<h2>What is POAS and how is it different from ROAS?</h2>
-<p>POAS (Profit on Ad Spend) uses gross profit instead of revenue: POAS = Gross Profit / Ad Spend. If you generate $10,000 in revenue with a 40% gross margin, your gross profit is $4,000. With $2,000 in ad spend, your POAS is 2x. ROAS would show 5x on the same campaign, which looks much better - but POAS tells you what actually matters: are you making money?</p>
-
-<h2>When should I use POAS instead of ROAS?</h2>
-<p>Use POAS when your product margins vary. If you sell products ranging from 15% to 60% gross margin, a high ROAS on low-margin products can still lose money. POAS forces this reality into your optimisation signal. It is especially important for e-commerce businesses with wide product catalogues, bundle deals, and promotional pricing. A campaign with ROAS 4x on a 20% margin product is losing money. The same ROAS on a 60% margin product is highly profitable.</p>
-
-<h2>What is a good ROAS?</h2>
-<p>There is no universal answer. The only ROAS that matters is your break-even ROAS, which depends entirely on your margins. An e-commerce business with 60% gross margin can be profitable at ROAS 2x. A business with 15% margin needs ROAS 8x or higher just to break even. Use the Break-even ROAS calculator above to find your specific floor.</p>
+<h2>What is POAS - and why it matters more</h2>
+<p>POAS (Profit on Ad Spend) uses gross profit instead of revenue: POAS = Gross Profit / Ad Spend. If your $10,000 revenue has a 40% gross margin, gross profit is $4,000. With $2,000 ad spend, POAS is 2x. ROAS shows 5x on the same campaign - which looks far better, but conceals the actual profitability.</p>
+<p>The practical difference becomes critical when margins vary across products. A ROAS of 4x on a 20% margin product is losing money. The same ROAS on a 60% margin product is highly profitable. ROAS cannot distinguish between these cases. POAS can, because it bakes margin into the metric.</p>
 
 <h2>What is break-even ROAS?</h2>
-<p>Break-even ROAS is the minimum return needed for a campaign to cover its costs and neither make nor lose money. The formula is: Break-even ROAS = AOV / (AOV - COGS - Other Variable Costs). If your average order value is $100, COGS is $40, and shipping costs $10, your margin is $50 and your break-even ROAS is 100/50 = 2x. Any campaign above 2x ROAS is profitable. Any campaign below it is losing money even if the absolute ROAS number looks acceptable.</p>
+<p>Break-even ROAS is the minimum return needed for a campaign to cover its costs - the floor below which you are losing money on every sale. Break-even ROAS = AOV / (AOV - COGS - Other Variable Costs). If your average order value is $100, COGS is $40, and shipping costs $10, your margin is $50 and your break-even ROAS is 100/50 = 2x. Every campaign you run should have this number clearly defined before you set targets.</p>
+<div class="ad-inline" aria-hidden="true"></div>
+<div class="affiliate-box">
+  <div class="aff-icon">🐋</div>
+  <div class="aff-body">
+    <div class="aff-label">Sponsored tool</div>
+    <div class="aff-title">Fix your ROAS attribution with Triple Whale</div>
+    <p class="aff-desc">iOS privacy changes broke last-click attribution. Triple Whale rebuilds your true ROAS picture using first-party pixel data and MMM modeling.</p>
+    <a href="https://www.triplewhale.com" class="aff-cta" rel="noopener sponsored" target="_blank">Try Triple Whale</a>
+    <p class="affiliate-disclaimer">Affiliate link - we may earn a commission at no extra cost to you.</p>
+  </div>
+</div>
 
-<h2>How do I improve ROAS?</h2>
-<p>ROAS can be improved from either side of the formula. On the revenue side: improve conversion rate on your landing page, increase average order value through upsells and bundles, improve product feed quality for shopping campaigns. On the cost side: cut spend on underperforming ad sets, tighten audience targeting, pause low-quality placements, and improve creative to reduce CPCs. The most sustainable ROAS improvements come from better post-click experience, not just bid adjustments.</p>
+<h2>Setting ROAS targets in Meta and Google Ads</h2>
+<p>Meta calls it Minimum ROAS in Advantage+ setups. Google Ads calls it Target ROAS (tROAS). Both work by instructing the platform algorithm to bid aggressively on users predicted to meet your return target and avoid users predicted to fall below it. Setting the target too high causes under-delivery as the algorithm becomes too selective. Set your target above break-even with enough headroom - typically 20% to 30% - for the algorithm to find volume while staying profitable.</p>
 
-<h2>What is the difference between ROAS and ROI?</h2>
-<p>ROAS measures revenue relative to ad spend only. ROI measures profit relative to all costs - including COGS, operations, and overhead - not just ad spend. ROAS = Revenue / Ad Spend. ROI = (Net Profit / Total Investment) x 100. ROAS is useful for comparing campaign efficiency. ROI tells you whether the entire business activity is profitable. POAS bridges the gap by factoring margins into the ad-spend calculation.</p>
+<h2>How to implement POAS in your ad accounts</h2>
+<p>Pass gross profit as your conversion value instead of order value. In Google Ads, this is done via a dynamic conversion value in your checkout or through the Enhanced Conversions API. In Meta, use the Conversions API to send a custom revenue value equal to gross profit per order. Once profit is your conversion value, set your target ROAS to 1x - because POAS break-even is always exactly 1, regardless of product or price point. This makes POAS targets universal across your catalogue.</p>
 
-<h2>How does attribution affect ROAS?</h2>
-<p>ROAS is only as accurate as your attribution model. Last-click attribution over-credits the final touchpoint and under-credits awareness and consideration channels. Data-driven attribution distributes credit across touchpoints but depends on volume to work well. iOS privacy changes and cookie restrictions have made ROAS figures less reliable across Meta and Google. This is one reason POAS is increasingly preferred - it focuses on actual profit outcomes rather than attributed revenue figures that may be inflated.</p>
-
-<h2>Can I set a ROAS target in Meta and Google Ads?</h2>
-<p>Yes. Meta calls it "Minimum ROAS" in Advantage+ and manual campaign setups. Google Ads calls it "Target ROAS" (tROAS). Both work by telling the platform's algorithm to only bid on users it predicts will deliver your target return. Setting the target too high can cause under-delivery as the algorithm becomes too selective. The break-even ROAS is your floor - set your target above it with enough headroom for the algorithm to find volume.</p>
-
-<h2>How do I implement POAS in Meta and Google Ads?</h2>
-<p>Pass gross profit as your conversion value instead of order value. In Google Ads, this is done via a dynamic conversion value in your checkout or via the conversion API. In Meta, use the Conversions API to send a custom revenue value equal to the gross profit per order. Once you are passing profit as conversion value, set your target ROAS to 1x - because POAS break-even is always 1.</p>
-
+          <div class="faq-section"><h2>Frequently asked questions</h2><div class="faq-item"><button class="faq-q">What is a good ROAS?</button><div class="faq-a">There is no universal answer. The only ROAS that matters is your break-even ROAS, which depends entirely on your gross margin. A 60% margin business can be profitable at ROAS 2x. A 15% margin business needs ROAS 8x just to break even. Use the Break-even ROAS tab in the calculator above to find your specific floor before setting any target.</div></div><div class="faq-item"><button class="faq-q">What is the difference between ROAS and ROI?</button><div class="faq-a">ROAS measures revenue relative to ad spend only. ROI measures profit relative to all costs - COGS, operations, and overhead - not just ad spend. ROAS is useful for comparing campaign efficiency. ROI tells you whether the whole business activity is profitable. POAS bridges the gap by factoring margins into the ad-spend calculation.</div></div><div class="faq-item"><button class="faq-q">How does iOS affect ROAS reporting?</button><div class="faq-a">iOS 14+ privacy changes limited Meta's ability to track conversions from iPhone users. Reported ROAS figures are typically understated by 20% to 40% compared to pre-iOS reality. Data-driven attribution, Conversions API, and aggregated event measurement all help close the gap. This is another reason POAS is gaining adoption - it focuses on actual profit outcomes rather than attributed revenue that may be incomplete.</div></div><div class="faq-item"><button class="faq-q">Why is my ROAS dropping?</button><div class="faq-a">Common causes: audience saturation (CPMs rising, reach shrinking), creative fatigue, increased competition in your auction, seasonal shifts in conversion rate, or attribution gaps from iOS changes. Audit in order: check frequency and CPM trends first, then creative performance, then post-click conversion rate.</div></div><div class="faq-item"><button class="faq-q">What is break-even POAS?</button><div class="faq-a">Break-even POAS is always 1x, regardless of product price or margin. This is the main advantage of POAS over ROAS as a target metric - your target is universal across all products and campaigns. ROAS 3x might be profitable for one SKU and catastrophically unprofitable for another. POAS 1x is always the floor.</div></div><div class="faq-item"><button class="faq-q">How do I calculate break-even ROAS?</button><div class="faq-a">Break-even ROAS = AOV / (AOV - COGS - Variable Costs). Example: AOV $100, COGS $35, shipping $10. Margin = $55. Break-even ROAS = 100/55 = 1.82x. Use the Break-even ROAS tab above to calculate this instantly.</div></div><div class="faq-item"><button class="faq-q">Should I optimise for ROAS or POAS?</button><div class="faq-a">POAS, if you can implement it. ROAS is easier to set up but rewards high-revenue, low-margin products. POAS aligns your ad spend with actual profitability. If all your products have similar margins, ROAS is a reasonable proxy. If margins vary across your catalogue, POAS is more accurate and prevents budget from flowing to unprofitable sales.</div></div></div>
+        </div>
+        <div class="sidebar-right"><div class="ad-sidebar" aria-hidden="true"></div></div>
+      </div>
     </div>
   </section>
 </main>
@@ -138,9 +130,12 @@
       <span>TheMarketingCalc.com</span>
     </div>
     <nav class="footer-links">
-      <a href="/cpm-calculator">CPM Calculator</a>
-      <a href="/ctr-calculator">CTR Calculator</a>
-      <a href="/roas-calculator">ROAS Calculator</a>
+      <a href="/cpm-calculator">CPM</a>
+      <a href="/ctr-calculator">CTR</a>
+      <a href="/cpc-calculator">CPC</a>
+      <a href="/roas-calculator">ROAS</a>
+      <a href="/cpl-calculator">CPL</a>
+      <a href="/frequency-calculator">Frequency</a>
       <a href="/budget-calculator">Budget Calculator</a>
       <a href="/guides">Guides</a>
       <a href="/privacy-policy">Privacy Policy</a>

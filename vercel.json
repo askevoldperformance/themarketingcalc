@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/budget-calculator", "destination": "/budget-calculator.html" },
+    { "source": "/guides", "destination": "/guides.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
+    { "source": "/guides/how-to-calculate-campaign-budget", "destination": "/guides/how-to-calculate-campaign-budget.html" },
+    { "source": "/guides/what-is-cpm", "destination": "/guides/what-is-cpm.html" },
+    { "source": "/guides/what-is-roas", "destination": "/guides/what-is-roas.html" },
+    { "source": "/guides/cpm-vs-ecpm", "destination": "/guides/cpm-vs-ecpm.html" },
+    { "source": "/guides/what-is-ctr", "destination": "/guides/what-is-ctr.html" },
+    { "source": "/guides/what-is-poas", "destination": "/guides/what-is-poas.html" },
+    { "source": "/guides/marketing-budget-benchmarks", "destination": "/guides/marketing-budget-benchmarks.html" }
+  ]
+}

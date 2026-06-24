@@ -14,7 +14,7 @@ from content import (
     FREQ_EDITORIAL, FREQ_FAQ,
 )
 
-GTM_ID      = "GTM-XXXXXXXXX"
+GTM_ID      = "GTM-WFL4M8ND"
 ADSENSE_PUB = "ca-pub-4789906927045850"
 SITE_URL    = "https://themarketingcalc.com"
 
@@ -90,7 +90,7 @@ def footer_html():
       <a href="/guides">Guides</a>
       <a href="/privacy-policy">Privacy Policy</a>
     </nav>
-    <p class="footer-copy">&copy; 2025 TheMarketingCalc.com</p>
+    <p class="footer-copy">&copy; 2026 TheMarketingCalc.com</p>
   </div>
 </footer>
 <script src="/cookie_banner.js" defer></script>

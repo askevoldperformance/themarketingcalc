@@ -14,7 +14,7 @@ from content import (
     FREQ_EDITORIAL, FREQ_FAQ,
 )
 
-GTM_ID      = "GTM-WFL4M8ND"
+GTM_ID      = "GTM-546VKQVR"
 ADSENSE_PUB = "ca-pub-4789906927045850"
 SITE_URL    = "https://themarketingcalc.com"
 

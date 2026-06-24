@@ -48,13 +48,13 @@ code {
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1100px; margin: 0 auto; padding: 0 20px;
-  display: flex; align-items: center; gap: 24px; height: 60px;
+  max-width: 1400px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; gap: 8px; height: 60px;
 }
 .nav-logo {
   display: flex; align-items: center; gap: 10px;
   font-family: var(--font-display); font-weight: 700;
-  font-size: 1rem; color: var(--text); text-decoration: none;
+  font-size: 0.9rem; color: var(--text); text-decoration: none;
   white-space: nowrap;
 }
 .nav-links::-webkit-scrollbar { display: none; }
@@ -65,7 +65,7 @@ code {
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
 .nav-links a, .nav-btn {
-  color: var(--text-muted); font-size: 0.875rem; padding: 6px 12px;
+  color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
   border-radius: 6px; transition: color 0.15s, background 0.15s;
   text-decoration: none; border: none; background: none; cursor: pointer;
   white-space: nowrap; flex-shrink: 0;
@@ -126,9 +126,10 @@ code {
 /* ── Calculator tabs ── */
 .calcs-section { padding: 0 0 64px; }
 .calc-tabs-nav {
-  display: flex; flex-wrap: nowrap; gap: 6px; margin-bottom: 28px; padding: 0 4px;
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  display: grid; grid-template-columns: repeat(4, auto); justify-content: center; gap: 8px; margin-bottom: 28px;
+}
+.calc-tabs-nav.scrollable {
+  display: flex; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; justify-content: flex-start;
 }
 .calc-tabs-nav::-webkit-scrollbar { display: none; }
 .calc-tab {
@@ -295,7 +296,7 @@ code {
   padding: 32px 20px;
 }
 .footer-inner {
-  max-width: 1100px; margin: 0 auto;
+  max-width: 1400px; margin: 0 auto;
   display: flex; flex-wrap: wrap; align-items: center; gap: 16px; justify-content: space-between;
 }
 .footer-brand { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; }
@@ -459,3 +460,13 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   line-height: 1.75; padding-top: 10px;
 }
 .faq-item.open .faq-a { display: block; }
+
+/* ── Index calc-tabs-nav responsive grid ── */
+@media (max-width: 640px) {
+  .calc-tabs-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .calc-tabs-nav .calc-tab {
+    text-align: center;
+  }
+}

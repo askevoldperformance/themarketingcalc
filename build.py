@@ -5,6 +5,8 @@ import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 
 from poas_guide_content import POAS_GUIDE_CONTENT
+from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
+from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
 from build_helpers import AD_LEADERBOARD, AD_SIDEBAR_L, AD_SIDEBAR_R, affiliate, faq, AFFILIATES
 from content import (
     CPM_EDITORIAL, CPM_FAQ,
@@ -494,10 +496,10 @@ if __name__ == "__main__":
     guides = [
         ("guides/how-to-calculate-campaign-budget.html", "How to Calculate a Campaign Budget", "Budgets", "/guides/how-to-calculate-campaign-budget",
          "<h2>The framework</h2><p>Start with your objective and work backwards from a target metric. If your goal is 500,000 impressions and your expected CPM is $5, your budget is 500,000 / 1,000 x $5 = $2,500.</p><h2>Step 1 - Choose your objective</h2><p>Reach/Awareness: use CPM. Traffic: use CPC. Conversions: use CPL or target CPA.</p><h2>Step 2 - Benchmark your metric</h2><p>Use platform averages as a starting point, then adjust for your industry, creative quality, and audience size. See our <a href='/guides/marketing-budget-benchmarks'>benchmark guide</a>.</p><h2>Step 3 - Calculate</h2><p>Budget = Target Impressions / 1,000 x CPM. Budget = Target Clicks x CPC. Budget = Target Leads x CPL.</p><h2>Step 4 - Sanity-check with break-even ROAS</h2><p>If running e-commerce, verify your budget makes sense against your margin floor before committing spend. Use our <a href='/roas-calculator'>Break-even ROAS calculator</a>."),
-        ("guides/what-is-cpm.html", "What is CPM? Cost Per Mille Explained", "CPM", "/guides/what-is-cpm",
-         "<h2>Definition</h2><p>CPM (Cost Per Mille) is the price you pay per 1,000 ad impressions. It is the standard buying unit for awareness and reach campaigns.</p><h2>Formula</h2><p><code>CPM = (Total Cost / Impressions) x 1,000</code></p><h2>Example</h2><p>You spend $500 and receive 200,000 impressions. CPM = ($500 / 200,000) x 1,000 = $2.50.</p><h2>Benchmarks</h2><p>Meta: $6 to $14. Google Display: $2 to $5. LinkedIn: $30 to $80. TikTok: $8 to $15.</p><p>Use our <a href='/cpm-calculator'>CPM calculator</a> to calculate CPM, cost, or impressions from any two values.</p>"),
-        ("guides/what-is-roas.html", "What is ROAS? Return on Ad Spend Explained", "ROAS", "/guides/what-is-roas",
-         "<h2>Definition</h2><p>ROAS (Return on Ad Spend) measures revenue generated per dollar spent on advertising. ROAS = Revenue / Ad Spend.</p><h2>Example</h2><p>Revenue $10,000. Ad Spend $2,000. ROAS = 5x.</p><h2>What is a good ROAS?</h2><p>Depends on your margins. Use the Break-even ROAS calculator to find your floor. See also: <a href='/guides/what-is-poas'>What is POAS</a> for a more accurate alternative.</p><p>Use our <a href='/roas-calculator'>ROAS calculator</a> to calculate ROAS, revenue, ad spend, and break-even ROAS.</p>"),
+        ("guides/what-is-cpm.html", "The Marketer's Guide to CPM - What It Means and Why It Drives Brand Growth", "CPM", "/guides/what-is-cpm",
+         CPM_GUIDE_CONTENT + faq(CPM_GUIDE_FAQ), "The Marketer's Guide to CPM: What It Means and Why It Drives Brand Growth"),
+        ("guides/what-is-roas.html", "The Ultimate Guide to ROAS - Measuring the True Efficiency of Your Ad Spend", "ROAS", "/guides/what-is-roas",
+         ROAS_GUIDE_CONTENT + faq(ROAS_GUIDE_FAQ), "The Ultimate Guide to ROAS: Measuring the True Efficiency of Your Ad Spend"),
         ("guides/cpm-vs-ecpm.html", "CPM vs eCPM - What is the Difference?", "CPM", "/guides/cpm-vs-ecpm",
          "<h2>CPM - what you pay</h2><p>CPM is the rate you agreed to pay per 1,000 impressions.</p><h2>eCPM - what you effectively pay</h2><p>eCPM normalises performance across buying models: eCPM = (Total Cost / Impressions) x 1,000. Use it to compare CPC and CPM buys on equal footing.</p><p>Use our <a href='/cpm-calculator'>CPM calculator</a> to calculate eCPM from any campaign spend and impression data.</p>"),
         ("guides/what-is-ctr.html", "What is CTR? Click-Through Rate Explained", "CTR", "/guides/what-is-ctr",

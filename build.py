@@ -354,12 +354,13 @@ PRIVACY_BODY = '''
 </main>'''
 
 
-def guide_body(title, tag, content_html):
+def guide_body(title, tag, content_html, h1=None):
+    h1_text = h1 if h1 else title
     return f'''
 <main>
   <section class="page-hero"><div class="container">
     <span class="guide-tag">{tag}</span>
-    <h1>{title}</h1>
+    <h1>{h1_text}</h1>
   </div></section>
   <section class="prose-section"><div class="container">
     <div class="page-with-sidebar">
@@ -501,13 +502,15 @@ if __name__ == "__main__":
          "<h2>CPM - what you pay</h2><p>CPM is the rate you agreed to pay per 1,000 impressions.</p><h2>eCPM - what you effectively pay</h2><p>eCPM normalises performance across buying models: eCPM = (Total Cost / Impressions) x 1,000. Use it to compare CPC and CPM buys on equal footing.</p><p>Use our <a href='/cpm-calculator'>CPM calculator</a> to calculate eCPM from any campaign spend and impression data.</p>"),
         ("guides/what-is-ctr.html", "What is CTR? Click-Through Rate Explained", "CTR", "/guides/what-is-ctr",
          "<h2>Definition</h2><p>CTR = (Clicks / Impressions) x 100. A direct signal of creative and audience relevance.</p><h2>Benchmarks</h2><p>Google Search: 3 to 6%. Google Display: 0.1 to 0.3%. Meta Feed: 0.5 to 1.5%. LinkedIn: 0.3 to 0.7%.</p><p>Use our <a href='/ctr-calculator'>CTR calculator</a> to calculate CTR, clicks, or impressions from any two values.</p>"),
-        ("guides/what-is-poas.html", "The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit | TheMarketingCalc", "POAS", "/guides/what-is-poas",
-         POAS_GUIDE_CONTENT),
+        ("guides/what-is-poas.html", "The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit", "POAS", "/guides/what-is-poas",
+         POAS_GUIDE_CONTENT, "The Ultimate Guide to POAS: Why POAS is the Metric That Actually Scales E-Commerce Profit"),
         ("guides/marketing-budget-benchmarks.html", "Marketing Budget Benchmarks by Channel", "Budgets", "/guides/marketing-budget-benchmarks",
          "<h2>CPM benchmarks (2024-2025)</h2><p>Meta: $6 to $14. Google Display: $2 to $5. LinkedIn: $30 to $80. TikTok: $8 to $15. Snapchat: $3 to $8. Reddit: $3 to $10. X: $4 to $9.</p><h2>CPC benchmarks</h2><p>Google Search: $1 to $6. Meta: $0.30 to $1.50. LinkedIn: $5 to $15. TikTok: $0.20 to $0.80.</p><h2>CTR benchmarks</h2><p>Google Search: 3 to 6%. Google Display: 0.1 to 0.3%. Meta Feed: 0.5 to 1.5%. LinkedIn: 0.3 to 0.7%.</p><h2>Note on benchmarks</h2><p>These are averages. Your numbers depend on audience, creative, industry, and bidding strategy. Use our <a href='/budget-calculator'>budget calculator</a> to model full campaigns with channel-specific benchmarks.</p>"),
     ]
 
-    for filepath, title, tag, canonical_path, content in guides:
-        page(filepath, f"{title} | TheMarketingCalc", title, canonical_path, guide_body(title, tag, content))
+    for entry in guides:
+        filepath, title, tag, canonical_path, content = entry[:5]
+        h1 = entry[5] if len(entry) > 5 else None
+        page(filepath, f"{title} | TheMarketingCalc", title, canonical_path, guide_body(title, tag, content, h1=h1))
 
     print("Done.")

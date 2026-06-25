@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit | TheMarketingCalc | TheMarketingCalc</title>
-  <meta name="description" content="The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit | TheMarketingCalc">
-  <link rel="canonical" href="https://themarketingcalc.com/guides/what-is-poas">
-  <meta property="og:title" content="The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit | TheMarketingCalc | TheMarketingCalc">
-  <meta property="og:description" content="The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit | TheMarketingCalc">
-  <meta property="og:url" content="https://themarketingcalc.com/guides/what-is-poas">
-  <meta property="og:image" content="https://themarketingcalc.com/logo.png">
-  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
-  <link rel="icon" href="/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-546VKQVR');</script>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-546VKQVR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <div class="nav-links"><a href="/">Home</a><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a><a href="/guides">Guides</a></div>
-    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
-  </div>
-</nav>
-<main>
-  <section class="page-hero"><div class="container">
-    <span class="guide-tag">POAS</span>
-    <h1>The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit | TheMarketingCalc</h1>
-  </div></section>
-  <section class="prose-section"><div class="container">
-    <div class="page-with-sidebar">
-      <div class="sidebar-left"><div class="ad-sidebar" aria-hidden="true"></div></div>
-      <div class="main-col prose">
+POAS_GUIDE_CONTENT = """
 <p style="font-size:1.05rem;color:#94a3b8;margin-bottom:32px;line-height:1.7;">For years, digital marketing agencies and ad platforms have treated Return on Ad Spend (ROAS) as the holy grail of e-commerce performance. If your ROAS target looks high, you're winning - right? Not necessarily. In fact, relying solely on traditional ROAS might be actively blocking your profitability.</p>
 
 <p>The issue lies in how the metric is practically applied. True "return" should mean profit. However, because net profit margins are complex and traditionally hidden from ad networks, Google and Meta swapped profit for the easiest data point available: revenue. As a result, traditional ROAS is actually Revenue on Ad Spend - and revenue tells you absolutely nothing about product margins, payment fees, shipping costs, or hidden overhead.</p>
@@ -116,37 +80,4 @@
 </div>
 
 <p>Ready to calculate your POAS? Use our free <a href="/roas-calculator">POAS Calculator</a> to factor in your margins, shipping, and transaction fees and see your true profit on ad spend.</p>
-</div>
-      <div class="sidebar-right"><div class="ad-sidebar" aria-hidden="true"></div></div>
-    </div>
-  </div></section>
-  <section class="tools-cta"><div class="container">
-    <h2>Try the calculators</h2>
-    <p>Put these formulas to work instantly.</p>
-    <a href="/" class="btn-primary">Open Calculators &rarr;</a>
-  </div></section>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="/logo.png" alt="The Marketing Calc" width="28" height="28">
-      <span>TheMarketingCalc.com</span>
-    </div>
-    <nav class="footer-links">
-      <a href="/cpm-calculator">CPM</a>
-      <a href="/ctr-calculator">CTR</a>
-      <a href="/cpc-calculator">CPC</a>
-      <a href="/roas-calculator">ROAS</a>
-      <a href="/cpl-calculator">CPL</a>
-      <a href="/frequency-calculator">Frequency</a>
-      <a href="/budget-calculator">Budget Calculator</a>
-      <a href="/guides">Guides</a>
-      <a href="/privacy-policy">Privacy Policy</a>
-    </nav>
-    <p class="footer-copy">&copy; 2026 TheMarketingCalc.com</p>
-  </div>
-</footer>
-<script src="/cookie_banner.js" defer></script>
-<script src="/main.js" defer></script>
-</body>
-</html>
+"""

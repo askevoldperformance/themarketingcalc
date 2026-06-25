@@ -4,6 +4,7 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 
+from poas_guide_content import POAS_GUIDE_CONTENT
 from build_helpers import AD_LEADERBOARD, AD_SIDEBAR_L, AD_SIDEBAR_R, affiliate, faq, AFFILIATES
 from content import (
     CPM_EDITORIAL, CPM_FAQ,
@@ -500,8 +501,8 @@ if __name__ == "__main__":
          "<h2>CPM - what you pay</h2><p>CPM is the rate you agreed to pay per 1,000 impressions.</p><h2>eCPM - what you effectively pay</h2><p>eCPM normalises performance across buying models: eCPM = (Total Cost / Impressions) x 1,000. Use it to compare CPC and CPM buys on equal footing.</p><p>Use our <a href='/cpm-calculator'>CPM calculator</a> to calculate eCPM from any campaign spend and impression data.</p>"),
         ("guides/what-is-ctr.html", "What is CTR? Click-Through Rate Explained", "CTR", "/guides/what-is-ctr",
          "<h2>Definition</h2><p>CTR = (Clicks / Impressions) x 100. A direct signal of creative and audience relevance.</p><h2>Benchmarks</h2><p>Google Search: 3 to 6%. Google Display: 0.1 to 0.3%. Meta Feed: 0.5 to 1.5%. LinkedIn: 0.3 to 0.7%.</p><p>Use our <a href='/ctr-calculator'>CTR calculator</a> to calculate CTR, clicks, or impressions from any two values.</p>"),
-        ("guides/what-is-poas.html", "What is POAS? Profit on Ad Spend Explained", "POAS", "/guides/what-is-poas",
-         "<h2>Definition</h2><p>POAS = Gross Profit / Ad Spend. More accurate than ROAS because it uses profit rather than revenue.</p><h2>Why it matters</h2><p>ROAS ignores COGS. A 5x ROAS on a 15% margin product loses money. POAS forces profitability into the optimisation signal. Break-even POAS is always 1x, making targets universal across products.</p><p>Use our <a href='/roas-calculator'>POAS calculator</a> alongside the ROAS tab to compare both views of the same campaign.</p>"),
+        ("guides/what-is-poas.html", "The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit | TheMarketingCalc", "POAS", "/guides/what-is-poas",
+         POAS_GUIDE_CONTENT),
         ("guides/marketing-budget-benchmarks.html", "Marketing Budget Benchmarks by Channel", "Budgets", "/guides/marketing-budget-benchmarks",
          "<h2>CPM benchmarks (2024-2025)</h2><p>Meta: $6 to $14. Google Display: $2 to $5. LinkedIn: $30 to $80. TikTok: $8 to $15. Snapchat: $3 to $8. Reddit: $3 to $10. X: $4 to $9.</p><h2>CPC benchmarks</h2><p>Google Search: $1 to $6. Meta: $0.30 to $1.50. LinkedIn: $5 to $15. TikTok: $0.20 to $0.80.</p><h2>CTR benchmarks</h2><p>Google Search: 3 to 6%. Google Display: 0.1 to 0.3%. Meta Feed: 0.5 to 1.5%. LinkedIn: 0.3 to 0.7%.</p><h2>Note on benchmarks</h2><p>These are averages. Your numbers depend on audience, creative, industry, and bidding strategy. Use our <a href='/budget-calculator'>budget calculator</a> to model full campaigns with channel-specific benchmarks.</p>"),
     ]

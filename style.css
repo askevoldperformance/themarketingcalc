@@ -382,19 +382,16 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 
 /* ── Ad placements (hidden until AdSense approved) ── */
 .ad-leaderboard {
-  display: none; /* remove when AdSense approved */
   width: 100%; max-width: 728px; height: 90px;
   margin: 0 auto 24px; background: var(--bg2);
   border: 1px dashed var(--border); border-radius: 6px;
 }
 .ad-inline {
-  display: none; /* remove when AdSense approved */
   width: 100%; margin: 32px 0;
   background: var(--bg2); border: 1px dashed var(--border);
   border-radius: 6px; min-height: 250px;
 }
 .ad-sidebar {
-  display: none; /* remove when AdSense approved */
   width: 160px; min-height: 600px;
   background: var(--bg2); border: 1px dashed var(--border); border-radius: 6px;
 }

@@ -358,11 +358,23 @@ PRIVACY_BODY = '''
 
 def guide_body(title, tag, content_html, h1=None):
     h1_text = h1 if h1 else title
+    from datetime import date
+    updated = date.today().strftime("%B %d, %Y")
+    author_box = f'''
+<div class="author-box">
+  <img src="/images/peter-jensen.jpg" alt="Peter Jensen" class="author-avatar">
+  <div class="author-meta">
+    <span class="author-name">Peter Jensen</span>
+    <span class="author-title">Marketing Specialist</span>
+    <span class="author-updated">Updated {updated}</span>
+  </div>
+</div>'''
     return f'''
 <main>
   <section class="page-hero"><div class="container">
     <span class="guide-tag">{tag}</span>
     <h1>{h1_text}</h1>
+    {author_box}
   </div></section>
   <section class="prose-section"><div class="container">
     <div class="page-with-sidebar">

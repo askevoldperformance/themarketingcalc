@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc</title>
-  <meta name="description" content="Advanced marketing budget calculator. Select market, channel mix, and objective to estimate results or required budget.">
-  <link rel="canonical" href="https://themarketingcalc.com/budget-calculator">
-  <meta property="og:title" content="Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc">
-  <meta property="og:description" content="Advanced marketing budget calculator. Select market, channel mix, and objective to estimate results or required budget.">
-  <meta property="og:url" content="https://themarketingcalc.com/budget-calculator">
-  <meta property="og:image" content="https://themarketingcalc.com/logo.png">
-  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
-  <link rel="icon" href="/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-546VKQVR');</script>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-546VKQVR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <div class="nav-links"><a href="/">Home</a><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator" class="active">Budget Calculator</a><a href="/guides">Guides</a></div>
-    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
-  </div>
-</nav>
+"""
+Budget Calculator v2 content module.
+Contains the HTML body and is paired with budget_calculator.js for logic.
+Benchmark data is embedded in the JS file (BENCHMARKS object) for runtime use.
+"""
+
+BUDGET_CALCULATOR_BODY = '''
 <main>
   <section class="page-hero"><div class="container">
     <p class="hero-eyebrow">Advanced tool</p>
@@ -114,29 +93,4 @@
 
     </div>
   </div></section>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="/logo.png" alt="The Marketing Calc" width="28" height="28">
-      <span>TheMarketingCalc.com</span>
-    </div>
-    <nav class="footer-links">
-      <a href="/cpm-calculator">CPM</a>
-      <a href="/ctr-calculator">CTR</a>
-      <a href="/cpc-calculator">CPC</a>
-      <a href="/roas-calculator">ROAS</a>
-      <a href="/cpl-calculator">CPL</a>
-      <a href="/frequency-calculator">Frequency</a>
-      <a href="/budget-calculator">Budget Calculator</a>
-      <a href="/guides">Guides</a>
-      <a href="/privacy-policy">Privacy Policy</a>
-    </nav>
-    <p class="footer-copy">&copy; 2026 TheMarketingCalc.com</p>
-  </div>
-</footer>
-<script src="/cookie_banner.js" defer></script>
-<script src="/main.js" defer></script>
-<script src="/budget_calculator.js" defer></script>
-</body>
-</html>
+</main>'''

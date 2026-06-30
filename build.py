@@ -8,6 +8,7 @@ from poas_guide_content import POAS_GUIDE_CONTENT
 from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
 from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
 from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
+from budget_calculator_content import BUDGET_CALCULATOR_BODY
 from build_helpers import AD_LEADERBOARD, AD_SIDEBAR_L, AD_SIDEBAR_R, affiliate, faq, AFFILIATES
 from content import (
     CPM_EDITORIAL, CPM_FAQ,
@@ -99,6 +100,7 @@ def footer_html():
 </footer>
 <script src="/cookie_banner.js" defer></script>
 <script src="/main.js" defer></script>
+<script src="/budget_calculator.js" defer></script>
 </body>
 </html>'''
 
@@ -397,65 +399,6 @@ def guide_body(title, tag, content_html, h1=None):
 </main>'''
 
 
-BUDGET_BODY = '''
-<main>
-  <section class="page-hero"><div class="container">
-    <p class="hero-eyebrow">Advanced tool</p>
-    <h1>Marketing <span class="accent">Budget Calculator</span></h1>
-    <p class="hero-sub">Estimate campaign results or required budget across channels - with benchmarks per market.</p>
-  </div></section>
-  <section class="budget-section"><div class="container">
-    <div class="budget-card">
-      <div class="budget-step"><h3>1. Select market and currency</h3>
-        <div class="market-grid">
-          <button class="market-btn active" data-market="US" data-currency="USD">US <span>USD</span></button>
-          <button class="market-btn" data-market="UK" data-currency="GBP">UK <span>GBP</span></button>
-          <button class="market-btn" data-market="NO" data-currency="NOK">Norway <span>NOK</span></button>
-          <button class="market-btn" data-market="SE" data-currency="SEK">Sweden <span>SEK</span></button>
-          <button class="market-btn" data-market="DK" data-currency="DKK">Denmark <span>DKK</span></button>
-          <button class="market-btn" data-market="EU" data-currency="EUR">EU <span>EUR</span></button>
-          <button class="market-btn" data-market="AU" data-currency="AUD">Australia <span>AUD</span></button>
-        </div>
-      </div>
-      <div class="budget-step"><h3>2. Select channel(s)</h3>
-        <div class="channel-grid">
-          <button class="channel-btn active" data-channel="meta">Meta</button>
-          <button class="channel-btn" data-channel="google">Google Ads</button>
-          <button class="channel-btn" data-channel="linkedin">LinkedIn</button>
-          <button class="channel-btn" data-channel="tiktok">TikTok</button>
-          <button class="channel-btn" data-channel="snapchat">Snapchat</button>
-          <button class="channel-btn" data-channel="reddit">Reddit</button>
-          <button class="channel-btn" data-channel="x">X (Twitter)</button>
-        </div>
-      </div>
-      <div class="budget-step"><h3>3. Objective</h3>
-        <div class="objective-toggle">
-          <button class="obj-btn active" data-obj="reach">Reach / Awareness</button>
-          <button class="obj-btn" data-obj="clicks">Traffic / Clicks</button>
-          <button class="obj-btn" data-obj="conversions">Conversions</button>
-        </div>
-      </div>
-      <div class="budget-step"><h3>4. Calculate</h3>
-        <div class="calc-direction-toggle">
-          <button class="dir-btn active" data-dir="budget-to-results">Budget to Results</button>
-          <button class="dir-btn" data-dir="goals-to-budget">Goals to Budget</button>
-        </div>
-        <div id="budget-to-results-inputs">
-          <div class="input-group"><label>Total Budget (<span class="currency-label">USD</span>)</label><input type="number" id="b2r-budget" placeholder="e.g. 5000" min="0"></div>
-        </div>
-        <div id="goals-to-budget-inputs" class="hidden">
-          <div class="input-group"><label id="goal-label">Target Impressions</label><input type="number" id="g2b-goal" placeholder="e.g. 500000" min="0"></div>
-        </div>
-        <button class="calc-btn" onclick="calcBudget()">Estimate</button>
-        <div class="calc-result hidden" id="budget-result"></div>
-      </div>
-      <div class="budget-benchmarks">
-        <h3>Channel benchmarks <span class="badge" id="benchmark-market">US</span></h3>
-        <div id="benchmark-table"></div>
-      </div>
-    </div>
-  </div></section>
-</main>'''
 
 
 # ── BUILD ─────────────────────────────────────────────────────────────────────
@@ -501,7 +444,7 @@ if __name__ == "__main__":
     page("budget-calculator.html",
          "Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc",
          "Advanced marketing budget calculator. Select market, channel mix, and objective to estimate results or required budget.",
-         "/budget-calculator", BUDGET_BODY)
+         "/budget-calculator", BUDGET_CALCULATOR_BODY)
 
     page("guides.html",
          "Marketing Guides - CPM, ROAS, CTR, POAS Explained | TheMarketingCalc",

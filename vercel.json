@@ -69,6 +69,14 @@
     {
       "source": "/guides/marketing-budget-benchmarks",
       "destination": "/guides/marketing-budget-benchmarks.html"
+    },
+    {
+      "source": "/marketing-tools",
+      "destination": "/marketing-tools.html"
+    },
+    {
+      "source": "/marketing-tools/free-keyword-tools",
+      "destination": "/marketing-tools/free-keyword-tools.html"
     }
   ]
 }

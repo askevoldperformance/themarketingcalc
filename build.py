@@ -9,6 +9,7 @@ from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
 from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
 from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
 from budget_calculator_content import BUDGET_CALCULATOR_BODY
+from marketing_tools_content import MARKETING_TOOLS_BODY, KEYWORD_TOOLS_BODY
 from build_helpers import AD_LEADERBOARD, AD_SIDEBAR_L, AD_SIDEBAR_R, affiliate, faq, AFFILIATES
 from content import (
     CPM_EDITORIAL, CPM_FAQ,
@@ -32,6 +33,7 @@ NAV_LINKS = [
     ("CPL Calculator", "/cpl-calculator"),
     ("Frequency Calculator", "/frequency-calculator"),
     ("Budget Calculator", "/budget-calculator"),
+    ("Marketing Tools", "/marketing-tools"),
     ("Guides", "/guides"),
 ]
 
@@ -102,6 +104,7 @@ def footer_html():
 <script src="/cookie_banner.js" defer></script>
 <script src="/main.js" defer></script>
 <script src="/budget_calculator.js" defer></script>
+<script src="/keyword_tools.js" defer></script>
 </body>
 </html>'''
 
@@ -446,6 +449,16 @@ if __name__ == "__main__":
          "Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc",
          "Advanced marketing budget calculator. Select market, channel mix, and objective to estimate results or required budget.",
          "/budget-calculator", BUDGET_CALCULATOR_BODY)
+
+    page("marketing-tools.html",
+         "Free Marketing Tools - Keyword Tools and More | TheMarketingCalc",
+         "Free marketing tools for PPC and SEO professionals. Keyword match type formatting, keyword combination generators, and more practical tools for daily campaign work.",
+         "/marketing-tools", MARKETING_TOOLS_BODY)
+
+    page("marketing-tools/free-keyword-tools.html",
+         "Free Keyword Tools - Match Type Formatter and Keyword Combiner | TheMarketingCalc",
+         "Free keyword match type tool and keyword combiner for Google Ads and Microsoft Ads. Format Broad, Phrase, and Exact match keywords instantly, or combine word lists into long-tail keywords.",
+         "/marketing-tools/free-keyword-tools", KEYWORD_TOOLS_BODY)
 
     page("guides.html",
          "Marketing Guides - CPM, ROAS, CTR, POAS Explained | TheMarketingCalc",

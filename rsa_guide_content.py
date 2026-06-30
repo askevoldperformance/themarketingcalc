@@ -1,0 +1,99 @@
+RSA_GUIDE_CONTENT = """
+<p style="font-size:1.05rem;color:#94a3b8;margin-bottom:32px;line-height:1.7;">Writing winning responsive search ads is no longer just about stuffing keywords into headlines and hoping Google's algorithm finds a good combination. The brands that consistently win the click in 2026 understand something deeper: search ads are not a single moment of persuasion, they are the final touchpoint in a long, chaotic decision-making process that Google itself has spent years researching. If you want your google search ads to convert at a higher rate, you need to understand exactly what is happening inside a shopper's head in the seconds before they click.</p>
+
+<p>This guide breaks down the psychology behind high-performing responsive search ads, the research backing it, and a practical framework you can apply to every ad group you write from today onward. We will also walk through a complete responsive search ads example, annotated line by line, so you can see exactly how these principles translate into copy you can ship inside responsive search ads Google Ads today.</p>
+
+<h2>The research behind what actually works</h2>
+<p>Think with Google released a 98-page study called <a href="https://www.thinkwithgoogle.com/_qs/documents/9998/Decoding_Decisions_The_Messy_Middle_of_Purchase_Behavior.pdf" target="_blank" rel="noopener">Decoding Decisions: The Messy Middle of Purchase Behavior</a>, produced together with The Behavioural Architects. It remains one of the most cited pieces of research on online purchase behaviour, and it explains why some responsive search ad examples convert dramatically better than others using the exact same product, the exact same budget, and the exact same audience.</p>
+
+<p>The conclusion is simple to state and surprisingly hard to execute: winning the click is not about being louder. It is about reducing psychological friction at the exact moment someone is deciding between you and a competitor.</p>
+
+<h2>The Messy Middle model</h2>
+<p>Traditional marketing teaches the funnel: awareness, consideration, decision, a clean linear path from stranger to customer. Think with Google's research throws that model out. The purchase journey is conceptualised not as a funnel, but as a complex loop between exploration and evaluation that sits between the initial trigger and the final purchase.</p>
+
+<div style="display:flex; gap:32px; align-items:center; flex-wrap:wrap; margin:32px 0;">
+  <div style="flex:1; min-width:260px;">
+    <p style="margin-bottom:14px;"><strong>The loop:</strong> consumers continuously cycle through exploring new brands (expanding their set of options) and evaluating them (narrowing those options down) in a non-linear fashion until they have gathered sufficient information to make a decision. They might check three review sites, compare two products, search a fourth alternative, then circle back to the first.</p>
+    <p style="margin:0;"><strong>Winning the sale:</strong> the marketer's goal is not to force a sale at the first opportunity. It is to provide the information and reassurance needed to help a consumer feel comfortable exiting the loop and choosing your brand specifically - at the moment they happen to be evaluating you.</p>
+  </div>
+  <div style="flex:1; min-width:260px;">
+    <img src="/images/messy-middle-model.png" alt="The Messy Middle model showing the loop between exploration and evaluation between trigger and purchase" style="width:100%; border-radius:10px;">
+  </div>
+</div>
+
+<p>This is where responsive search ads become critical. Because Google's RSA format tests multiple headline and description combinations automatically, it is uniquely suited to addressing several psychological triggers within a single ad - meeting a shopper wherever they happen to be in that loop.</p>
+
+<h2>Navigating the messy middle: the six biases</h2>
+<p>The Messy Middle is where customers are won and lost. To cope with the overwhelming amount of information available online, shoppers rely on cognitive shortcuts rather than exhaustively researching every option. Think with Google identified six of these shortcuts, calling them the Six Biases. These are not marketing gimmicks - they are well-documented psychological drivers studied extensively in behavioural economics, and they apply directly to how you should structure every responsive search ad you write.</p>
+
+<h3>1. Category heuristics</h3>
+<p>Short, simple descriptions of key product specifications that let a shopper make a fast decision without deep research - "10MP camera", "organic cotton", "24-month warranty". In a responsive search ad, this means leading with the spec or claim that matters most in your category, not a generic value proposition.</p>
+
+<h3>2. Power of now</h3>
+<p>The longer someone has to wait for a product or outcome, the weaker your offer becomes in their mind. Instant access, same-day delivery, and immediate availability are disproportionately persuasive compared to their actual practical value. If you can ship fast or deliver instantly, say so explicitly in your headline.</p>
+
+<h3>3. Social proof</h3>
+<p>Recommendations, star ratings, and reviews from other people are some of the most persuasive elements you can include. A specific number ("4.8 stars, 3,211 reviews") builds more trust than a vague claim ("loved by customers"). Specificity is what makes social proof credible.</p>
+
+<h3>4. Scarcity bias</h3>
+<p>As stock or availability decreases, perceived value increases. "Only 2 left" or "selling fast" triggers a fear of missing out that a neutral product listing never will. This works because it is true scarcity-based information, not because it is manipulative - use it honestly when it reflects real inventory conditions.</p>
+
+<h3>5. Authority bias</h3>
+<p>We are easily swayed by expert opinions, trusted sources, and industry awards. A line like "Awarded Best AV Performance 2024 by Pro-AV Magazine" does more persuasive work in a responsive search ad than three lines describing features, because it borrows credibility from a source the shopper already trusts.</p>
+
+<h3>6. Power of free</h3>
+<p>A free gift, free shipping, or free trial - even one unrelated to the core purchase decision - can tip a shopper toward your brand. The psychological weight of "free" is disproportionate to its actual monetary value, which is exactly why it works so well in ad copy where every character counts.</p>
+
+<h2>Supercharging the second-choice brand</h2>
+<p>The most striking finding in the research is what happens when a brand that starts as a clear underdog applies all six biases systematically. In the original study, the second-choice brand was able to take a full 78% of preference away from the first-choice brand once it was supercharged with all six biases.</p>
+
+<figure style="margin:32px 0;">
+  <img src="/images/second-choice-supercharged.png" alt="Bar chart showing the second choice brand winning 78% of preference after being supercharged with the six biases, up from 24% before" style="width:100%; border-radius:10px; border:1px solid var(--border);">
+  <figcaption style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;text-align:center;">Before optimisation, the stated first-choice brand held 100% preference. Once the second-choice brand was supercharged with all six biases, it captured 78% of preference - a complete reversal.</figcaption>
+</figure>
+
+<p>Before any intervention, the stated first-choice brand holds the full advantage - 100% preference, as you would expect. Simply introducing the second-choice brand as an option pulls 24% of preference away, just from awareness alone. But once that second-choice brand is presented using all six biases together - category heuristics, urgency, social proof, scarcity, authority, and a free incentive - it wins 78% of preference. The underdog becomes the winner.</p>
+
+<p>This is the single most important insight for any challenger brand running google search ads against a category leader with a bigger budget. You do not need a bigger budget to win the click. You need a responsive search ad that addresses more of the six biases than your competitor's ad does.</p>
+
+<h2>A responsive search ad example using all six biases</h2>
+<p>Here is what a fully supercharged responsive search ad looks like in practice, built around a search for "4K Ultra HDTV":</p>
+
+<figure style="margin:32px 0;">
+  <img src="/images/rsa-example.png" alt="Example of a Google responsive search ad annotated with the six biases: category heuristics, authority bias, power of now, scarcity bias, social proof, and power of free" style="width:100%; border-radius:10px; border:1px solid var(--border);">
+  <figcaption style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;text-align:center;">A single responsive search ad addressing all six biases: category heuristics in the headline, authority bias and power of now in the description, social proof in the rating line, and power of free in the sitelinks.</figcaption>
+</figure>
+
+<p>Notice how every line of this responsive search ad example earns its place. The headline uses category heuristics ("Elite 4K Ultra HDTVs") and authority bias ("Expert-Validated Tech") together. The description opens with authority bias (an award from a recognised publication), then layers in power of now (free same-day delivery) and scarcity bias ("Only 2 left!") in the same sentence. The star rating beneath it is social proof with a specific, credible number. The sitelinks close the ad with power of free - a loyalty program, a bundling option, and free installation.</p>
+
+<p>This is the structural template worth copying for any responsive search ad you write going forward: lead with category heuristics or authority in your top headlines, layer urgency and scarcity into your descriptions, support with a specific social proof number wherever your ad format allows it, and use sitelinks or callout extensions to surface free-value offers.</p>
+
+<h2>How to apply this to your own responsive search ads</h2>
+<p>Google's responsive search ad format gives you up to 15 headlines and 4 descriptions, and the platform automatically tests combinations to find what performs best for each individual auction. This is exactly why the six biases framework matters more for RSAs than it did for legacy expanded text ads - you are not writing one ad, you are writing a pool of message fragments that Google will mix and match. If every fragment in that pool reflects a different bias, your ad has a much higher chance of matching whatever psychological state a given searcher is in.</p>
+
+<p>A practical way to structure your headline pool: write two to three headlines per bias category. Two or three category heuristic headlines stating your core specs. Two urgency or power-of-now headlines. One or two social proof headlines with a specific number. A scarcity headline if your inventory genuinely supports it. An authority headline if you have a credible source to cite. And at least one power-of-free headline highlighting your strongest free incentive.</p>
+
+<p>This naturally produces a pool of 10 to 15 headlines that each pull a different psychological lever, which is precisely what the responsive search ad format was built to optimise across.</p>
+
+<h2>Why this matters more in a privacy-first ad landscape</h2>
+<p>As third-party cookie deprecation and iOS privacy changes continue to erode granular audience targeting, the actual creative content of your ad carries more of the conversion burden than it used to. You can no longer rely purely on hyper-precise targeting to compensate for generic ad copy. The messy middle research becomes more relevant, not less, in a world where your responsive search ad needs to do more psychological work because the targeting layer is doing less.</p>
+
+<p>Once you have written ads using this framework, the next step is making sure your budget and bidding strategy can actually support testing this many message variations across enough impressions to reach statistical significance. Use our <a href="/budget-calculator">budget calculator</a> to estimate the spend required to generate enough clicks for reliable testing, and our <a href="/ctr-calculator">CTR calculator</a> to benchmark whether your new ad copy is actually outperforming your previous version.</p>
+"""
+
+RSA_GUIDE_FAQ = [
+    ("What are responsive search ads?",
+     "Responsive search ads (RSAs) are a Google Ads format where you provide up to 15 headlines and 4 descriptions, and Google's machine learning automatically tests and serves the best-performing combinations for each individual search query and auction. They replaced expanded text ads as the default Google Search ad format."),
+    ("How many headlines should I write for a responsive search ad?",
+     "Google allows up to 15 headlines, and using close to the maximum is recommended because it gives the algorithm more combinations to test and learn from. A practical structure is two to three headlines per psychological trigger - category heuristics, urgency, social proof, scarcity, authority, and free incentives - which naturally produces 10 to 15 headlines."),
+    ("What is the Messy Middle model in marketing?",
+     "The Messy Middle is a model from Think with Google describing the purchase journey as a non-linear loop between exploration (discovering options) and evaluation (narrowing them down), rather than a straight funnel. Shoppers cycle through this loop multiple times before making a decision, and brands win by reducing friction at whichever stage the shopper happens to be in."),
+    ("What are the six biases in the Messy Middle research?",
+     "The six biases are category heuristics (simple specs that simplify decisions), power of now (instant availability), social proof (reviews and ratings), scarcity bias (limited stock), authority bias (expert endorsements and awards), and power of free (free gifts, shipping, or trials). Applying multiple biases in a single ad significantly increases conversion likelihood."),
+    ("Can a second-choice brand really overtake the market leader?",
+     "Yes - Think with Google's research found that a stated second-choice brand captured 78% of preference away from the original first-choice brand once it was presented using all six biases together. This demonstrates that ad copy and message structure can outweigh existing brand preference in the moment of decision."),
+    ("How do I write a responsive search ad example that converts?",
+     "Lead with category heuristics or authority bias in your top headlines, since these show first most often. Layer urgency and scarcity into your descriptions where they are factually accurate. Include a specific, credible social proof number if your ad extensions support it. Use sitelinks or callouts to highlight free-value offers like free shipping or free installation."),
+    ("Does responsive search ad performance differ from expanded text ads?",
+     "Yes - because RSAs test combinations automatically across a pool of headlines and descriptions, ad strength and combination diversity matter more than they did with fixed expanded text ads. Writing headlines that each address a distinct psychological trigger, rather than several headlines that say similar things, gives Google's algorithm more genuinely different combinations to test."),
+]

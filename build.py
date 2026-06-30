@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from poas_guide_content import POAS_GUIDE_CONTENT
 from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
 from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
+from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
 from build_helpers import AD_LEADERBOARD, AD_SIDEBAR_L, AD_SIDEBAR_R, affiliate, faq, AFFILIATES
 from content import (
     CPM_EDITORIAL, CPM_FAQ,
@@ -324,6 +325,7 @@ GUIDES_BODY = '''
   </div></section>
   <section class="guides-full"><div class="container">
     <div class="guide-grid guide-grid-full">
+      <a href="/guides/responsive-search-ads-guide" class="guide-card"><span class="guide-tag">Google Ads</span><h3>The Ultimate Google Search Ads Guide</h3><p>How to write winning responsive search ads using the science of the Messy Middle.</p></a>
       <a href="/guides/how-to-calculate-campaign-budget" class="guide-card"><span class="guide-tag">Budgets</span><h3>How to Calculate a Campaign Budget</h3><p>A step-by-step framework for estimating ad budgets across channels.</p></a>
       <a href="/guides/what-is-cpm" class="guide-card"><span class="guide-tag">CPM</span><h3>What is CPM?</h3><p>Cost per mille explained - with channel benchmarks and examples.</p></a>
       <a href="/guides/what-is-roas" class="guide-card"><span class="guide-tag">ROAS</span><h3>What is ROAS?</h3><p>Return on Ad Spend: how to calculate, benchmark, and improve it.</p></a>
@@ -510,6 +512,8 @@ if __name__ == "__main__":
          "Privacy policy for TheMarketingCalc.com.", "/privacy-policy", PRIVACY_BODY)
 
     guides = [
+        ("guides/responsive-search-ads-guide.html", "The Ultimate Google Search Ads Guide - Writing Winning Responsive Search Ads", "Google Ads", "/guides/responsive-search-ads-guide",
+         RSA_GUIDE_CONTENT + faq(RSA_GUIDE_FAQ), "The Ultimate Google Search Ads Guide: Learn How to Write Winning Responsive Search Ads"),
         ("guides/how-to-calculate-campaign-budget.html", "How to Calculate a Campaign Budget", "Budgets", "/guides/how-to-calculate-campaign-budget",
          "<h2>The framework</h2><p>Start with your objective and work backwards from a target metric. If your goal is 500,000 impressions and your expected CPM is $5, your budget is 500,000 / 1,000 x $5 = $2,500.</p><h2>Step 1 - Choose your objective</h2><p>Reach/Awareness: use CPM. Traffic: use CPC. Conversions: use CPL or target CPA.</p><h2>Step 2 - Benchmark your metric</h2><p>Use platform averages as a starting point, then adjust for your industry, creative quality, and audience size. See our <a href='/guides/marketing-budget-benchmarks'>benchmark guide</a>.</p><h2>Step 3 - Calculate</h2><p>Budget = Target Impressions / 1,000 x CPM. Budget = Target Clicks x CPC. Budget = Target Leads x CPL.</p><h2>Step 4 - Sanity-check with break-even ROAS</h2><p>If running e-commerce, verify your budget makes sense against your margin floor before committing spend. Use our <a href='/roas-calculator'>Break-even ROAS calculator</a>."),
         ("guides/what-is-cpm.html", "The Marketer's Guide to CPM - What It Means and Why It Drives Brand Growth", "CPM", "/guides/what-is-cpm",

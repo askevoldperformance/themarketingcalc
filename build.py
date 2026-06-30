@@ -66,6 +66,7 @@ def head_html(title, description, canonical_path):
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{SITE_URL}/logo.png">
   <meta name="google-adsense-account" content="{ADSENSE_PUB}">
+  <meta name="impact-site-verification" content="11b4deab-0282-498b-bf5a-89afaea16cf7">
   <link rel="icon" href="/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">

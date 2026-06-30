@@ -204,3 +204,10 @@ document.addEventListener('click', e => {
   if (!q) return;
   q.closest('.faq-item').classList.toggle('open');
 });
+
+// ── Mobile nav ────────────────────────────────────────────────────────────────
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+}

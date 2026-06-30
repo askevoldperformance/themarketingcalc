@@ -369,9 +369,13 @@ def guide_body(title, tag, content_html, h1=None):
     <span class="author-updated">Updated {updated}</span>
   </div>
 </div>'''
+    breadcrumb = f'''<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a><span class="bc-sep">/</span><a href="/guides">Guides</a><span class="bc-sep">/</span><span class="bc-current">{h1_text}</span>
+</nav>'''
     return f'''
 <main>
   <section class="page-hero"><div class="container">
+    {breadcrumb}
     <span class="guide-tag">{tag}</span>
     <h1>{h1_text}</h1>
     {author_box}

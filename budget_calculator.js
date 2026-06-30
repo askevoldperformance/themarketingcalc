@@ -490,5 +490,8 @@ function initBudgetCalculator() {
   document.getElementById('benchmark-market').textContent = state.market;
 }
 
-document.addEventListener('DOMContentLoaded', initBudgetCalculator);
-if (document.readyState !== 'loading') initBudgetCalculator();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initBudgetCalculator);
+} else {
+  initBudgetCalculator();
+}

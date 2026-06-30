@@ -6,6 +6,13 @@ function generateMatchTypes() {
 
   let lines = input.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
 
+  if (lines.length === 0) {
+    output.value = '';
+    const countEl = document.getElementById('mt-count');
+    if (countEl) countEl.textContent = '';
+    return;
+  }
+
   if (document.getElementById('mt-lowercase').checked) {
     lines = lines.map(l => l.toLowerCase());
   }
@@ -29,6 +36,15 @@ function generateMatchTypes() {
   if (countEl) countEl.textContent = `(${result.length} keywords)`;
 }
 
+function initMatchTypeTool() {
+  const input = document.getElementById('mt-input');
+  if (!input) return;
+  ['mt-input', 'mt-broad', 'mt-phrase', 'mt-exact', 'mt-lowercase', 'mt-dedupe'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', generateMatchTypes);
+  });
+}
+
 // ── Keyword Combiner Tool ────────────────────────────────────────────────────
 let combinerSeparator = ' ';
 
@@ -38,6 +54,7 @@ document.addEventListener('click', e => {
   document.querySelectorAll('.sep-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   combinerSeparator = btn.dataset.sep === 'space' ? ' ' : btn.dataset.sep === 'dash' ? '-' : '';
+  generateCombinations();
 });
 
 function generateCombinations() {
@@ -54,7 +71,9 @@ function generateCombinations() {
   const l3 = parseLines(list3);
 
   if (l1.length === 0 || l2.length === 0) {
-    output.value = 'Please enter at least two lists.';
+    output.value = '';
+    const countEl = document.getElementById('cb-count');
+    if (countEl) countEl.textContent = '';
     return;
   }
 
@@ -81,6 +100,15 @@ function generateCombinations() {
   if (countEl) countEl.textContent = `(${combos.length} keywords)`;
 }
 
+function initCombinerTool() {
+  const list1 = document.getElementById('cb-list1');
+  if (!list1) return;
+  ['cb-list1', 'cb-list2', 'cb-list3', 'cb-lowercase', 'cb-dedupe'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', generateCombinations);
+  });
+}
+
 // ── Shared: copy to clipboard ─────────────────────────────────────────────────
 function copyKwOutput(id) {
   const el = document.getElementById(id);
@@ -91,4 +119,15 @@ function copyKwOutput(id) {
     btn.textContent = 'Copied!';
     setTimeout(() => { btn.textContent = original; }, 1500);
   });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+function initKeywordTools() {
+  initMatchTypeTool();
+  initCombinerTool();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initKeywordTools);
+} else {
+  initKeywordTools();
 }

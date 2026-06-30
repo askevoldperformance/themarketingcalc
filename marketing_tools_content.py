@@ -52,7 +52,6 @@ KEYWORD_MATCH_TYPE_TOOL_HTML = '''
         <label class="kw-check"><input type="checkbox" id="mt-lowercase"> Transform to lowercase</label>
         <label class="kw-check"><input type="checkbox" id="mt-dedupe"> Remove duplicates</label>
       </div>
-      <button class="calc-btn" onclick="generateMatchTypes()">Generate</button>
     </div>
     <div class="kw-output-col">
       <label>Result <span id="mt-count" class="kw-count"></span></label>
@@ -94,8 +93,7 @@ KEYWORD_COMBINER_TOOL_HTML = '''
     <label class="kw-check"><input type="checkbox" id="cb-lowercase"> Transform to lowercase</label>
     <label class="kw-check"><input type="checkbox" id="cb-dedupe"> Remove duplicates</label>
   </div>
-  <button class="calc-btn" onclick="generateCombinations()">Generate combinations</button>
-  <div class="kw-output-col" style="margin-top:16px;">
+  <div class="kw-output-col" style="margin-top:4px;">
     <label>Result <span id="cb-count" class="kw-count"></span></label>
     <textarea id="cb-output" rows="10" readonly placeholder="Your combined keywords will appear here"></textarea>
     <button class="btn-secondary kw-copy-btn" onclick="copyKwOutput('cb-output')">Copy to clipboard</button>
@@ -104,19 +102,13 @@ KEYWORD_COMBINER_TOOL_HTML = '''
 
 
 KEYWORD_TOOLS_EDITORIAL_TOP = '''
-<h2>What is a keyword match type tool?</h2>
-<p>A keyword match type tool takes a raw list of keywords and automatically formats each one into the punctuation required by Google Ads and Microsoft Ads match types - quotation marks for Phrase Match, square brackets for Exact Match, and plain text for Broad Match. Instead of manually adding this formatting to hundreds of keywords one at a time, the tool above does it instantly for your entire list.</p>
-
-<h2>Google Ads and Microsoft Ads keyword match types explained</h2>
-<p><strong>Broad Match</strong> is the widest match type. A broad match keyword can trigger your ad for related searches, synonyms, and variations the platform deems relevant - even if the exact words are not present in the user's query. This match type is well suited to Smart Bidding strategies like Target CPA or Target ROAS, since the algorithm uses broad match data to find converting queries you may not have thought to bid on manually.</p>
-<p><strong>Phrase Match</strong> sits in the middle. Enclosing a keyword in quotation marks - "keyword example" - tells the platform to match search queries that include that phrase or a close variation of it, with additional words allowed before or after. Phrase match is a sensible default for accounts with limited historical conversion data, since it balances reach against relevance.</p>
-<p><strong>Exact Match</strong> is the most precise. Enclosing a keyword in square brackets - [keyword example] - restricts matching to the exact term or very close variations only, such as plurals or minor misspellings. Exact match delivers the highest relevance and lowest wasted spend, making it the right choice for proven, high-converting keywords.</p>
+<h2>Google Ads and Microsoft Ads match types</h2>
+<p><strong>Broad Match</strong> reaches the widest range of related searches and works best with Smart Bidding. <strong>Phrase Match</strong> - wrapped in quotes - matches your phrase plus extra words around it. <strong>Exact Match</strong> - wrapped in brackets - is the most precise and the lowest-waste option. The broad match modifier was retired in 2021 and is no longer a distinct match type on either platform.</p>
 '''
 
 KEYWORD_TOOLS_EDITORIAL_MIDDLE = '''
-<h2>What is a keyword combiner tool used for?</h2>
-<p>A keyword combiner tool (sometimes called a keyword permutation tool or keyword mixer) cross-multiplies two or more lists of words to generate every possible combination between them. If you have a list of modifiers (cheap, best, free) and a list of core terms (marketing software, keyword tool, budget calculator), the combiner generates all nine combinations automatically - cheap marketing software, cheap keyword tool, cheap budget calculator, best marketing software, and so on.</p>
-<p>This is especially useful when building out long-tail keyword lists for Phrase Match and Exact Match campaigns, where having a comprehensive list of specific variations matters more than relying on a single broad keyword to catch everything. It is also a fast way to generate content ideas, ad group structures, or negative keyword lists by combining your core terms with common qualifiers.</p>
+<h2>What the keyword combiner is for</h2>
+<p>Cross-multiply two or three word lists into every possible combination - useful for building long-tail keyword lists, ad group structures, or content ideas in seconds instead of typing variations by hand.</p>
 '''
 
 KEYWORD_TOOLS_FAQ_ITEMS = [
@@ -152,11 +144,10 @@ KEYWORD_TOOLS_BODY = f'''
     <div class="page-with-sidebar">
       {AD_SIDEBAR_L}
       <div class="main-col prose">
-        {KEYWORD_TOOLS_EDITORIAL_TOP}
         {KEYWORD_MATCH_TYPE_TOOL_HTML}
-        {AD_INLINE}
-        {KEYWORD_TOOLS_EDITORIAL_MIDDLE}
+        {KEYWORD_TOOLS_EDITORIAL_TOP}
         {KEYWORD_COMBINER_TOOL_HTML}
+        {KEYWORD_TOOLS_EDITORIAL_MIDDLE}
         {KEYWORD_TOOLS_AFFILIATE}
         {KEYWORD_TOOLS_FAQ}
       </div>

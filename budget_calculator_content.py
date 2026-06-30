@@ -4,7 +4,54 @@ Contains the HTML body and is paired with budget_calculator.js for logic.
 Benchmark data is embedded in the JS file (BENCHMARKS object) for runtime use.
 """
 
-BUDGET_CALCULATOR_BODY = '''
+from build_helpers import AD_SIDEBAR_L, AD_SIDEBAR_R, faq
+
+BUDGET_EDITORIAL = """
+<h2>What is a marketing budget calculator?</h2>
+<p>A marketing budget calculator estimates how much you need to spend - or what results you can expect from a given spend - across paid advertising channels like Meta, Google Search, YouTube, LinkedIn, and TikTok. The calculator above goes a step further than a simple cost-per-click multiplier: it builds an actual channel mix, weighting your budget across the channels you select based on each channel's reach in your chosen market and how well that channel fits your campaign objective.</p>
+
+<h2>How to calculate your marketing budget</h2>
+<p>There are three ways to approach a marketing budget calculation, and the tool above supports all three.</p>
+<p><strong>Budget to Results:</strong> you know what you can spend, and want to know what that spend will deliver - impressions, reach, frequency, and clicks - split sensibly across your selected channels.</p>
+<p><strong>Goals to Budget:</strong> you have a target outcome - a specific number of impressions, clicks, or conversions - and want to know what budget is required to hit it.</p>
+<p><strong>Reach My Audience:</strong> you do not have a specific number in mind at all. You simply want to know what it costs to reach your target age groups at least once across your selected channels in a given market. This is the fastest way to get a rough budget figure when you are still in the early planning stage of a media plan and have not yet defined hard KPI targets.</p>
+
+<h2>How the channel mix is calculated</h2>
+<p>Rather than showing you a single blended number, the calculator splits your budget across each channel you select using two factors combined: market penetration (what percentage of the population in your chosen country that channel can realistically reach) and objective fit (channels that suit your stated goal - Reach, Traffic, or Conversions - are weighted more heavily). A Search-heavy mix for a Conversions objective will allocate more budget to Google and Bing than to TikTok, for example, while a Reach objective shifts more budget toward YouTube, Performance Max, Demand Gen, and social placements.</p>
+
+<h2>Why population and demographic filters matter for budget planning</h2>
+<p>Reach can never exceed the number of people who actually exist in your target demographic within a market. The calculator uses national population and internet penetration data, filtered by your selected age groups, to set a hard ceiling on reach estimates per channel. Impressions and frequency are not capped the same way - if your budget is large relative to your audience size, the tool will show a high frequency instead of an impossible reach number, which mirrors how delivery actually behaves in platforms like Meta Ads Manager and Google Ads.</p>
+
+<h2>Planning budget across multiple markets</h2>
+<p>Channel penetration and cost benchmarks vary significantly by country. Meta's reach as a percentage of population is meaningfully higher in Nordic markets like Norway, Sweden, and Denmark than in larger markets like Germany or the United States, while Google Search CPCs vary by a factor of three or more between markets depending on local competition. Always recalculate your marketing budget per market rather than applying a single global average - a budget that delivers strong reach in the UK will behave very differently in Germany using the exact same spend.</p>
+
+<h2>Using your own account data instead of benchmarks</h2>
+<p>Public benchmark data is a useful starting point, but it will never match your specific account, industry, or audience exactly. Once you have live campaign data, switch on custom metrics and enter your own CPM, CPC, and CTR per channel directly from your ads manager. This turns the calculator from a generic planning tool into an accurate forecasting model based on your actual account performance, while still using the channel mix and population logic to plan how to scale.</p>
+
+<h2>Marketing budget allocation by channel</h2>
+<p>A common question when planning a digital marketing budget is how much to allocate to each channel. There is no universal split that works for every business - it depends on your market, your objective, and your existing channel performance. As a general planning principle: Search (Google and Bing) typically deserves a larger share of budget when the objective is conversions, since it captures existing demand. Social and push channels (Meta, YouTube, TikTok, Performance Max, Demand Gen) typically deserve a larger share when the objective is reach or awareness, since they create new demand rather than capturing it. Use the calculator above to model this trade-off directly for your market rather than relying on generic rules of thumb.</p>
+"""
+
+BUDGET_FAQ_ITEMS = [
+    ("How much should I budget for digital marketing?",
+     "There is no fixed percentage that applies to every business - it depends on your margins, growth stage, and customer acquisition cost. As a planning starting point, use the calculator above with your target market, channels, and objective to see what budget is required to reach a meaningful portion of your addressable audience, then adjust based on your own conversion and margin data."),
+    ("How is the channel mix split calculated?",
+     "The split is based on two combined factors: each channel's market penetration (what percentage of the population in your selected country that channel can reach) and how well the channel fits your selected objective. Channels that align with your objective - for example Search and Performance Max for a Conversions goal - receive a larger share of the budget."),
+    ("Can I calculate budget without knowing my target impressions or clicks?",
+     "Yes - use the Reach My Audience mode. Select your market, age groups, and channels, and the calculator estimates the budget required to reach your audience at least once across those channels, without requiring you to specify a target number upfront."),
+    ("Why does reach have a maximum but impressions do not?",
+     "Reach counts unique people, and a market only has a finite population. Impressions count total ad views, including repeat views by the same person, so they can climb indefinitely as your budget increases - this shows up as a rising frequency rather than impossible reach."),
+    ("Should I use the same marketing budget split in every country?",
+     "No. Channel penetration and cost per result vary significantly by market. The same budget split that works well in the UK may underperform in Germany or overperform in Norway, simply because channel usage and competition differ by country. Recalculate your channel mix per market rather than applying one global split."),
+    ("How accurate are the benchmark CPM, CPC, and CTR figures?",
+     "They are blended industry averages intended as a starting point for planning, not a guarantee of your account's actual performance. Your real numbers depend on your industry, creative quality, audience targeting, and bidding strategy. Once you have live campaign data, switch on custom metrics and enter your own figures per channel for a more accurate forecast."),
+    ("What is the difference between reach and frequency in budget planning?",
+     "Reach is how many unique people you reach. Frequency is the average number of times each person sees your ad. When planning budget, a high frequency on a small audience often signals you should either broaden targeting or reduce spend on that channel, since additional budget is going toward repeat views rather than new reach."),
+]
+
+BUDGET_FAQ = faq(BUDGET_FAQ_ITEMS)
+
+BUDGET_CALCULATOR_BODY = f'''
 <main>
   <section class="page-hero"><div class="container">
     <p class="hero-eyebrow">Advanced tool</p>
@@ -24,16 +71,15 @@ BUDGET_CALCULATOR_BODY = '''
         <h3>2. Audience filter <span class="step-hint">optional - narrows population and reach estimates</span></h3>
         <div class="audience-filter-row">
           <div class="input-group">
-            <label>Age range</label>
-            <select id="age-filter">
-              <option value="all">All ages (13+)</option>
-              <option value="18-24">18-24</option>
-              <option value="25-34">25-34</option>
-              <option value="35-44">35-44</option>
-              <option value="45-54">45-54</option>
-              <option value="55-64">55-64</option>
-              <option value="65+">65+</option>
-            </select>
+            <label>Age range <span class="step-hint">select one or more</span></label>
+            <div class="age-checkbox-group" id="age-checkbox-group">
+              <label class="age-check"><input type="checkbox" value="18-24"><span>18-24</span></label>
+              <label class="age-check"><input type="checkbox" value="25-34"><span>25-34</span></label>
+              <label class="age-check"><input type="checkbox" value="35-44"><span>35-44</span></label>
+              <label class="age-check"><input type="checkbox" value="45-54"><span>45-54</span></label>
+              <label class="age-check"><input type="checkbox" value="55-64"><span>55-64</span></label>
+              <label class="age-check"><input type="checkbox" value="65+"><span>65+</span></label>
+            </div>
           </div>
           <div class="input-group">
             <label>Gender</label>
@@ -73,12 +119,16 @@ BUDGET_CALCULATOR_BODY = '''
         <div class="calc-direction-toggle">
           <button class="dir-btn active" data-dir="budget-to-results">Budget to Results</button>
           <button class="dir-btn" data-dir="goals-to-budget">Goals to Budget</button>
+          <button class="dir-btn" data-dir="audience-to-budget">Reach My Audience</button>
         </div>
         <div id="budget-to-results-inputs">
           <div class="input-group"><label>Total Budget (<span class="currency-label">USD</span>)</label><input type="number" id="b2r-budget" placeholder="e.g. 5000" min="0"></div>
         </div>
         <div id="goals-to-budget-inputs" class="hidden">
           <div class="input-group"><label id="goal-label">Target Impressions</label><input type="number" id="g2b-goal" placeholder="e.g. 500000" min="0"></div>
+        </div>
+        <div id="audience-to-budget-inputs" class="hidden">
+          <p class="audience-mode-hint">No targets needed. We will estimate the budget required to reach your selected age groups at least once on each selected channel, based on market population and channel penetration.</p>
         </div>
         <button class="calc-btn" onclick="calcBudget()">Calculate channel mix</button>
       </div>
@@ -91,6 +141,17 @@ BUDGET_CALCULATOR_BODY = '''
         <div id="benchmark-table"></div>
       </div>
 
+    </div>
+  </div></section>
+
+  <section class="calc-content"><div class="container">
+    <div class="page-with-sidebar">
+      {AD_SIDEBAR_L}
+      <div class="main-col prose">
+        {BUDGET_EDITORIAL}
+        {BUDGET_FAQ}
+      </div>
+      {AD_SIDEBAR_R}
     </div>
   </div></section>
 </main>'''

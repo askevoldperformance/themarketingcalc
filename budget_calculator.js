@@ -152,7 +152,7 @@ const OBJECTIVES = {
 
 let state = {
   market: 'US',
-  ageFilter: 'all',
+  ageFilters: new Set(),
   genderFilter: 'all',
   channels: new Set(['meta', 'google']),
   objective: 'reach',
@@ -284,15 +284,20 @@ function initDirectionToggle() {
       state.direction = btn.dataset.dir;
       document.getElementById('budget-to-results-inputs').classList.toggle('hidden', state.direction !== 'budget-to-results');
       document.getElementById('goals-to-budget-inputs').classList.toggle('hidden', state.direction !== 'goals-to-budget');
+      document.getElementById('audience-to-budget-inputs').classList.toggle('hidden', state.direction !== 'audience-to-budget');
     });
   });
 }
 
 // Age / gender filter listeners
 function initFilters() {
-  const ageEl = document.getElementById('age-filter');
+  document.querySelectorAll('#age-checkbox-group input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) state.ageFilters.add(cb.value);
+      else state.ageFilters.delete(cb.value);
+    });
+  });
   const genderEl = document.getElementById('gender-filter');
-  if (ageEl) ageEl.addEventListener('change', () => { state.ageFilter = ageEl.value; });
   if (genderEl) genderEl.addEventListener('change', () => { state.genderFilter = genderEl.value; });
 }
 
@@ -307,8 +312,13 @@ function getMetric(channel, field) {
 // ── Population ceiling for current filters ──
 function getPopulationCeiling() {
   const market = MARKETS[state.market];
-  const ageFactor = AGE_DISTRIBUTION[state.ageFilter] || 1;
   const genderFactor = GENDER_DISTRIBUTION[state.genderFilter] || 1;
+  let ageFactor;
+  if (state.ageFilters.size === 0) {
+    ageFactor = 1; // no age filter selected = all ages
+  } else {
+    ageFactor = [...state.ageFilters].reduce((sum, age) => sum + (AGE_DISTRIBUTION[age] || 0), 0);
+  }
   return Math.round(market.population * market.internetPct * ageFactor * genderFactor);
 }
 
@@ -347,7 +357,7 @@ function calcBudget() {
   if (state.direction === 'budget-to-results') {
     totalBudget = getVal('b2r-budget');
     if (!totalBudget) return;
-  } else {
+  } else if (state.direction === 'goals-to-budget') {
     // goals-to-budget: distribute target across channels by weight, sum required budget
     const goal = getVal('g2b-goal');
     if (!goal) return;
@@ -359,6 +369,25 @@ function calcBudget() {
       if (state.objective === 'reach') channelBudget = (channelGoal / 1000) * cpm;
       else if (state.objective === 'clicks') channelBudget = channelGoal * cpc;
       else channelBudget = (channelGoal / 0.02) * cpc; // assume 2% CVR for conversions
+      totalBudget += channelBudget;
+    });
+  } else if (state.direction === 'audience-to-budget') {
+    // audience-to-budget: estimate cost to reach the full addressable population once per channel
+    channels.forEach(ch => {
+      const penetration = CHANNEL_PENETRATION[ch][state.market] || 0.3;
+      const channelTargetReach = Math.round(popCeiling * penetration);
+      const cpm = getMetric(ch, 'cpm');
+      const cpc = getMetric(ch, 'cpc');
+      const meta = CHANNEL_META[ch];
+      let channelBudget = 0;
+      if (meta.type === 'cpc') {
+        const ctr = getMetric(ch, 'ctr');
+        const impressionsNeeded = channelTargetReach; // 1x frequency assumption
+        const clicksNeeded = impressionsNeeded * (ctr / 100);
+        channelBudget = clicksNeeded * cpc;
+      } else {
+        channelBudget = (channelTargetReach / 1000) * cpm;
+      }
       totalBudget += channelBudget;
     });
   }

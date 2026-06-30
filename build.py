@@ -364,10 +364,10 @@ def guide_body(title, tag, content_html, h1=None):
     updated = date.today().strftime("%B %d, %Y")
     author_box = f'''
 <div class="author-box">
-  <img src="/images/peter-jensen.jpg" alt="Peter Jensen" class="author-avatar">
+  <img src="/images/robin-askevold.jpg" alt="Robin Askevold" class="author-avatar">
   <div class="author-meta">
-    <span class="author-name">Peter Jensen</span>
-    <span class="author-title">Marketing Specialist</span>
+    <span class="author-name">Robin Askevold</span>
+    <span class="author-title">Performance Specialist</span>
     <span class="author-updated">Updated {updated}</span>
   </div>
 </div>'''

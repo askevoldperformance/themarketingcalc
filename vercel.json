@@ -77,6 +77,10 @@
     {
       "source": "/marketing-tools/free-keyword-tools",
       "destination": "/marketing-tools/free-keyword-tools.html"
+    },
+    {
+      "source": "/guides/performance-max-creative-specs",
+      "destination": "/guides/performance-max-creative-specs.html"
     }
   ]
 }

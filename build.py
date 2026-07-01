@@ -8,6 +8,7 @@ from poas_guide_content import POAS_GUIDE_CONTENT
 from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
 from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
 from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
+from pmax_guide_content import PMAX_GUIDE_CONTENT, PMAX_GUIDE_FAQ
 from budget_calculator_content import BUDGET_CALCULATOR_BODY
 from marketing_tools_content import MARKETING_TOOLS_BODY, KEYWORD_TOOLS_BODY
 from build_helpers import AD_LEADERBOARD, AD_SIDEBAR_L, AD_SIDEBAR_R, affiliate, faq, AFFILIATES
@@ -331,6 +332,7 @@ GUIDES_BODY = '''
   </div></section>
   <section class="guides-full"><div class="container">
     <div class="guide-grid guide-grid-full">
+      <a href="/guides/performance-max-creative-specs" class="guide-card"><span class="guide-tag">Google Ads</span><h3>Performance Max Creative Specs</h3><p>Image sizes, video formats, character limits, and dead zones for PMax asset groups.</p></a>
       <a href="/guides/responsive-search-ads-guide" class="guide-card"><span class="guide-tag">Google Ads</span><h3>The Ultimate Google Search Ads Guide</h3><p>How to write winning responsive search ads using the science of the Messy Middle.</p></a>
       <a href="/guides/how-to-calculate-campaign-budget" class="guide-card"><span class="guide-tag">Budgets</span><h3>How to Calculate a Campaign Budget</h3><p>A step-by-step framework for estimating ad budgets across channels.</p></a>
       <a href="/guides/what-is-cpm" class="guide-card"><span class="guide-tag">CPM</span><h3>What is CPM?</h3><p>Cost per mille explained - with channel benchmarks and examples.</p></a>
@@ -469,6 +471,8 @@ if __name__ == "__main__":
          "Privacy policy for TheMarketingCalc.com.", "/privacy-policy", PRIVACY_BODY)
 
     guides = [
+        ("guides/performance-max-creative-specs.html", "Performance Max Creative Specs - Image Sizes, Video Formats and Dead Zones", "Google Ads", "/guides/performance-max-creative-specs",
+         PMAX_GUIDE_CONTENT + faq(PMAX_GUIDE_FAQ), "Mastering Google Ads Performance Max Formats: Specs, Dead Zones, and Creative Best Practices"),
         ("guides/responsive-search-ads-guide.html", "The Ultimate Google Search Ads Guide - Writing Winning Responsive Search Ads", "Google Ads", "/guides/responsive-search-ads-guide",
          RSA_GUIDE_CONTENT + faq(RSA_GUIDE_FAQ), "The Ultimate Google Search Ads Guide: Learn How to Write Winning Responsive Search Ads"),
         ("guides/how-to-calculate-campaign-budget.html", "How to Calculate a Campaign Budget", "Budgets", "/guides/how-to-calculate-campaign-budget",

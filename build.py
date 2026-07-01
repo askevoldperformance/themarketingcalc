@@ -25,7 +25,7 @@ GTM_ID      = "GTM-546VKQVR"
 ADSENSE_PUB = "ca-pub-4789906927045850"
 SITE_URL    = "https://themarketingcalc.com"
 
-NAV_LINKS_BEFORE = [("Home", "/")]
+NAV_LINKS_BEFORE = []
 NAV_LINKS_AFTER = [("Marketing Tools", "/marketing-tools"), ("Guides", "/guides")]
 
 CALC_DROPDOWN = [
@@ -58,10 +58,12 @@ def nav_html(active_path="/"):
         active = ' class="active"' if href == active_path else ""
         links += f'<a href="{href}"{active}>{label}</a>'
 
+    home_active = " active" if active_path == "/" else ""
     return f'''
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+    <a href="/" class="nav-home{home_active}">Home</a>
     <div class="nav-links">{links}</div>
     <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
   </div>

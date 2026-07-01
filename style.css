@@ -76,7 +76,6 @@ code {
   color: var(--text); background: var(--bg3);
 }
 .nav-links a.active { color: var(--accent); }
-.nav-dropdown { position: relative; }
 .nav-hamburger {
   display: none; background: none; border: none; color: var(--text);
   font-size: 1.25rem; cursor: pointer; margin-left: auto;
@@ -296,14 +295,7 @@ code {
 
 /* ── Responsive ── */
 @media (max-width: 640px) {
-  .nav-links { display: none; }
   .nav-hamburger { display: block; }
-  .nav-links.open {
-    display: flex; flex-direction: column; position: absolute;
-    top: 60px; left: 0; right: 0; background: var(--bg2);
-    border-bottom: 1px solid var(--border); padding: 12px;
-    gap: 2px; z-index: 200;
-  }
   .site-nav { position: relative; }
   .calc-tabs-nav { gap: 4px; padding-bottom: 4px; }
   .calc-card { padding: 20px 16px; }
@@ -652,52 +644,56 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   .kw-combiner-lists { grid-template-columns: 1fr; }
 }
 
-/* ── Nav home ── */
+/* ── Nav extras ── */
 .nav-home {
   color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
-  border-radius: 6px; text-decoration: none; white-space: nowrap;
-  flex-shrink: 0; transition: color 0.15s, background 0.15s;
+  border-radius: 6px; text-decoration: none; white-space: nowrap; flex-shrink: 0;
 }
 .nav-home:hover { color: var(--text); background: var(--bg3); text-decoration: none; }
 .nav-home.active { color: var(--accent); }
 
-/* ── Calculators pill ── */
+.nav-left { display: flex; align-items: center; gap: 8px; }
+
+/* Center the nav-links absolutely so they are always in the middle of the bar */
+.nav-inner { position: relative; }
+.nav-links {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  white-space: nowrap;
+}
+
+/* Calculators pill */
 .nav-calc-pill {
-  background: var(--accent); color: #fff; border: none;
-  border-radius: 20px; padding: 6px 14px; font-size: 0.8rem;
-  font-weight: 600; cursor: pointer; font-family: var(--font-body);
-  white-space: nowrap; flex-shrink: 0; transition: background 0.15s;
+  background: var(--accent); color: #fff; border: none; border-radius: 20px;
+  padding: 6px 14px; font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; font-family: var(--font-body); white-space: nowrap;
 }
 .nav-calc-pill:hover { background: var(--accent-h); }
 
-/* ── Dropdown menu - only JS .open class, no hover ── */
+/* Dropdown */
 .nav-dropdown { position: relative; }
 .nav-dropdown-menu {
-  display: none;
-  position: absolute; top: calc(100% + 8px); left: 0;
+  display: none; position: absolute; top: calc(100% + 8px); left: 0;
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: var(--radius); min-width: 200px;
-  padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  padding: 6px; box-shadow: 0 8px 32px rgba(0,0,0,0.6);
   z-index: 9999; flex-direction: column;
-}
-@media (max-width: 640px) {
-  .nav-dropdown-menu {
-    position: fixed; top: 60px; left: 0; right: 0;
-    border-radius: 0; min-width: unset; padding: 8px 16px 16px;
-    border-left: none; border-right: none; gap: 4px;
-  }
 }
 .nav-dropdown-menu.open { display: flex; }
 .nav-dropdown-menu a {
   display: block; padding: 8px 12px; font-size: 0.875rem;
-  color: var(--text-muted); border-radius: 6px;
-  text-decoration: none; white-space: nowrap;
+  color: var(--text-muted); border-radius: 6px; text-decoration: none; white-space: nowrap;
 }
 .nav-dropdown-menu a:hover { background: var(--bg3); color: var(--text); }
 .nav-dropdown-menu a.active { color: var(--accent); }
 
-/* ── Nav left group ── */
-.nav-left {
-  display: flex; align-items: center; gap: 8px;
+/* Mobile: hide nav-links, show hamburger, dropdown full width */
+@media (max-width: 640px) {
+  .nav-links { display: none !important; }
+  .nav-hamburger { display: block; }
+  .nav-dropdown-menu {
+    position: fixed; top: 60px; left: 0; right: 0;
+    border-radius: 0; min-width: unset; padding: 12px 16px;
+    border-left: none; border-right: none;
+  }
 }
-.nav-hamburger { margin-left: auto; }

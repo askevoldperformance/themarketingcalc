@@ -27,6 +27,11 @@ SITE_URL    = "https://themarketingcalc.com"
 
 NAV_LINKS = [
     ("Home", "/"),
+    ("Marketing Tools", "/marketing-tools"),
+    ("Guides", "/guides"),
+]
+
+CALC_DROPDOWN = [
     ("CPM Calculator", "/cpm-calculator"),
     ("CTR Calculator", "/ctr-calculator"),
     ("CPC Calculator", "/cpc-calculator"),
@@ -34,16 +39,26 @@ NAV_LINKS = [
     ("CPL Calculator", "/cpl-calculator"),
     ("Frequency Calculator", "/frequency-calculator"),
     ("Budget Calculator", "/budget-calculator"),
-    ("Marketing Tools", "/marketing-tools"),
-    ("Guides", "/guides"),
 ]
 
 
 def nav_html(active_path="/"):
-    links = ""
+    # Calculators dropdown pill
+    calc_active = any(href == active_path for _, href in CALC_DROPDOWN)
+    dropdown_items = "".join(
+        f'<a href="{href}"{"class=\"active\"" if href == active_path else ""}>{label}</a>'
+        for label, href in CALC_DROPDOWN
+    )
+    calc_pill = f'''<div class="nav-dropdown">
+      <button class="nav-calc-pill">Calculators &#9662;</button>
+      <div class="nav-dropdown-menu">{dropdown_items}</div>
+    </div>'''
+
+    links = calc_pill
     for label, href in NAV_LINKS:
         active = ' class="active"' if href == active_path else ""
         links += f'<a href="{href}"{active}>{label}</a>'
+
     return f'''
 <nav class="site-nav">
   <div class="nav-inner">

@@ -662,3 +662,29 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   .kw-tool-grid { grid-template-columns: 1fr; }
   .kw-combiner-lists { grid-template-columns: 1fr; }
 }
+
+/* ── Calculators nav pill + dropdown ── */
+.nav-calc-pill {
+  background: var(--accent); color: #fff;
+  border: none; border-radius: 20px;
+  padding: 6px 14px; font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; font-family: var(--font-body);
+  white-space: nowrap; flex-shrink: 0;
+  transition: background 0.15s;
+}
+.nav-calc-pill:hover { background: var(--accent-h); }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); min-width: 200px;
+  padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; }
+.nav-dropdown-menu a {
+  display: block; padding: 8px 12px; font-size: 0.875rem;
+  color: var(--text-muted); border-radius: 6px; text-decoration: none;
+  white-space: nowrap;
+}
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a.active { background: var(--bg3); color: var(--text); }
+.nav-dropdown-menu a.active { color: var(--accent); }

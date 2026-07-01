@@ -25,11 +25,8 @@ GTM_ID      = "GTM-546VKQVR"
 ADSENSE_PUB = "ca-pub-4789906927045850"
 SITE_URL    = "https://themarketingcalc.com"
 
-NAV_LINKS = [
-    ("Home", "/"),
-    ("Marketing Tools", "/marketing-tools"),
-    ("Guides", "/guides"),
-]
+NAV_LINKS_BEFORE = [("Home", "/")]
+NAV_LINKS_AFTER = [("Marketing Tools", "/marketing-tools"), ("Guides", "/guides")]
 
 CALC_DROPDOWN = [
     ("CPM Calculator", "/cpm-calculator"),
@@ -43,8 +40,6 @@ CALC_DROPDOWN = [
 
 
 def nav_html(active_path="/"):
-    # Calculators dropdown pill
-    calc_active = any(href == active_path for _, href in CALC_DROPDOWN)
     dropdown_items = "".join(
         f'<a href="{href}"{"class=\"active\"" if href == active_path else ""}>{label}</a>'
         for label, href in CALC_DROPDOWN
@@ -54,8 +49,12 @@ def nav_html(active_path="/"):
       <div class="nav-dropdown-menu">{dropdown_items}</div>
     </div>'''
 
-    links = calc_pill
-    for label, href in NAV_LINKS:
+    links = ""
+    for label, href in NAV_LINKS_BEFORE:
+        active = ' class="active"' if href == active_path else ""
+        links += f'<a href="{href}"{active}>{label}</a>'
+    links += calc_pill
+    for label, href in NAV_LINKS_AFTER:
         active = ' class="active"' if href == active_path else ""
         links += f'<a href="{href}"{active}>{label}</a>'
 

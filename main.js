@@ -211,3 +211,14 @@ const navLinks = document.querySelector('.nav-links');
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 }
+
+// ── Calculators dropdown ──────────────────────────────────────────────────────
+const navDropdown = document.querySelector('.nav-dropdown');
+const navDropdownMenu = document.querySelector('.nav-dropdown-menu');
+if (navDropdown && navDropdownMenu) {
+  navDropdown.querySelector('.nav-calc-pill').addEventListener('click', (e) => {
+    e.stopPropagation();
+    navDropdownMenu.classList.toggle('open');
+  });
+  document.addEventListener('click', () => navDropdownMenu.classList.remove('open'));
+}

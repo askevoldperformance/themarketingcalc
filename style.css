@@ -63,6 +63,7 @@ code {
   display: flex; align-items: center; gap: 4px; flex: 1;
   overflow-x: auto; flex-wrap: nowrap;
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  justify-content: center;
 }
 .nav-links a, .nav-btn {
   color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
@@ -679,6 +680,7 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   border-radius: var(--radius); min-width: 200px;
   padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 200;
 }
+.nav-dropdown-menu.open { display: flex; flex-direction: column; }
 .nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; }
 .nav-dropdown-menu a {
   display: block; padding: 8px 12px; font-size: 0.875rem;

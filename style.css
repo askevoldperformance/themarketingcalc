@@ -645,6 +645,8 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 }
 
 /* ── Nav extras ── */
+.nav-left { display: flex; align-items: center; gap: 8px; }
+
 .nav-home {
   color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
   border-radius: 6px; text-decoration: none; white-space: nowrap; flex-shrink: 0;
@@ -652,17 +654,12 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 .nav-home:hover { color: var(--text); background: var(--bg3); text-decoration: none; }
 .nav-home.active { color: var(--accent); }
 
-.nav-left { display: flex; align-items: center; gap: 8px; }
-
-/* Center the nav-links absolutely so they are always in the middle of the bar */
-.nav-inner { position: relative; }
+/* nav-links: flex centered between left group and hamburger */
 .nav-links {
-  position: absolute; left: 50%; transform: translateX(-50%);
   display: flex; align-items: center; gap: 12px;
-  white-space: nowrap;
+  flex: 1; justify-content: center; overflow: visible;
 }
 
-/* Calculators pill */
 .nav-calc-pill {
   background: var(--accent); color: #fff; border: none; border-radius: 20px;
   padding: 6px 14px; font-size: 0.8rem; font-weight: 600;
@@ -670,30 +667,38 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 }
 .nav-calc-pill:hover { background: var(--accent-h); }
 
-/* Dropdown */
 .nav-dropdown { position: relative; }
+
 .nav-dropdown-menu {
-  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  display: none;
+  position: absolute; top: calc(100% + 8px); left: 0;
   background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); min-width: 200px;
+  border-radius: var(--radius); min-width: 210px;
   padding: 6px; box-shadow: 0 8px 32px rgba(0,0,0,0.6);
   z-index: 9999; flex-direction: column;
 }
 .nav-dropdown-menu.open { display: flex; }
 .nav-dropdown-menu a {
-  display: block; padding: 8px 12px; font-size: 0.875rem;
-  color: var(--text-muted); border-radius: 6px; text-decoration: none; white-space: nowrap;
+  display: block; padding: 9px 14px; font-size: 0.875rem;
+  color: var(--text-muted); border-radius: 6px;
+  text-decoration: none; white-space: nowrap;
 }
 .nav-dropdown-menu a:hover { background: var(--bg3); color: var(--text); }
 .nav-dropdown-menu a.active { color: var(--accent); }
 
-/* Mobile: hide nav-links, show hamburger, dropdown full width */
+/* Mobile */
 @media (max-width: 640px) {
-  .nav-links { display: none !important; }
+  .nav-links { display: none; }
   .nav-hamburger { display: block; }
-  .nav-dropdown-menu {
+  .nav-links.open {
+    display: flex; flex-direction: column;
     position: fixed; top: 60px; left: 0; right: 0;
-    border-radius: 0; min-width: unset; padding: 12px 16px;
-    border-left: none; border-right: none;
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    padding: 12px; gap: 4px; z-index: 9999;
   }
+  .nav-dropdown-menu {
+    position: static; box-shadow: none; border: none;
+    padding: 0 0 0 12px; background: transparent;
+  }
+  .nav-dropdown-menu.open { display: flex; }
 }

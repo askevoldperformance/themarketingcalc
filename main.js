@@ -213,12 +213,14 @@ document.querySelector('.nav-hamburger')?.addEventListener('click', function(e) 
 });
 
 // ── Calculators dropdown ──────────────────────────────────────────────────────
-document.querySelector('.nav-calc-pill')?.addEventListener('click', function(e) {
-  e.stopPropagation();
-  document.querySelector('.nav-dropdown-menu')?.classList.toggle('open');
-});
-
-document.addEventListener('click', function() {
-  document.querySelector('.nav-dropdown-menu')?.classList.remove('open');
-  document.querySelector('.nav-links')?.classList.remove('open');
+document.addEventListener('click', function(e) {
+  var pill = e.target.closest('.nav-calc-pill');
+  var menu = document.querySelector('.nav-dropdown-menu');
+  if (!menu) return;
+  if (pill) {
+    e.stopPropagation();
+    menu.classList.toggle('open');
+  } else {
+    menu.classList.remove('open');
+  }
 });

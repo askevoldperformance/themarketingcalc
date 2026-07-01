@@ -103,11 +103,8 @@ PMAX_GUIDE_CONTENT = """
 </table>
 </div>
 
-<h2>Image dead zones and safe areas</h2>
-<p>Google may automatically crop up to 20% of the outer edges of your images to fit specific ad spaces. It also frequently overlays a CTA button or your business name at the bottom of the asset. Keep all critical elements - product shots, faces, text overlays, logos - within the central 80% of every image you upload.</p>
-
 <figure style="margin:28px 0;">
-  <img src="/images/pmax-stills.png" alt="Performance Max still image formats showing 1.91:1 landscape on Google Search, 1:1 square on YouTube feed, and 4:5 portrait on Gmail - with recommended pixel dimensions" style="width:100%;border-radius:10px;border:1px solid var(--border);">
+  <img src="/images/pmax-stills.png" alt="Performance Max still image formats showing 1.91:1 landscape on Google Search, 1:1 square on YouTube feed, and 4:5 portrait on Gmail - with recommended pixel dimensions" style="width:100%;border-radius:10px;">
   <figcaption style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;text-align:center;">Performance Max still image formats: 1.91:1 (1200x628px) on Google Search, 1:1 (1200x1200px) on YouTube feed, 4:5 (960x1200px) on Gmail.</figcaption>
 </figure>
 
@@ -155,17 +152,28 @@ PMAX_GUIDE_CONTENT = """
 
 <p>You can upload up to 15 videos per asset group as of early 2026. Aim for at least 3 to 5 covering different aspect ratios.</p>
 
-<h2>Video dead zones</h2>
-
 <figure style="margin:28px 0;">
-  <img src="/images/pmax-video-formats-1.png" alt="Performance Max video formats: 16:9 landscape at 1920x1080px on Google Search feed, 1:1 square at 1080x1080px on YouTube feed" style="width:100%;border-radius:10px;border:1px solid var(--border);margin-bottom:12px;">
-  <img src="/images/pmax-video-formats-2.png" alt="Performance Max video formats: 9:16 vertical at 1080x1920px on YouTube Shorts with right-side UI elements visible, 4:5 portrait at 1080x1350px on Discover feed" style="width:100%;border-radius:10px;border:1px solid var(--border);">
-  <figcaption style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;text-align:center;">Top: 16:9 (1920x1080px) on Google Search feed and 1:1 (1080x1080px) on YouTube. Bottom: 9:16 (1080x1920px) on YouTube Shorts - note the right-side UI elements that form the dead zone - and 4:5 (1080x1350px) on Discover.</figcaption>
+  <img src="/images/pmax-video.png" alt="Performance Max video formats: 16:9 landscape at 1920x1080px on Google Search feed, 1:1 square at 1080x1080px on YouTube feed, 9:16 vertical at 1080x1920px on YouTube Shorts, and 4:5 portrait at 1080x1350px on Discover" style="width:100%;border-radius:10px;">
+  <figcaption style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;text-align:center;">Performance Max video formats: 16:9 (1920x1080px) on Google Search, 1:1 (1080x1080px) on YouTube, 9:16 (1080x1920px) on YouTube Shorts, 4:5 (1080x1350px) on Discover.</figcaption>
 </figure>
 
-<p>Vertical videos for YouTube Shorts are the highest-risk format. The Shorts UI overlays heavy interactive elements on the right side of the screen (Like, Share, Comments, Profile icon) and the channel name and caption text at the bottom. Keep all text, logos, and core action within the central 70% of the frame. Avoid placing anything in the top or bottom 15% of the vertical video.</p>
+<h2>Video safe zones</h2>
 
-<p>For landscape video, the bottom-left and bottom-right corners are the most commonly overlaid by YouTube UI elements across desktop and connected TV. Keep your branding and any burnt-in text away from the lower 15% of the frame.</p>
+<p>Knowing the format specs is only half the job. The more critical question is which part of the frame is actually safe for your logo, text, and key visuals - and which parts will be obscured by platform UI elements or cropped by the serving system.</p>
+
+<p>For landscape (16:9) video, keep everything important within the central safe zone of the frame. Google and YouTube overlay UI elements, ad labels, and CTAs along the edges - particularly the bottom bar and lower-left corner on desktop placements.</p>
+
+<figure style="margin:28px 0;">
+  <img src="/images/pmax-safezone-horizontal.png" alt="Performance Max horizontal video safe zone diagram showing the central safe area in purple and the areas that may be overlaid by platform UI" style="width:100%;border-radius:10px;">
+  <figcaption style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;text-align:center;">Horizontal video safe zone. Keep logos, text, and key product shots within the highlighted area.</figcaption>
+</figure>
+
+<p>Vertical (9:16) video for YouTube Shorts is the highest-risk format. The Shorts UI overlays interactive elements on the right side of the screen - Like, Dislike, Comments, Share, and the channel logo - and the channel name plus caption text at the bottom. Keep all text, logos, and core action within the central 70% of the frame. Avoid placing anything in the top or bottom 15% of a vertical video.</p>
+
+<figure style="margin:28px 0;">
+  <img src="/images/pmax-safezone-vertical.png" alt="Performance Max vertical video safe zone diagram for YouTube Shorts showing the right-side UI overlay area and bottom caption area as dead zones, with the central safe zone highlighted" style="width:100%;border-radius:10px;">
+  <figcaption style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;text-align:center;">Vertical video safe zone for YouTube Shorts. The right-side UI and bottom caption area are overlaid by platform elements - keep all critical content in the central zone.</figcaption>
+</figure>
 
 <p>Always include audio. PMax videos appear on YouTube Shorts and in-stream placements where audio is on by default for the vast majority of users. Use high-quality voiceover, background music, or sound effects. Also burn in captions for the minority of users browsing with sound off.</p>
 

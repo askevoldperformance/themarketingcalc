@@ -49,7 +49,7 @@ code {
 }
 .nav-inner {
   max-width: 1400px; margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; gap: 8px; height: 60px;
+  display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; height: 60px; gap: 16px;
 }
 .nav-logo {
   display: flex; align-items: center; gap: 10px;
@@ -60,10 +60,10 @@ code {
 .nav-links::-webkit-scrollbar { display: none; }
 .nav-logo img { border-radius: 6px; }
 .nav-links {
-  display: flex; align-items: center; gap: 4px; flex: 1;
+  display: flex; align-items: center; gap: 12px;
   overflow-x: auto; flex-wrap: nowrap;
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
-  justify-content: center; gap: 12px;
+  justify-content: center;
 }
 .nav-links a, .nav-btn {
   color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
@@ -652,38 +652,39 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   .kw-combiner-lists { grid-template-columns: 1fr; }
 }
 
-/* ── Calculators nav pill + dropdown ── */
-.nav-calc-pill {
-  background: var(--accent); color: #fff;
-  border: none; border-radius: 20px;
-  padding: 6px 14px; font-size: 0.8rem; font-weight: 600;
-  cursor: pointer; font-family: var(--font-body);
-  white-space: nowrap; flex-shrink: 0;
-  transition: background 0.15s;
-}
-.nav-calc-pill:hover { background: var(--accent-h); }
-.nav-dropdown-menu {
-  display: none; position: absolute; top: calc(100% + 8px); left: 0;
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); min-width: 200px;
-  padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 200;
-}
-.nav-dropdown-menu.open { display: flex; flex-direction: column; }
-.nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; }
-.nav-dropdown-menu a {
-  display: block; padding: 8px 12px; font-size: 0.875rem;
-  color: var(--text-muted); border-radius: 6px; text-decoration: none;
-  white-space: nowrap;
-}
-.nav-dropdown-menu a:hover,
-.nav-dropdown-menu a.active { background: var(--bg3); color: var(--text); }
-.nav-dropdown-menu a.active { color: var(--accent); }
-
-/* ── Nav home link (sits between logo and centered links) ── */
+/* ── Nav home ── */
 .nav-home {
   color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
   border-radius: 6px; text-decoration: none; white-space: nowrap;
-  transition: color 0.15s, background 0.15s; flex-shrink: 0;
+  flex-shrink: 0; transition: color 0.15s, background 0.15s;
 }
 .nav-home:hover { color: var(--text); background: var(--bg3); text-decoration: none; }
 .nav-home.active { color: var(--accent); }
+
+/* ── Calculators pill ── */
+.nav-calc-pill {
+  background: var(--accent); color: #fff; border: none;
+  border-radius: 20px; padding: 6px 14px; font-size: 0.8rem;
+  font-weight: 600; cursor: pointer; font-family: var(--font-body);
+  white-space: nowrap; flex-shrink: 0; transition: background 0.15s;
+}
+.nav-calc-pill:hover { background: var(--accent-h); }
+
+/* ── Dropdown menu - only JS .open class, no hover ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); min-width: 200px;
+  padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  z-index: 9999; flex-direction: column;
+}
+.nav-dropdown-menu.open { display: flex; }
+.nav-dropdown-menu a {
+  display: block; padding: 8px 12px; font-size: 0.875rem;
+  color: var(--text-muted); border-radius: 6px;
+  text-decoration: none; white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { background: var(--bg3); color: var(--text); }
+.nav-dropdown-menu a.active { color: var(--accent); }

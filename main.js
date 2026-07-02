@@ -73,11 +73,11 @@ function calc_cpm() {
   if (mode === 'cpm-cpm') {
     const cost = getVal('cpm-cost'), imp = getVal('cpm-impressions');
     if (!cost || !imp) return;
-    showResult('cpm-result', 'CPM', `$${fmtNum(cost / imp * 1000)}`);
+    showResult('cpm-result', 'CPM', `${fmtNum(cost / imp * 1000)}`);
   } else if (mode === 'cpm-cost') {
     const cpm = getVal('cpm-cpm-val'), imp = getVal('cpm-impressions');
     if (!cpm || !imp) return;
-    showResult('cpm-result', 'Total Cost', `$${fmtNum(cpm * imp / 1000)}`);
+    showResult('cpm-result', 'Total Cost', `${fmtNum(cpm * imp / 1000)}`);
   } else {
     const cost = getVal('cpm-cost'), cpm = getVal('cpm-cpm-val');
     if (!cost || !cpm) return;
@@ -107,11 +107,11 @@ function calc_cpc() {
   if (mode === 'cpc-cpc') {
     const cost = getVal('cpc-cost'), clicks = getVal('cpc-clicks');
     if (!cost || !clicks) return;
-    showResult('cpc-result', 'CPC', `$${fmtNum(cost / clicks)}`);
+    showResult('cpc-result', 'CPC', `${fmtNum(cost / clicks)}`);
   } else if (mode === 'cpc-cost') {
     const cpc = getVal('cpc-cpc-val'), clicks = getVal('cpc-clicks');
     if (!cpc || !clicks) return;
-    showResult('cpc-result', 'Total Cost', `$${fmtNum(cpc * clicks)}`);
+    showResult('cpc-result', 'Total Cost', `${fmtNum(cpc * clicks)}`);
   } else {
     const cost = getVal('cpc-cost'), cpc = getVal('cpc-cpc-val');
     if (!cost || !cpc) return;
@@ -128,11 +128,11 @@ function calcROAS() {
   } else if (mode === 'roas-rev') {
     const roas = getVal('roas-roas'), spend = getVal('roas-spend');
     if (!roas || !spend) return;
-    showResult('roas-result', 'Revenue', `$${fmtNum(roas * spend)}`);
+    showResult('roas-result', 'Revenue', `${fmtNum(roas * spend)}`);
   } else {
     const rev = getVal('roas-rev'), roas = getVal('roas-roas');
     if (!rev || !roas) return;
-    showResult('roas-result', 'Ad Spend', `$${fmtNum(rev / roas)}`);
+    showResult('roas-result', 'Ad Spend', `${fmtNum(rev / roas)}`);
   }
 }
 
@@ -145,11 +145,11 @@ function calcPOAS() {
   } else if (mode === 'poas-profit') {
     const poas = getVal('poas-poas'), spend = getVal('poas-spend');
     if (!poas || !spend) return;
-    showResult('poas-result', 'Gross Profit', `$${fmtNum(poas * spend)}`);
+    showResult('poas-result', 'Gross Profit', `${fmtNum(poas * spend)}`);
   } else {
     const profit = getVal('poas-profit'), poas = getVal('poas-poas');
     if (!profit || !poas) return;
-    showResult('poas-result', 'Ad Spend', `$${fmtNum(profit / poas)}`);
+    showResult('poas-result', 'Ad Spend', `${fmtNum(profit / poas)}`);
   }
 }
 
@@ -158,11 +158,11 @@ function calc_cpl() {
   if (mode === 'cpl-cpl') {
     const cost = getVal('cpl-cost'), leads = getVal('cpl-leads');
     if (!cost || !leads) return;
-    showResult('cpl-result', 'CPL', `$${fmtNum(cost / leads)}`);
+    showResult('cpl-result', 'CPL', `${fmtNum(cost / leads)}`);
   } else if (mode === 'cpl-cost') {
     const cpl = getVal('cpl-cpl-val'), leads = getVal('cpl-leads');
     if (!cpl || !leads) return;
-    showResult('cpl-result', 'Total Cost', `$${fmtNum(cpl * leads)}`);
+    showResult('cpl-result', 'Total Cost', `${fmtNum(cpl * leads)}`);
   } else {
     const cost = getVal('cpl-cost'), cpl = getVal('cpl-cpl-val');
     if (!cost || !cpl) return;

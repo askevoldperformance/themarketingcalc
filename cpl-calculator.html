@@ -22,8 +22,10 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-546VKQVR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <a href="/" class="nav-home">Home</a>
+    <div class="nav-left">
+      <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+      <a href="/" class="nav-home">Home</a>
+    </div>
     <div class="nav-links"><div class="nav-dropdown">
       <button class="nav-calc-pill">Calculators &#9662;</button>
       <div class="nav-dropdown-menu"><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator"class="active">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a></div>
@@ -44,7 +46,7 @@
   <div class="calc-mode-toggle"><button class="mode-btn active" data-mode="cpl-cpl">Find CPL</button><button class="mode-btn" data-mode="cpl-cost">Find Cost</button><button class="mode-btn" data-mode="cpl-leads">Find Leads</button></div>
   <div class="calc-inputs">
         <div class="input-group" id="field-cpl-cost">
-          <label>Total Cost ($)</label>
+          <label>Total Cost</label>
           <input type="number" id="cpl-cost" placeholder="e.g. 1000" min="0">
         </div>
         <div class="input-group" id="field-cpl-leads">
@@ -52,7 +54,7 @@
           <input type="number" id="cpl-leads" placeholder="e.g. 50" min="0">
         </div>
         <div class="input-group hidden" id="field-cpl-cpl-val">
-          <label>CPL ($)</label>
+          <label>CPL</label>
           <input type="number" id="cpl-cpl-val" placeholder="e.g. 20" min="0">
         </div></div>
   <button class="calc-btn" onclick="calc_cpl()">Calculate</button>

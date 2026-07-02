@@ -22,8 +22,10 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-546VKQVR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <a href="/" class="nav-home">Home</a>
+    <div class="nav-left">
+      <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+      <a href="/" class="nav-home">Home</a>
+    </div>
     <div class="nav-links"><div class="nav-dropdown">
       <button class="nav-calc-pill">Calculators &#9662;</button>
       <div class="nav-dropdown-menu"><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator"class="active">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a></div>
@@ -44,7 +46,7 @@
   <div class="calc-mode-toggle"><button class="mode-btn active" data-mode="cpc-cpc">Find CPC</button><button class="mode-btn" data-mode="cpc-cost">Find Cost</button><button class="mode-btn" data-mode="cpc-clicks">Find Clicks</button></div>
   <div class="calc-inputs">
         <div class="input-group" id="field-cpc-cost">
-          <label>Total Cost ($)</label>
+          <label>Total Cost</label>
           <input type="number" id="cpc-cost" placeholder="e.g. 500" min="0">
         </div>
         <div class="input-group" id="field-cpc-clicks">
@@ -52,7 +54,7 @@
           <input type="number" id="cpc-clicks" placeholder="e.g. 1000" min="0">
         </div>
         <div class="input-group hidden" id="field-cpc-cpc-val">
-          <label>CPC ($)</label>
+          <label>CPC</label>
           <input type="number" id="cpc-cpc-val" placeholder="e.g. 0.50" min="0">
         </div></div>
   <button class="calc-btn" onclick="calc_cpc()">Calculate</button>

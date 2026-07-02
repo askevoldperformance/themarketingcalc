@@ -62,8 +62,10 @@ def nav_html(active_path="/"):
     return f'''
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <a href="/" class="nav-home{home_active}">Home</a>
+    <div class="nav-left">
+      <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+      <a href="/" class="nav-home{home_active}">Home</a>
+    </div>
     <div class="nav-links">{links}</div>
     <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
   </div>
@@ -196,7 +198,7 @@ CPM_CALC = calc_card(
     "cpm", "CPM Calculator",
     "Calculate CPM, total cost, or impressions. Enter any two values to find the third.",
     [("Find CPM", "cpm-cpm"), ("Find Cost", "cpm-cost"), ("Find Impressions", "cpm-imp")],
-    [("cpm-cost","Total Cost ($)","e.g. 500",False), ("cpm-impressions","Impressions","e.g. 100000",False), ("cpm-cpm-val","CPM ($)","e.g. 5.00",True)],
+    [("cpm-cost","Total Cost","e.g. 500",False), ("cpm-impressions","Impressions","e.g. 100000",False), ("cpm-cpm-val","CPM","e.g. 5.00",True)],
     "CPM = (Cost / Impressions) x 1,000"
 )
 
@@ -212,7 +214,7 @@ CPC_CALC = calc_card(
     "cpc", "CPC Calculator",
     "Calculate cost per click, total cost, or number of clicks. Enter any two values to find the third.",
     [("Find CPC", "cpc-cpc"), ("Find Cost", "cpc-cost"), ("Find Clicks", "cpc-clicks")],
-    [("cpc-cost","Total Cost ($)","e.g. 500",False), ("cpc-clicks","Clicks","e.g. 1000",False), ("cpc-cpc-val","CPC ($)","e.g. 0.50",True)],
+    [("cpc-cost","Total Cost","e.g. 500",False), ("cpc-clicks","Clicks","e.g. 1000",False), ("cpc-cpc-val","CPC","e.g. 0.50",True)],
     "CPC = Cost / Clicks"
 )
 
@@ -231,8 +233,8 @@ ROAS_CALC = '''
       <button class="mode-btn" data-mode="roas-spend">Find Ad Spend</button>
     </div>
     <div class="calc-inputs">
-      <div class="input-group" id="roas-field-rev"><label>Revenue ($)</label><input type="number" id="roas-rev" placeholder="e.g. 5000" min="0"></div>
-      <div class="input-group" id="roas-field-spend"><label>Ad Spend ($)</label><input type="number" id="roas-spend" placeholder="e.g. 1000" min="0"></div>
+      <div class="input-group" id="roas-field-rev"><label>Revenue</label><input type="number" id="roas-rev" placeholder="e.g. 5000" min="0"></div>
+      <div class="input-group" id="roas-field-spend"><label>Ad Spend</label><input type="number" id="roas-spend" placeholder="e.g. 1000" min="0"></div>
       <div class="input-group hidden" id="roas-field-roas"><label>ROAS</label><input type="number" id="roas-roas" placeholder="e.g. 4" min="0"></div>
     </div>
     <button class="calc-btn" onclick="calcROAS()">Calculate</button>
@@ -247,8 +249,8 @@ ROAS_CALC = '''
       <button class="mode-btn" data-mode="poas-spend">Find Ad Spend</button>
     </div>
     <div class="calc-inputs">
-      <div class="input-group" id="poas-field-profit"><label>Gross Profit ($)</label><input type="number" id="poas-profit" placeholder="e.g. 2000" min="0"></div>
-      <div class="input-group" id="poas-field-spend"><label>Ad Spend ($)</label><input type="number" id="poas-spend" placeholder="e.g. 1000" min="0"></div>
+      <div class="input-group" id="poas-field-profit"><label>Gross Profit</label><input type="number" id="poas-profit" placeholder="e.g. 2000" min="0"></div>
+      <div class="input-group" id="poas-field-spend"><label>Ad Spend</label><input type="number" id="poas-spend" placeholder="e.g. 1000" min="0"></div>
       <div class="input-group hidden" id="poas-field-poas"><label>POAS</label><input type="number" id="poas-poas" placeholder="e.g. 2" min="0"></div>
     </div>
     <button class="calc-btn" onclick="calcPOAS()">Calculate</button>
@@ -258,9 +260,9 @@ ROAS_CALC = '''
   <div class="calc-panel" id="tab-beroas">
     <div class="calc-header"><h2>Break-even ROAS Calculator</h2><p class="calc-desc">Find the minimum ROAS your campaigns need to cover costs and break even on ad spend.</p></div>
     <div class="calc-inputs">
-      <div class="input-group"><label>Average Order Value ($)</label><input type="number" id="be-aov" placeholder="e.g. 100" min="0"></div>
-      <div class="input-group"><label>COGS per order ($)</label><input type="number" id="be-cogs" placeholder="e.g. 40" min="0"></div>
-      <div class="input-group"><label>Other variable costs per order ($) <span class="input-hint">shipping, fulfillment etc.</span></label><input type="number" id="be-other" placeholder="e.g. 10" min="0" value="0"></div>
+      <div class="input-group"><label>Average Order Value</label><input type="number" id="be-aov" placeholder="e.g. 100" min="0"></div>
+      <div class="input-group"><label>COGS per order</label><input type="number" id="be-cogs" placeholder="e.g. 40" min="0"></div>
+      <div class="input-group"><label>Other variable costs per order <span class="input-hint">shipping, fulfillment etc.</span></label><input type="number" id="be-other" placeholder="e.g. 10" min="0" value="0"></div>
     </div>
     <button class="calc-btn" onclick="calcBEROAS()">Calculate</button>
     <div class="calc-result hidden" id="beroas-result"></div>
@@ -272,7 +274,7 @@ CPL_CALC = calc_card(
     "cpl", "CPL Calculator",
     "Calculate cost per lead, total budget, or number of leads. Enter any two values to find the third.",
     [("Find CPL", "cpl-cpl"), ("Find Cost", "cpl-cost"), ("Find Leads", "cpl-leads")],
-    [("cpl-cost","Total Cost ($)","e.g. 1000",False), ("cpl-leads","Leads","e.g. 50",False), ("cpl-cpl-val","CPL ($)","e.g. 20",True)],
+    [("cpl-cost","Total Cost","e.g. 1000",False), ("cpl-leads","Leads","e.g. 50",False), ("cpl-cpl-val","CPL","e.g. 20",True)],
     "CPL = Cost / Leads"
 )
 

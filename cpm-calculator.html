@@ -22,8 +22,10 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-546VKQVR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <a href="/" class="nav-home">Home</a>
+    <div class="nav-left">
+      <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+      <a href="/" class="nav-home">Home</a>
+    </div>
     <div class="nav-links"><div class="nav-dropdown">
       <button class="nav-calc-pill">Calculators &#9662;</button>
       <div class="nav-dropdown-menu"><a href="/cpm-calculator"class="active">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a><a href="/budget-calculator">Budget Calculator</a></div>
@@ -44,7 +46,7 @@
   <div class="calc-mode-toggle"><button class="mode-btn active" data-mode="cpm-cpm">Find CPM</button><button class="mode-btn" data-mode="cpm-cost">Find Cost</button><button class="mode-btn" data-mode="cpm-imp">Find Impressions</button></div>
   <div class="calc-inputs">
         <div class="input-group" id="field-cpm-cost">
-          <label>Total Cost ($)</label>
+          <label>Total Cost</label>
           <input type="number" id="cpm-cost" placeholder="e.g. 500" min="0">
         </div>
         <div class="input-group" id="field-cpm-impressions">
@@ -52,7 +54,7 @@
           <input type="number" id="cpm-impressions" placeholder="e.g. 100000" min="0">
         </div>
         <div class="input-group hidden" id="field-cpm-cpm-val">
-          <label>CPM ($)</label>
+          <label>CPM</label>
           <input type="number" id="cpm-cpm-val" placeholder="e.g. 5.00" min="0">
         </div></div>
   <button class="calc-btn" onclick="calc_cpm()">Calculate</button>

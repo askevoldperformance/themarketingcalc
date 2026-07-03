@@ -40,47 +40,6 @@ code {
 .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
 .hidden { display: none !important; }
 
-/* ── Navigation ── */
-.site-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(18,28,45,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: 1400px; margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; height: 60px; padding: 0 24px;
-}
-.nav-logo {
-  display: flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-weight: 700;
-  font-size: 0.9rem; color: var(--text); text-decoration: none;
-  white-space: nowrap;
-}
-.nav-links::-webkit-scrollbar { display: none; }
-.nav-logo img { border-radius: 6px; }
-.nav-links {
-  display: flex; align-items: center; gap: 12px;
-  overflow-x: auto; flex-wrap: nowrap;
-  scrollbar-width: none; -webkit-overflow-scrolling: touch;
-  flex: 1; justify-content: center;
-}
-.nav-links a, .nav-btn {
-  color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
-  border-radius: 6px; transition: color 0.15s, background 0.15s;
-  text-decoration: none; border: none; background: none; cursor: pointer;
-  white-space: nowrap; flex-shrink: 0;
-  font-family: var(--font-body);
-}
-.nav-links a:hover, .nav-btn:hover, .nav-links a.active {
-  color: var(--text); background: var(--bg3);
-}
-.nav-links a.active { color: var(--accent); }
-.nav-hamburger {
-  display: none; background: none; border: none; color: var(--text);
-  font-size: 1.25rem; cursor: pointer; margin-left: auto;
-}
-
 /* ── Hero ── */
 .hero {
   padding: 80px 20px 64px;
@@ -644,61 +603,94 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   .kw-combiner-lists { grid-template-columns: 1fr; }
 }
 
-/* ── Nav extras ── */
-.nav-left { display: flex; align-items: center; gap: 8px; }
-
-.nav-home {
-  color: var(--text-muted); font-size: 0.8rem; padding: 5px 10px;
-  border-radius: 6px; text-decoration: none; white-space: nowrap; flex-shrink: 0;
+/* ── Navigation ── */
+.site-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(18,28,45,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
 }
-.nav-home:hover { color: var(--text); background: var(--bg3); text-decoration: none; }
-.nav-home.active { color: var(--accent); }
-
-/* nav-links: flex centered between left group and hamburger */
+.nav-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center; gap: 8px; height: 64px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; flex-shrink: 0; margin-right: 16px;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 0.9rem; color: var(--text);
+}
+.nav-logo img { border-radius: 6px; }
 .nav-links {
-  display: flex; align-items: center; gap: 12px;
-  flex: 1; justify-content: center; overflow: visible;
+  display: flex; gap: 2px; list-style: none;
+  flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+  padding: 0; margin: 0; flex: 1;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links li { flex-shrink: 0; }
+.nav-links a, .nav-calc-pill {
+  white-space: nowrap; flex-shrink: 0;
+  font-size: 0.85rem; padding: 6px 11px; border-radius: 8px;
+  color: var(--text-muted); text-decoration: none;
+  transition: all 200ms; display: block;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-body);
+}
+.nav-links a:hover, .nav-links a.active,
+.nav-calc-pill:hover, .nav-calc-pill.active {
+  color: var(--accent); background: rgba(99,102,241,0.1);
 }
 
+/* Calculators pill - accent styled */
 .nav-calc-pill {
-  background: var(--accent); color: #fff; border: none; border-radius: 20px;
-  padding: 6px 14px; font-size: 0.8rem; font-weight: 600;
-  cursor: pointer; font-family: var(--font-body); white-space: nowrap;
+  background: var(--accent) !important; color: #fff !important;
+  border-radius: 20px; padding: 6px 14px; font-weight: 600;
 }
-.nav-calc-pill:hover { background: var(--accent-h); }
+.nav-calc-pill:hover { background: var(--accent-h) !important; color: #fff !important; }
 
+/* Dropdown */
 .nav-dropdown { position: relative; }
-
 .nav-dropdown-menu {
-  display: none;
-  position: absolute; top: calc(100% + 8px); left: 0;
+  display: none; position: absolute;
+  top: calc(100% + 8px); left: 0;
   background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); min-width: 210px;
-  padding: 6px; box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-  z-index: 9999; flex-direction: column;
+  border-radius: 12px; padding: 8px; min-width: 220px;
+  z-index: 100; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
-.nav-dropdown-menu.open { display: flex; }
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: flex; flex-direction: column; gap: 2px;
+}
 .nav-dropdown-menu a {
-  display: block; padding: 9px 14px; font-size: 0.875rem;
-  color: var(--text-muted); border-radius: 6px;
-  text-decoration: none; white-space: nowrap;
+  padding: 8px 12px; border-radius: 8px;
+  font-size: 0.875rem; color: var(--text-muted);
 }
 .nav-dropdown-menu a:hover { background: var(--bg3); color: var(--text); }
 .nav-dropdown-menu a.active { color: var(--accent); }
 
-/* Mobile */
+/* Hamburger */
+.nav-hamburger {
+  display: none; background: none; border: none;
+  color: var(--text); font-size: 1.25rem; cursor: pointer;
+  margin-left: auto; flex-shrink: 0;
+}
+
 @media (max-width: 640px) {
   .nav-links { display: none; }
   .nav-hamburger { display: block; }
   .nav-links.open {
     display: flex; flex-direction: column;
-    position: fixed; top: 60px; left: 0; right: 0;
+    position: fixed; top: 64px; left: 0; right: 0;
     background: var(--bg2); border-bottom: 1px solid var(--border);
     padding: 12px; gap: 4px; z-index: 9999;
   }
+  .nav-links.open li { flex-shrink: unset; }
   .nav-dropdown-menu {
     position: static; box-shadow: none; border: none;
-    padding: 0 0 0 12px; background: transparent;
+    border-radius: 0; padding: 4px 0 4px 12px;
+    background: transparent; min-width: unset;
+    display: none;
   }
   .nav-dropdown-menu.open { display: flex; }
+  .nav-calc-pill { display: inline-block; }
 }

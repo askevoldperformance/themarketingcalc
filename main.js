@@ -205,22 +205,22 @@ document.addEventListener('click', e => {
   q.closest('.faq-item').classList.toggle('open');
 });
 
-
-// ── Mobile nav ────────────────────────────────────────────────────────────────
-document.querySelector('.nav-hamburger')?.addEventListener('click', function(e) {
-  e.stopPropagation();
-  document.querySelector('.nav-links')?.classList.toggle('open');
-});
-
-// ── Calculators dropdown ──────────────────────────────────────────────────────
+// ── Mobile nav + dropdown ─────────────────────────────────────────────────────
 document.addEventListener('click', function(e) {
-  var pill = e.target.closest('.nav-calc-pill');
-  var menu = document.querySelector('.nav-dropdown-menu');
-  if (!menu) return;
-  if (pill) {
-    e.stopPropagation();
-    menu.classList.toggle('open');
-  } else {
-    menu.classList.remove('open');
+  // Hamburger toggle
+  if (e.target.closest('.nav-hamburger')) {
+    document.querySelector('.nav-links').classList.toggle('open');
+    return;
+  }
+  // Mobile dropdown toggle (calc pill inside open hamburger menu)
+  if (e.target.closest('.nav-calc-pill')) {
+    var menu = e.target.closest('.nav-dropdown').querySelector('.nav-dropdown-menu');
+    if (menu) menu.classList.toggle('open');
+    return;
+  }
+  // Close hamburger if clicking outside
+  var navLinks = document.querySelector('.nav-links');
+  if (navLinks && !e.target.closest('.nav-links') && !e.target.closest('.nav-hamburger')) {
+    navLinks.classList.remove('open');
   }
 });

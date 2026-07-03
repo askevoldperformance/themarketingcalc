@@ -25,9 +25,6 @@ GTM_ID      = "GTM-546VKQVR"
 ADSENSE_PUB = "ca-pub-4789906927045850"
 SITE_URL    = "https://themarketingcalc.com"
 
-NAV_LINKS_BEFORE = []
-NAV_LINKS_AFTER = [("Marketing Tools", "/marketing-tools"), ("Guides", "/guides")]
-
 CALC_DROPDOWN = [
     ("CPM Calculator", "/cpm-calculator"),
     ("CTR Calculator", "/ctr-calculator"),
@@ -35,38 +32,42 @@ CALC_DROPDOWN = [
     ("ROAS Calculator", "/roas-calculator"),
     ("CPL Calculator", "/cpl-calculator"),
     ("Frequency Calculator", "/frequency-calculator"),
-    ("Budget Calculator", "/budget-calculator"),
+]
+
+NAV_LINKS = [
+    ("Home", "/"),
+    ("Marketing Budget Calculator", "/budget-calculator"),
+    ("Marketing Tools", "/marketing-tools"),
+    ("Guides", "/guides"),
 ]
 
 
 def nav_html(active_path="/"):
+    calc_active = any(href == active_path for _, href in CALC_DROPDOWN)
     dropdown_items = "".join(
         f'<a href="{href}"{"class=\"active\"" if href == active_path else ""}>{label}</a>'
         for label, href in CALC_DROPDOWN
     )
     calc_pill = f'''<div class="nav-dropdown">
-      <button class="nav-calc-pill">Calculators &#9662;</button>
+      <a href="#" class="nav-calc-pill{"active" if calc_active else ""}">Calculators</a>
       <div class="nav-dropdown-menu">{dropdown_items}</div>
     </div>'''
 
-    links = ""
-    for label, href in NAV_LINKS_BEFORE:
-        active = ' class="active"' if href == active_path else ""
-        links += f'<a href="{href}"{active}>{label}</a>'
-    links += calc_pill
-    for label, href in NAV_LINKS_AFTER:
+    links = calc_pill
+    for label, href in NAV_LINKS[1:]:
         active = ' class="active"' if href == active_path else ""
         links += f'<a href="{href}"{active}>{label}</a>'
 
-    home_active = " active" if active_path == "/" else ""
+    home_active = ' class="active"' if active_path == "/" else ""
     return f'''
 <nav class="site-nav">
   <div class="nav-inner">
-    <div class="nav-left">
-      <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-      <a href="/" class="nav-home{home_active}">Home</a>
-    </div>
-    <div class="nav-links">{links}</div>
+    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
+    <ul class="nav-links">
+      <li><a href="/" {home_active}>Home</a></li>
+      <li>{calc_pill}</li>
+      {" ".join(f'<li><a href="{href}"{"class=\"active\"" if href == active_path else ""}>{label}</a></li>' for label, href in NAV_LINKS[1:])}
+    </ul>
     <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </nav>'''

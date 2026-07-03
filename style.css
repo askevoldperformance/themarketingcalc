@@ -314,11 +314,7 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 .metric-name { font-size: 0.8rem; font-weight: 600; color: var(--text); }
 .metric-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; margin-top: 2px; }
 
-/* ── Nav overflow: scrollable on small screens ── */
-@media (max-width: 900px) {
-  .nav-links { overflow-x: auto; flex-wrap: nowrap; }
-  .nav-links a { white-space: nowrap; }
-}
+
 
 /* ── Ad placements (hidden until AdSense approved) ── */
 .ad-leaderboard {
@@ -624,7 +620,7 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 .nav-logo img { border-radius: 6px; }
 .nav-links {
   display: flex; gap: 6px; list-style: none;
-  flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+  flex-wrap: nowrap; overflow: visible;
   padding: 0; margin: 0; flex: 1;
 }
 .nav-links::-webkit-scrollbar { display: none; }

@@ -34,39 +34,57 @@ CALC_DROPDOWN = [
     ("Frequency Calculator", "/frequency-calculator"),
 ]
 
-NAV_LINKS = [
-    ("Home", "/"),
-    ("Marketing Budget Calculator", "/budget-calculator"),
-    ("Marketing Tools", "/marketing-tools"),
-    ("Guides", "/guides"),
+GUIDES_DROPDOWN = [
+    ("What is CPM?", "/guides/what-is-cpm"),
+    ("What is ROAS?", "/guides/what-is-roas"),
+    ("What is POAS?", "/guides/what-is-poas"),
+    ("What is CTR?", "/guides/what-is-ctr"),
+    ("CPM vs eCPM", "/guides/cpm-vs-ecpm"),
+    ("How to Calculate Campaign Budget", "/guides/how-to-calculate-campaign-budget"),
+    ("Marketing Budget Benchmarks", "/guides/marketing-budget-benchmarks"),
+    ("Google Search Ads Guide", "/guides/responsive-search-ads-guide"),
+    ("Performance Max Creative Specs", "/guides/performance-max-creative-specs"),
+    ("All Guides", "/guides"),
 ]
 
 
 def nav_html(active_path="/"):
     calc_active = any(href == active_path for _, href in CALC_DROPDOWN)
-    dropdown_items = "".join(
+    guides_active = any(href == active_path for _, href in GUIDES_DROPDOWN)
+
+    calc_items = "".join(
         f'<a href="{href}"{"class=\"active\"" if href == active_path else ""}>{label}</a>'
         for label, href in CALC_DROPDOWN
     )
-    calc_pill = f'''<div class="nav-dropdown">
-      <a href="#" class="nav-calc-pill{"active" if calc_active else ""}">Calculators</a>
-      <div class="nav-dropdown-menu">{dropdown_items}</div>
+    guides_items = "".join(
+        f'<a href="{href}"{"class=\"active\"" if href == active_path else ""}>{label}</a>'
+        for label, href in GUIDES_DROPDOWN
+    )
+
+    calc_dropdown = f'''<div class="nav-dropdown">
+      <a href="#" class="nav-calc-pill">Calculators</a>
+      <div class="nav-dropdown-menu">{calc_items}</div>
     </div>'''
 
-    links = calc_pill
-    for label, href in NAV_LINKS[1:]:
-        active = ' class="active"' if href == active_path else ""
-        links += f'<a href="{href}"{active}>{label}</a>'
+    guides_dropdown = f'''<div class="nav-dropdown">
+      <a href="/guides" class="{"active" if guides_active else ""}">Guides</a>
+      <div class="nav-dropdown-menu">{guides_items}</div>
+    </div>'''
 
+    budget_active = ' class="active"' if active_path == "/budget-calculator" else ""
+    tools_active = ' class="active"' if active_path == "/marketing-tools" else ""
     home_active = ' class="active"' if active_path == "/" else ""
+
     return f'''
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
     <ul class="nav-links">
       <li><a href="/" {home_active}>Home</a></li>
-      <li>{calc_pill}</li>
-      {" ".join(f'<li><a href="{href}"{"class=\"active\"" if href == active_path else ""}>{label}</a></li>' for label, href in NAV_LINKS[1:])}
+      <li>{calc_dropdown}</li>
+      <li><a href="/budget-calculator"{budget_active}>Marketing Budget Calculator</a></li>
+      <li><a href="/marketing-tools"{tools_active}>Marketing Tools</a></li>
+      <li>{guides_dropdown}</li>
     </ul>
     <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
   </div>

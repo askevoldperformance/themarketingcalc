@@ -81,6 +81,10 @@
     {
       "source": "/guides/performance-max-creative-specs",
       "destination": "/guides/performance-max-creative-specs.html"
+    },
+    {
+      "source": "/marketing-tools/rsa-preview-tool",
+      "destination": "/marketing-tools/rsa-preview-tool.html"
     }
   ]
 }

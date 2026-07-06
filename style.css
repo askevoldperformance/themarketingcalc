@@ -690,3 +690,93 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   .nav-dropdown-menu.open { display: flex; }
   .nav-calc-pill { display: inline-block; }
 }
+
+/* ── RSA Preview Tool ── */
+.rsa-tool-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px; margin-bottom: 32px;
+}
+.rsa-tool-header { margin-bottom: 24px; }
+.rsa-tool-header h1 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+.rsa-tool-desc { color: var(--text-muted); font-size: 0.9rem; }
+.rsa-tool-body { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.rsa-section-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 10px; }
+.rsa-section-hint { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.rsa-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.rsa-input-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.rsa-input-wrap { flex: 1; position: relative; }
+.rsa-input-wrap input, .rsa-input-wrap textarea {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 9px 12px; color: var(--text);
+  font-size: 0.875rem; font-family: var(--font-body); resize: vertical;
+}
+.rsa-input-wrap input:focus, .rsa-input-wrap textarea:focus {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.rsa-char-count { font-size: 0.72rem; color: var(--text-muted); display: block; text-align: right; margin-top: 3px; }
+.rsa-counter { font-size: 0.72rem; color: var(--text-muted); display: block; text-align: right; margin-top: 3px; }
+.rsa-counter.over { color: #ef4444; }
+.rsa-pin-wrap { display: flex; align-items: center; gap: 4px; padding-top: 8px; }
+.rsa-pin-btn {
+  font-size: 0.72rem; padding: 4px 10px; border-radius: 20px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--bg2); color: var(--text-muted);
+  white-space: nowrap; transition: all 0.15s;
+}
+.rsa-pin-btn.pinned { background: var(--accent); color: #fff; border-color: var(--accent); }
+.rsa-unpin-btn, .rsa-remove-btn {
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  font-size: 0.9rem; padding: 4px 6px; line-height: 1; border-radius: 4px;
+}
+.rsa-unpin-btn:hover, .rsa-remove-btn:hover { color: #ef4444; background: rgba(239,68,68,0.1); }
+.rsa-add-btn {
+  font-size: 0.82rem; color: var(--accent); background: none; border: 1px dashed var(--accent);
+  border-radius: 8px; padding: 7px 14px; cursor: pointer; width: 100%; text-align: left;
+  transition: background 0.15s;
+}
+.rsa-add-btn:hover { background: var(--accent-glow); }
+
+/* Pin position menu */
+.rsa-pin-menu {
+  position: absolute; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  z-index: 100; min-width: 140px;
+}
+.rsa-pin-menu-title { font-size: 0.72rem; color: var(--text-muted); padding: 4px 8px 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.rsa-pin-option {
+  display: block; width: 100%; text-align: left; padding: 7px 12px;
+  font-size: 0.85rem; color: var(--text); background: none; border: none;
+  border-radius: 6px; cursor: pointer;
+}
+.rsa-pin-option:hover { background: var(--bg3); }
+
+/* Preview */
+.rsa-preview-wrapper { background: var(--bg2); border-radius: 10px; padding: 20px; }
+.rsa-preview-ad { font-family: Arial, sans-serif; max-width: 600px; }
+.rsa-preview-top { margin-bottom: 6px; }
+.rsa-preview-badge {
+  font-size: 11px; color: #1e8e3e; border: 1px solid #1e8e3e;
+  border-radius: 3px; padding: 1px 5px; margin-bottom: 4px; display: inline-block;
+}
+.rsa-preview-brand-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.rsa-preview-favicon { font-size: 14px; color: var(--text-muted); }
+.rsa-preview-brand { font-size: 14px; color: var(--text); font-weight: 500; }
+.rsa-preview-url { font-size: 12px; color: var(--text-muted); }
+.rsa-preview-headlines {
+  font-size: 18px; color: #1a73e8; line-height: 1.3;
+  margin: 8px 0 6px; font-weight: 400;
+}
+.rsa-hl { color: #1a73e8; }
+.rsa-hl-sep { color: #1a73e8; opacity: 0.5; }
+.rsa-hl-placeholder { color: #94a3b8; }
+.rsa-preview-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+.rsa-combo-controls { margin-top: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.rsa-combo-info { font-size: 0.8rem; color: var(--text-muted); }
+.rsa-locked-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.rsa-locked-item:last-child { border-bottom: none; }
+.rsa-locked-pos { background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; flex-shrink: 0; }
+.rsa-locked-text { font-size: 0.85rem; color: var(--text); }
+
+@media (max-width: 760px) {
+  .rsa-tool-body { grid-template-columns: 1fr; }
+  .rsa-field-row { grid-template-columns: 1fr; }
+}

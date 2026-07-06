@@ -11,6 +11,7 @@ from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
 from pmax_guide_content import PMAX_GUIDE_CONTENT, PMAX_GUIDE_FAQ
 from budget_calculator_content import BUDGET_CALCULATOR_BODY
 from marketing_tools_content import MARKETING_TOOLS_BODY, KEYWORD_TOOLS_BODY
+from rsa_preview_content import RSA_PREVIEW_BODY
 from build_helpers import AD_LEADERBOARD, AD_SIDEBAR_L, AD_SIDEBAR_R, affiliate, faq, AFFILIATES
 from content import (
     CPM_EDITORIAL, CPM_FAQ,
@@ -143,6 +144,7 @@ def footer_html():
 <script src="/main.js" defer></script>
 <script src="/budget_calculator.js" defer></script>
 <script src="/keyword_tools.js" defer></script>
+<script src="/rsa_preview.js" defer></script>
 </body>
 </html>'''
 
@@ -493,6 +495,11 @@ if __name__ == "__main__":
          "Free Marketing Tools - Keyword Tools and More | TheMarketingCalc",
          "Free marketing tools for PPC and SEO professionals. Keyword match type formatting, keyword combination generators, and more practical tools for daily campaign work.",
          "/marketing-tools", MARKETING_TOOLS_BODY)
+
+    page("marketing-tools/rsa-preview-tool.html",
+         "Free RSA Preview Tool - Responsive Search Ad Generator and Mockup | TheMarketingCalc",
+         "Free responsive search ad preview tool. Visualize Google Ads RSA combinations, lock headline positions, and test every variation before launch. No sign-up required.",
+         "/marketing-tools/rsa-preview-tool", RSA_PREVIEW_BODY)
 
     page("marketing-tools/free-keyword-tools.html",
          "Free Keyword Tools - Match Type Formatter and Keyword Combiner | TheMarketingCalc",

@@ -20,6 +20,12 @@ MARKETING_TOOLS_BODY = '''
     <p class="tools-hub-intro">Every tool below is free to use directly in your browser. No account, no email gate, no usage limits. If you have a tool you wish existed, we are actively expanding this list - check back regularly or browse our <a href="/">marketing calculators</a> for metric-based planning tools.</p>
 
     <div class="tool-category-grid">
+      <a href="/marketing-tools/rsa-preview-tool" class="tool-category-card">
+        <span class="tool-category-tag">Google Ads</span>
+        <h2>RSA Preview Tool</h2>
+        <p>Visualize your Responsive Search Ad combinations, lock headline positions, and test every variation before uploading to Google Ads.</p>
+        <span class="tool-category-link">Open tool &rarr;</span>
+      </a>
       <a href="/marketing-tools/free-keyword-tools" class="tool-category-card">
         <span class="tool-category-tag">PPC &amp; SEO</span>
         <h2>Free Keyword Tools</h2>

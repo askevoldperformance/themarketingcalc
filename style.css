@@ -37,7 +37,7 @@ code {
 }
 
 /* ── Layout ── */
-.container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
 .hidden { display: none !important; }
 
 /* ── Hero ── */
@@ -46,7 +46,7 @@ code {
   background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.12) 0%, transparent 70%);
   text-align: center;
 }
-.hero-inner { max-width: 660px; margin: 0 auto; }
+.hero-inner { max-width: 800px; margin: 0 auto; }
 .hero-eyebrow {
   font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
@@ -55,7 +55,7 @@ code {
   font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700; line-height: 1.15; margin-bottom: 20px; color: var(--text);
 }
-.hero-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+.hero-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 680px; margin: 0 auto; }
 .accent { color: var(--accent); }
 
 /* ── Page hero (inner pages) ── */
@@ -231,7 +231,7 @@ code {
 
 /* ── Prose (guides inner pages) ── */
 .prose-section { padding: 0 20px 64px; }
-.prose { max-width: 720px; }
+.prose { max-width: 900px; }
 .prose h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
 .prose p { color: var(--text-muted); margin-bottom: 14px; line-height: 1.75; }
 .prose a { color: var(--accent); }
@@ -538,7 +538,7 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 
 /* ── Marketing Tools hub ── */
 .tools-hub-section { padding: 8px 0 64px; }
-.tools-hub-intro { color: var(--text-muted); max-width: 720px; margin-bottom: 32px; line-height: 1.75; }
+.tools-hub-intro { color: var(--text-muted); max-width: 900px; margin-bottom: 32px; line-height: 1.75; }
 .tool-category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .tool-category-card {
   background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg);

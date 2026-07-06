@@ -43,7 +43,7 @@ function rsaAddHeadline(silent) {
 function rsaAddDescription(silent) {
   if (rsaDescriptions.length >= DESC_LIMIT) return;
   var idx = rsaDescriptions.length;
-  rsaDescriptions.push({text: ''});
+  rsaDescriptions.push({text: '', pin: 0});
   rsaRenderDescriptions();
   if (!silent) rsaUpdatePreview();
 }
@@ -153,6 +153,12 @@ function rsaRenderDescriptions() {
           'placeholder="Description ' + (idx+1) + '" rows="2">' + escHtml(desc.text) + '</textarea>' +
         '<span class="rsa-char-count">' + desc.text.length + '/' + DESC_CHARS + '</span>' +
       '</div>' +
+      '<div class="rsa-pin-wrap">' +
+        '<button class="rsa-pin-btn' + (desc.pin ? ' pinned' : '') + '" title="Pin to position">' +
+          (desc.pin ? 'Pos ' + desc.pin : 'Pin') +
+        '</button>' +
+        (desc.pin ? '<button class="rsa-unpin-btn" title="Unpin">&#x2715;</button>' : '') +
+      '</div>' +
       (rsaDescriptions.length > 2 ? '<button class="rsa-remove-btn" title="Remove">&#x2715;</button>' : '');
 
     var textarea = row.querySelector('.rsa-desc-input');
@@ -161,6 +167,20 @@ function rsaRenderDescriptions() {
       row.querySelector('.rsa-char-count').textContent = this.value.length + '/' + DESC_CHARS;
       rsaUpdatePreview();
     });
+
+    var pinBtn = row.querySelector('.rsa-pin-btn');
+    pinBtn.addEventListener('click', function() {
+      rsaShowDescPinMenu(idx, this);
+    });
+
+    var unpinBtn = row.querySelector('.rsa-unpin-btn');
+    if (unpinBtn) {
+      unpinBtn.addEventListener('click', function() {
+        rsaDescriptions[idx].pin = 0;
+        rsaRenderDescriptions();
+        rsaUpdatePreview();
+      });
+    }
 
     var removeBtn = row.querySelector('.rsa-remove-btn');
     if (removeBtn) {
@@ -175,6 +195,39 @@ function rsaRenderDescriptions() {
   });
   var addBtn = document.getElementById('rsa-add-desc-btn');
   if (addBtn) addBtn.style.display = rsaDescriptions.length >= DESC_LIMIT ? 'none' : '';
+}
+
+function rsaShowDescPinMenu(idx, btn) {
+  var existing = document.querySelector('.rsa-pin-menu');
+  if (existing) existing.remove();
+
+  var menu = document.createElement('div');
+  menu.className = 'rsa-pin-menu';
+  menu.innerHTML = '<div class="rsa-pin-menu-title">Pin to position</div>' +
+    [1,2].map(function(pos) {
+      return '<button class="rsa-pin-option" data-pos="' + pos + '">Position ' + pos + '</button>';
+    }).join('');
+
+  menu.querySelectorAll('.rsa-pin-option').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      var pos = parseInt(this.dataset.pos);
+      rsaDescriptions.forEach(function(d, i) { if (d.pin === pos && i !== idx) d.pin = 0; });
+      rsaDescriptions[idx].pin = pos;
+      menu.remove();
+      rsaRenderDescriptions();
+      rsaUpdatePreview();
+    });
+  });
+
+  btn.parentNode.appendChild(menu);
+  setTimeout(function() {
+    document.addEventListener('click', function closePinMenu(e) {
+      if (!e.target.closest('.rsa-pin-menu') && !e.target.closest('.rsa-pin-btn')) {
+        menu.remove();
+        document.removeEventListener('click', closePinMenu);
+      }
+    });
+  }, 10);
 }
 
 function rsaUpdatePreview() {
@@ -217,11 +270,24 @@ function rsaBuildCombo() {
     }
   }
 
-  // Pick 2 descriptions
-  var descs = rsaDescriptions.filter(function(d) { return d.text; }).map(function(d) { return d.text; });
-  rsaShuffle(descs);
-  var desc1 = descs[0] || '';
-  var desc2 = descs[1] || '';
+  // Pick 2 descriptions respecting pins
+  var descSlots = [null, null];
+  var freeDescs = [];
+  rsaDescriptions.forEach(function(d) {
+    if (!d.text) return;
+    if (d.pin >= 1 && d.pin <= 2) {
+      descSlots[d.pin - 1] = d.text;
+    } else {
+      freeDescs.push(d.text);
+    }
+  });
+  rsaShuffle(freeDescs);
+  var dfi = 0;
+  for (var i = 0; i < 2; i++) {
+    if (!descSlots[i] && dfi < freeDescs.length) descSlots[i] = freeDescs[dfi++];
+  }
+  var desc1 = descSlots[0] || '';
+  var desc2 = descSlots[1] || '';
 
   return { headlines: slots, desc1: desc1, desc2: desc2 };
 }
@@ -255,13 +321,19 @@ function rsaShowCombo(combo) {
   // Update locked summary
   var lockedEl = document.getElementById('rsa-locked-summary');
   if (lockedEl) {
-    var locked = rsaHeadlines.filter(function(h) { return h.pin && h.text; });
-    if (locked.length === 0) {
-      lockedEl.innerHTML = '<span style="font-size:0.82rem;color:var(--text-muted);">No headlines locked. Use the Pin button to fix a headline to a specific position.</span>';
+    var lockedHls = rsaHeadlines.filter(function(h) { return h.pin && h.text; });
+    var lockedDescs = rsaDescriptions.filter(function(d) { return d.pin && d.text; });
+    var allLocked = lockedHls.length + lockedDescs.length;
+    if (allLocked === 0) {
+      lockedEl.innerHTML = '<span style="font-size:0.82rem;color:var(--text-muted);">No assets locked. Use the Pin button to fix a headline or description to a specific position.</span>';
     } else {
-      lockedEl.innerHTML = locked.map(function(h) {
-        return '<div class="rsa-locked-item"><span class="rsa-locked-pos">Pos ' + h.pin + '</span><span class="rsa-locked-text">' + escHtml(h.text) + '</span></div>';
+      var hlHtml = lockedHls.map(function(h) {
+        return '<div class="rsa-locked-item"><span class="rsa-locked-type">HL</span><span class="rsa-locked-pos">Pos ' + h.pin + '</span><span class="rsa-locked-text">' + escHtml(h.text) + '</span></div>';
       }).join('');
+      var descHtml = lockedDescs.map(function(d) {
+        return '<div class="rsa-locked-item"><span class="rsa-locked-type desc">Desc</span><span class="rsa-locked-pos">Pos ' + d.pin + '</span><span class="rsa-locked-text">' + escHtml(d.text) + '</span></div>';
+      }).join('');
+      lockedEl.innerHTML = hlHtml + descHtml;
     }
   }
 }

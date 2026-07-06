@@ -62,8 +62,9 @@ def nav_html(active_path="/"):
         for label, href in GUIDES_DROPDOWN
     )
 
+    calc_class = "active" if calc_active else ""
     calc_dropdown = f'''<div class="nav-dropdown">
-      <a href="#" class="nav-calc-pill{'active' if calc_active else ''}">Calculators</a>
+      <a href="#" class="nav-calc-pill {calc_class}">Calculators</a>
       <div class="nav-dropdown-menu">{calc_items}</div>
     </div>'''
 

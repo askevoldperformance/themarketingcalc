@@ -63,7 +63,7 @@ def nav_html(active_path="/"):
     )
 
     calc_dropdown = f'''<div class="nav-dropdown">
-      <a href="#" class="nav-calc-pill">Calculators</a>
+      <a href="#" class="nav-calc-pill{'active' if calc_active else ''}">Calculators</a>
       <div class="nav-dropdown-menu">{calc_items}</div>
     </div>'''
 
@@ -359,6 +359,24 @@ INDEX_BODY = '''
         <a href="/guides/marketing-budget-benchmarks" class="guide-card"><span class="guide-tag">Budgets</span><h3>Marketing Budget Benchmarks</h3><p>CPM, CPC, CTR and ROAS benchmarks by channel.</p></a>
       </div>
       <a href="/guides" class="btn-secondary">View all guides &rarr;</a>
+    </div>
+  </section>
+  <section class="guides-preview">
+    <div class="container">
+      <h2>Free Marketing Tools</h2>
+      <div class="guide-grid">
+        <a href="/marketing-tools/rsa-preview-tool" class="guide-card">
+          <span class="guide-tag">Google Ads</span>
+          <h3>RSA Preview Tool</h3>
+          <p>Visualize Responsive Search Ad combinations, lock headline positions, and test every variation before launch.</p>
+        </a>
+        <a href="/marketing-tools/free-keyword-tools" class="guide-card">
+          <span class="guide-tag">PPC &amp; SEO</span>
+          <h3>Free Keyword Tools</h3>
+          <p>Format keyword match types for Google Ads and Microsoft Ads, or combine word lists into long-tail keywords.</p>
+        </a>
+      </div>
+      <a href="/marketing-tools" class="btn-secondary">View all tools &rarr;</a>
     </div>
   </section>
 </main>'''

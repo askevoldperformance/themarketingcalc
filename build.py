@@ -9,6 +9,7 @@ from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
 from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
 from ctr_guide_content import CTR_GUIDE_CONTENT, CTR_GUIDE_FAQ
 from cpm_vs_ecpm_content import CPM_VS_ECPM_CONTENT, CPM_VS_ECPM_FAQ
+from budget_guide_content import BUDGET_GUIDE_CONTENT, BUDGET_GUIDE_FAQ
 from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
 from pmax_guide_content import PMAX_GUIDE_CONTENT, PMAX_GUIDE_FAQ
 from budget_calculator_content import BUDGET_CALCULATOR_BODY
@@ -540,8 +541,8 @@ if __name__ == "__main__":
          PMAX_GUIDE_CONTENT + faq(PMAX_GUIDE_FAQ), "Mastering Google Ads Performance Max Formats: Specs, Dead Zones, and Creative Best Practices"),
         ("guides/responsive-search-ads-guide.html", "The Ultimate Google Search Ads Guide - Writing Winning Responsive Search Ads", "Google Ads", "/guides/responsive-search-ads-guide",
          RSA_GUIDE_CONTENT + faq(RSA_GUIDE_FAQ), "The Ultimate Google Search Ads Guide: Learn How to Write Winning Responsive Search Ads"),
-        ("guides/how-to-calculate-campaign-budget.html", "How to Calculate a Campaign Budget", "Budgets", "/guides/how-to-calculate-campaign-budget",
-         "<h2>The framework</h2><p>Start with your objective and work backwards from a target metric. If your goal is 500,000 impressions and your expected CPM is $5, your budget is 500,000 / 1,000 x $5 = $2,500.</p><h2>Step 1 - Choose your objective</h2><p>Reach/Awareness: use CPM. Traffic: use CPC. Conversions: use CPL or target CPA.</p><h2>Step 2 - Benchmark your metric</h2><p>Use platform averages as a starting point, then adjust for your industry, creative quality, and audience size. See our <a href='/guides/marketing-budget-benchmarks'>benchmark guide</a>.</p><h2>Step 3 - Calculate</h2><p>Budget = Target Impressions / 1,000 x CPM. Budget = Target Clicks x CPC. Budget = Target Leads x CPL.</p><h2>Step 4 - Sanity-check with break-even ROAS</h2><p>If running e-commerce, verify your budget makes sense against your margin floor before committing spend. Use our <a href='/roas-calculator'>Break-even ROAS calculator</a>."),
+        ("guides/how-to-calculate-campaign-budget.html", "How to Calculate a Marketing Campaign Budget - Step-by-Step Guide", "Budgets", "/guides/how-to-calculate-campaign-budget",
+         BUDGET_GUIDE_CONTENT + faq(BUDGET_GUIDE_FAQ), "How to Calculate a Marketing Campaign Budget: A Step-by-Step Guide"),
         ("guides/what-is-cpm.html", "The Marketer's Guide to CPM - What It Means and Why It Drives Brand Growth", "CPM", "/guides/what-is-cpm",
          CPM_GUIDE_CONTENT + faq(CPM_GUIDE_FAQ), "The Marketer's Guide to CPM: What It Means and Why It Drives Brand Growth"),
         ("guides/what-is-roas.html", "The Ultimate Guide to ROAS - Measuring the True Efficiency of Your Ad Spend", "ROAS", "/guides/what-is-roas",

@@ -1,0 +1,149 @@
+from build_helpers import faq, AD_INLINE, AFFILIATES
+
+BUDGET_GUIDE_CONTENT = """
+<p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:32px;line-height:1.7;">Setting a marketing budget is not about picking a number and hoping for the best. A solid campaign budget is built backwards from your revenue targets, customer acquisition costs, and channel benchmarks. Here is the exact framework and formulas to calculate yours.</p>
+
+<h2>Why a structured marketing budget matters</h2>
+<p>Think of your marketing budget not as a cost centre, but as a direct investment in your growth funnel. A structured budget gives your team three distinct advantages:</p>
+<ul>
+  <li><strong>Speed and agility.</strong> Eliminates the bottleneck of waiting for approval on every ad set, tool, or freelancer spend.</li>
+  <li><strong>Strategic alignment.</strong> Directly ties your marketing actions to business metrics like customer acquisition and revenue growth.</li>
+  <li><strong>Waste prevention.</strong> Keeps your team from spreading budget too thin across too many channels, which yields inconclusive data and poor results.</li>
+</ul>
+
+<h2>Method 1: The percentage-of-revenue formula</h2>
+<p>This is the most common method for annual and monthly planning. Your baseline budget is calculated by multiplying your gross or target revenue by an industry benchmark percentage.</p>
+
+<div class="formula-block">
+  <div class="formula-label">Percentage of revenue formula</div>
+  <div class="formula-main">Marketing Budget = Estimated Gross Revenue &times; Allocation Percentage</div>
+</div>
+
+<div class="calc-example">
+  <div class="calc-example-step">
+    <span class="calc-step-num">&#9432;</span>
+    <div>
+      <div class="calc-step-label">Conservative growth (2% to 10% of revenue)</div>
+      <div class="calc-step-formula">Best for established businesses in mature industries looking to maintain market share.</div>
+    </div>
+  </div>
+  <div class="calc-example-step">
+    <span class="calc-step-num">&#9432;</span>
+    <div>
+      <div class="calc-step-label">Aggressive growth (10% to 25%+ of revenue)</div>
+      <div class="calc-step-formula">Common for startups, businesses scaling into new markets, or companies launching in highly competitive categories.</div>
+    </div>
+  </div>
+</div>
+
+<p>Once you have your total budget, use the <a href="/budget-calculator">Marketing Budget Calculator</a> to model how that spend splits across channels based on your market, objective, and audience.</p>
+
+<h2>Method 2: The bottom-up objective formula</h2>
+<p>If you are running a specific acquisition or lead generation campaign, calculate your budget from the bottom up based on your Target Customer Acquisition Cost (CAC).</p>
+
+<div class="formula-block">
+  <div class="formula-label">Bottom-up budget formula</div>
+  <div class="formula-main">Required Budget = Target New Customers &times; Target CAC</div>
+</div>
+
+<h3>Step-by-step example</h3>
+<p>Your sales goal is 200 new clients next month. Your historically proven CAC is EUR 150.</p>
+
+<div class="calc-example">
+  <div class="calc-example-step">
+    <span class="calc-step-num">1</span>
+    <div>
+      <div class="calc-step-label">Identify your target and CAC</div>
+      <div class="calc-step-formula">200 new customers &times; EUR 150 CAC</div>
+    </div>
+  </div>
+  <div class="calc-example-step">
+    <span class="calc-step-num">2</span>
+    <div>
+      <div class="calc-step-label">Calculate required budget</div>
+      <div class="calc-step-formula">200 &times; EUR 150 = <strong>EUR 30,000</strong></div>
+    </div>
+  </div>
+  <div class="calc-example-result">
+    You need <strong>EUR 30,000</strong> in campaign budget to hit your acquisition target at your historical CAC. If you cannot allocate that amount, either the target needs to come down or you need a plan to reduce CAC first.
+  </div>
+</div>
+
+<p>Use the <a href="/budget-calculator">Marketing Budget Calculator</a> to model this bottom-up calculation across multiple channels, or enter your own metrics to forecast reach, clicks, and spend per channel.</p>
+
+""" + AD_INLINE + """
+
+<h2>How to calculate budget per channel</h2>
+<p>Once you have your total campaign budget, the next step is working out how much to allocate to each channel. The <a href="/budget-calculator">Marketing Budget Calculator</a> handles this automatically based on your market, objective, and audience - but here are the underlying formulas if you are building this manually.</p>
+
+<div class="formula-block">
+  <div class="formula-label">Budget from impressions target</div>
+  <div class="formula-main">Budget = (Target Impressions &divide; 1,000) &times; CPM</div>
+</div>
+
+<div class="formula-block">
+  <div class="formula-label">Budget from clicks target</div>
+  <div class="formula-main">Budget = Target Clicks &times; CPC</div>
+</div>
+
+<div class="formula-block">
+  <div class="formula-label">Budget from leads target</div>
+  <div class="formula-main">Budget = Target Leads &times; CPL</div>
+</div>
+
+<p>Use our calculators to work these numbers per channel: <a href="/cpm-calculator">CPM Calculator</a>, <a href="/cpc-calculator">CPC Calculator</a>, <a href="/cpl-calculator">CPL Calculator</a>.</p>
+
+<h2>Smart budget allocation: the 50/30/20 rule</h2>
+<p>Once you have your total budget, a common pitfall is spreading it too thin or concentrating everything in one channel. A practical allocation framework splits your budget into three operational tiers:</p>
+
+<div class="calc-example">
+  <div class="calc-example-step">
+    <span class="calc-step-num">50%</span>
+    <div>
+      <div class="calc-step-label">Proven acquisition channels</div>
+      <div class="calc-step-formula">Channels that have already delivered positive ROI for your specific audience - typically Google Search, mature email lists, or your top-performing social channel.</div>
+    </div>
+  </div>
+  <div class="calc-example-step">
+    <span class="calc-step-num">30%</span>
+    <div>
+      <div class="calc-step-label">New channels and experiments</div>
+      <div class="calc-step-formula">Testing new platforms, emerging ad formats, or experimental funnels. Scale up the winners quickly and cut what does not work.</div>
+    </div>
+  </div>
+  <div class="calc-example-step">
+    <span class="calc-step-num">20%</span>
+    <div>
+      <div class="calc-step-label">Brand and operations</div>
+      <div class="calc-step-formula">Baseline tools, creative assets, and long-term brand awareness campaigns that build trust but are harder to attribute directly.</div>
+    </div>
+  </div>
+</div>
+
+<p>See our <a href="/guides/marketing-budget-benchmarks">marketing budget benchmarks guide</a> for channel-specific allocation data by industry and business stage.</p>
+
+<h2>Sanity-checking your budget with break-even ROAS</h2>
+<p>For e-commerce campaigns, always verify your budget against your margin floor before committing spend. If your break-even ROAS is 3x and your campaign is only delivering 2x, adding more budget will accelerate losses, not growth. Use the <a href="/roas-calculator">Break-even ROAS calculator</a> to find the minimum ROAS your campaigns need to hit before they become profitable.</p>
+
+<h2>Four marketing budget mistakes to avoid</h2>
+<p><strong>Relying exclusively on paid ads.</strong> Paid traffic is an excellent short-term lever, but it creates an expensive dependency. Balance paid acquisition with long-term organic assets - SEO, content, and owned channels - so your CAC does not spike every time you pause spend.</p>
+<p><strong>Spreading budget too thin.</strong> Putting EUR 100 per month into five different platforms gives you zero statistically significant data on any of them. Focus on one or two channels first to observe the actual effects of scale before diversifying.</p>
+<p><strong>Operating without a single source of truth.</strong> If campaign costs are tracked in one spreadsheet, web traffic in another, and sales conversions in a CRM, calculating true ROI becomes nearly impossible. Consolidate reporting before scaling budget.</p>
+<p><strong>Excluding the execution team.</strong> CMOs and business owners should not build budgets in isolation. Involve the team members who manage day-to-day accounts - they know whether the KPI targets match real-world inventory pricing and platform behaviour.</p>
+
+""" + AFFILIATES['hubspot']()
+
+BUDGET_GUIDE_FAQ = [
+    ("How much should a business spend on marketing?",
+     "The most widely cited benchmark is 5% to 15% of gross revenue, with B2C companies typically spending more than B2B. Startups and high-growth companies often allocate 20% to 30% of projected revenue during their scaling phase. The right percentage depends on your growth stage, margins, and competitive market. Use the Marketing Budget Calculator to model what a given budget would deliver in reach and leads before committing."),
+    ("What is the best way to calculate a campaign budget?",
+     "The most reliable method is to work backwards from your target outcome. Decide how many leads, customers, or conversions you need. Multiply by your target CPL or CAC. That is your required budget. If you do not have historical data, use industry CPM and CPC benchmarks as a starting point and refine based on actual campaign performance. The Marketing Budget Calculator does this calculation automatically across multiple channels."),
+    ("How do I split my marketing budget across channels?",
+     "Allocate the majority - around 50% - to channels that have already proven positive ROI for your business. Reserve 30% for testing new channels or formats. Use the remaining 20% for brand-building and operational costs. The right split also depends on your objective: conversion-focused budgets should weight Search and retargeting more heavily, while reach objectives benefit from a broader social and display mix."),
+    ("Should I include agency fees and tool costs in my marketing budget?",
+     "Yes. A complete marketing budget includes all costs required to run campaigns effectively: media spend, agency or freelancer fees, creative production costs, software and tool subscriptions, and attribution or analytics platforms. Many businesses underestimate their true CAC because they only count media spend and exclude the operational costs sitting around it."),
+    ("What is a good CPL (cost per lead) benchmark?",
+     "CPL benchmarks vary significantly by industry and channel. B2B leads via LinkedIn typically cost EUR 50 to EUR 200 or more. B2C leads through Google Search might cost EUR 10 to EUR 50. Email list leads can be generated for EUR 1 to EUR 10 with mature content assets. Use the CPL Calculator to calculate your current CPL and compare it against your customer lifetime value to determine whether the cost is sustainable."),
+    ("How does ROAS relate to marketing budget planning?",
+     "ROAS (Return on Ad Spend) tells you how much revenue you generate per unit of ad spend. Break-even ROAS is the minimum ROAS your campaigns need to cover the cost of goods sold and deliver a profit. If your break-even ROAS is 4x and your campaigns are delivering 2x, increasing budget will scale losses. Always calculate your break-even ROAS before scaling a campaign and use it as the floor for budget decisions."),
+]

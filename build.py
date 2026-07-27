@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from poas_guide_content import POAS_GUIDE_CONTENT
 from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
 from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
+from ctr_guide_content import CTR_GUIDE_CONTENT, CTR_GUIDE_FAQ
 from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
 from pmax_guide_content import PMAX_GUIDE_CONTENT, PMAX_GUIDE_FAQ
 from budget_calculator_content import BUDGET_CALCULATOR_BODY
@@ -433,7 +434,7 @@ def guide_body(title, tag, content_html, h1=None):
   <img src="/images/robin-askevold.jpg" alt="Robin Askevold" class="author-avatar">
   <div class="author-meta">
     <span class="author-name">Robin Askevold</span>
-    <span class="author-title">Performance Specialist</span>
+    <span class="author-title">Performance Marketing Specialist</span>
     <span class="author-updated">Updated {updated}</span>
   </div>
 </div>'''
@@ -546,8 +547,8 @@ if __name__ == "__main__":
          ROAS_GUIDE_CONTENT + faq(ROAS_GUIDE_FAQ), "The Ultimate Guide to ROAS: Measuring the True Efficiency of Your Ad Spend"),
         ("guides/cpm-vs-ecpm.html", "CPM vs eCPM - What is the Difference?", "CPM", "/guides/cpm-vs-ecpm",
          "<h2>CPM - what you pay</h2><p>CPM is the rate you agreed to pay per 1,000 impressions.</p><h2>eCPM - what you effectively pay</h2><p>eCPM normalises performance across buying models: eCPM = (Total Cost / Impressions) x 1,000. Use it to compare CPC and CPM buys on equal footing.</p><p>Use our <a href='/cpm-calculator'>CPM calculator</a> to calculate eCPM from any campaign spend and impression data.</p>"),
-        ("guides/what-is-ctr.html", "What is CTR? Click-Through Rate Explained", "CTR", "/guides/what-is-ctr",
-         "<h2>Definition</h2><p>CTR = (Clicks / Impressions) x 100. A direct signal of creative and audience relevance.</p><h2>Benchmarks</h2><p>Google Search: 3 to 6%. Google Display: 0.1 to 0.3%. Meta Feed: 0.5 to 1.5%. LinkedIn: 0.3 to 0.7%.</p><p>Use our <a href='/ctr-calculator'>CTR calculator</a> to calculate CTR, clicks, or impressions from any two values.</p>"),
+        ("guides/what-is-ctr.html", "What is CTR? Click-Through Rate Meaning, Formula and Benchmarks", "CTR", "/guides/what-is-ctr",
+         CTR_GUIDE_CONTENT + faq(CTR_GUIDE_FAQ), "The Ultimate Guide to CTR: Meaning, Formula, and How to Improve It"),
         ("guides/what-is-poas.html", "The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit", "POAS", "/guides/what-is-poas",
          POAS_GUIDE_CONTENT, "The Ultimate Guide to POAS: Why POAS is the Metric That Actually Scales E-Commerce Profit"),
         ("guides/marketing-budget-benchmarks.html", "Marketing Budget Benchmarks by Channel", "Budgets", "/guides/marketing-budget-benchmarks",

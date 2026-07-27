@@ -1,96 +1,146 @@
+from build_helpers import faq, AD_INLINE, AFFILIATES
+
 CPM_GUIDE_CONTENT = """
-<p style="font-size:1.05rem;color:#94a3b8;margin-bottom:32px;line-height:1.7;">Building initial awareness is the critical first milestone in any successful customer journey. While digital marketing offers various pricing structures, one framework remains a cornerstone of visibility campaigns: CPM. Below, we break down exactly how CPM operates, how it compares to alternative models, and how to leverage it to scale your brand.</p>
+<p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:32px;line-height:1.7;">Whether you are launching a digital marketing campaign, buying TV spots, or running an email newsletter, mastering CPM is essential for keeping your ad spend under control. Here is everything you need to know about what CPM means, how to calculate it, and how to use it to benchmark your campaigns.</p>
 
-<h2>The strategic value: benefits and drawbacks of CPM</h2>
+<h2>What is CPM? Meaning and definition</h2>
+<p>CPM stands for Cost Per Mille, where "mille" is the Latin and French word for one thousand. In advertising, CPM represents the cost an advertiser pays for every 1,000 views or impressions of an advertisement.</p>
+<p>Every time your ad is displayed 1,000 times on a screen, billboard, or print page, you incur the baseline CPM cost.</p>
 
-<h3>The benefits</h3>
-<p><strong>Highly budget-friendly:</strong> CPM stands as one of the most economical entry points in digital advertising. Because you pay a predictable rate for a set volume of exposure, it is highly scalable for businesses of all sizes.</p>
-<p><strong>Rapid brand reach and recognition:</strong> If your goal is top-of-funnel visibility, CPM is unmatched. You are paying to get your brand assets directly in front of a large audience, building awareness before intent exists.</p>
-<p><strong>Rich data gathering:</strong> Because impressions accumulate rapidly, you gather actionable creative insights and audience data quickly without burning through your budget on conversion-focused campaigns.</p>
+<h2>Why use "per thousand"?</h2>
+<p>Because single digital ad impressions are incredibly cheap - often fractions of a cent - the industry scales the metric up to 1,000 impressions to make budgeting, pricing, and forecasting much easier to manage. Saying a campaign costs EUR 12.50 CPM is far more practical than saying it costs EUR 0.0125 per impression.</p>
 
-<h3>The drawbacks</h3>
-<p><strong>No guaranteed actions:</strong> An impression means exposure, not engagement. CPM does not guarantee clicks, form fills, or sales. It is a top-of-funnel metric and should be evaluated as one.</p>
-<p><strong>Ad fraud risks:</strong> The digital space struggles with invalid traffic. Sophisticated bots can artificially inflate impressions, meaning you could pay for views never seen by real people. Stick to reputable platforms and monitor post-impression metrics closely.</p>
+<h2>How to calculate CPM</h2>
+<p>To find your cost per thousand impressions, you need two numbers: the total cost of the campaign and the total number of impressions generated.</p>
 
-<h2>What is CPM?</h2>
-<p>CPM stands for Cost Per Mille - derived from the Latin word for one thousand. It represents the price an advertiser pays for every 1,000 impressions a digital advertisement receives.</p>
+<div class="formula-block">
+  <div class="formula-label">CPM formula</div>
+  <div class="formula-main">CPM = (Total Cost &divide; Total Impressions) &times; 1,000</div>
+</div>
 
-<h3>Impressions vs. page views: the critical difference</h3>
-<p>These are two entirely distinct metrics. A page view occurs when a user loads a webpage. An ad impression occurs specifically when the ad element itself loads and is displayed. If a user leaves before your ad loads, no impression is counted. Conversely, if a single page features three of your ad units simultaneously, one page view yields three impressions.</p>
+<h3>Step-by-step calculation example</h3>
+<p>Say you invest EUR 5,000 into a campaign and your ad is served 400,000 times.</p>
 
-<h2>The formula: how to calculate CPM</h2>
-<p>You divide total spend by the number of impressions received, then multiply by 1,000.</p>
-
-<div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px 24px;margin:28px 0;text-align:center;">
-  <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;margin-bottom:20px;">CPM formula</div>
-  <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
-    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 18px;">
-      <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:2px;">Total Cost</div>
-      <div style="font-size:1.1rem;font-weight:700;color:var(--text);font-family:'Space Grotesk',sans-serif;">$500</div>
-    </div>
-    <span style="font-size:1.4rem;color:var(--text-muted);">÷</span>
-    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 18px;">
-      <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:2px;">Total Impressions</div>
-      <div style="font-size:1.1rem;font-weight:700;color:var(--text);font-family:'Space Grotesk',sans-serif;">100,000</div>
-    </div>
-    <span style="font-size:1.4rem;color:var(--text-muted);">×</span>
-    <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 18px;">
-      <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:2px;">Mille</div>
-      <div style="font-size:1.1rem;font-weight:700;color:var(--text);font-family:'Space Grotesk',sans-serif;">1,000</div>
-    </div>
-    <span style="font-size:1.4rem;color:var(--text-muted);">=</span>
-    <div style="background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.4);border-radius:8px;padding:10px 18px;">
-      <div style="font-size:0.75rem;color:#a5b4fc;margin-bottom:2px;">CPM</div>
-      <div style="font-size:1.1rem;font-weight:700;color:#a5b4fc;font-family:'Space Grotesk',sans-serif;">$5.00</div>
+<div class="calc-example">
+  <div class="calc-example-step">
+    <span class="calc-step-num">1</span>
+    <div>
+      <div class="calc-step-label">Divide total cost by total impressions</div>
+      <div class="calc-step-formula">EUR 5,000 &divide; 400,000 = <strong>0.0125</strong></div>
     </div>
   </div>
-  <div style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);">Use our free <a href="/cpm-calculator" style="color:#6366F1;">CPM Calculator</a> to test different budget scenarios instantly.</div>
+  <div class="calc-example-step">
+    <span class="calc-step-num">2</span>
+    <div>
+      <div class="calc-step-label">Multiply by 1,000 to get cost per thousand</div>
+      <div class="calc-step-formula">0.0125 &times; 1,000 = <strong>EUR 12.50</strong></div>
+    </div>
+  </div>
+  <div class="calc-example-result">
+    Your CPM is <strong>EUR 12.50</strong> - meaning it costs EUR 12.50 for every 1,000 times your ad is seen.
+  </div>
 </div>
 
-<h3>What is a good CPM?</h3>
-<p>A good CPM is tied entirely to your return on investment. A cheap CPM that yields zero business value is far worse than a premium CPM that lands your ad in front of high-value, ready-to-buy audiences. Judge success by outcomes, not just cost. For reference: Meta typically ranges $6 to $14, Google Display $2 to $5, LinkedIn $30 to $80, and TikTok $8 to $15.</p>
+<p>Use the <a href="/cpm-calculator">free CPM calculator</a> above to run this calculation instantly for your own numbers.</p>
 
-<h2>CPM vs. alternative digital ad models</h2>
+""" + AD_INLINE + """
 
-<h3>Pay-Per-Click (CPC)</h3>
-<p>In a CPC model, you only pay when a user actively clicks your ad. CPM prioritises exposure. CPC prioritises intent. Use our <a href="/ctr-calculator">CTR calculator</a> to understand the relationship between the two - your effective CPC from a CPM campaign is CPM divided by (CTR x 10).</p>
+<h2>Why is CPM so important in marketing?</h2>
+<p>CPM is a universal benchmarking tool. Because it standardises cost based on volume, it allows you to compare the efficiency of entirely different media channels on equal terms. With CPM, you can directly compare:</p>
+<ul>
+  <li>A high-traffic digital banner ad campaign</li>
+  <li>A prime-time television commercial - the Super Bowl has a massive upfront cost but a highly competitive CPM due to millions of concurrent viewers</li>
+  <li>An email marketing campaign where the ESP charges a CPM rate to cover server bandwidth and deliverability</li>
+</ul>
+<p>Without CPM as a common unit, comparing a EUR 10,000 TV spot reaching 2 million viewers against a EUR 500 display campaign reaching 80,000 people would be nearly impossible. CPM reduces both to a single comparable number.</p>
 
-<h3>Cost Per Action (CPA)</h3>
-<p>CPA takes things further - you only pay when a user completes a predefined action: a purchase, a sign-up, a form fill. Ideal for tight conversion goals, but typically requires more budget to let algorithms find converting users.</p>
+<h2>Advanced variations: vCPM vs eCPM</h2>
+<p>As advertising technology has evolved, two important variations of CPM have emerged to provide deeper insight into ad exposure and publisher revenue.</p>
 
-<h2>The role of CTR in CPM campaigns</h2>
-<p>Even in an impression-based campaign, always monitor your Click-Through Rate. CTR = (Clicks / Impressions) x 100. A low CTR during a CPM campaign usually indicates a creative-audience mismatch: either your ad is not compelling enough to stop the scroll, or you are reaching the wrong people. Use our <a href="/ctr-calculator">CTR calculator</a> to diagnose and forecast.</p>
+<h3>Viewable CPM (vCPM)</h3>
+<p>Standard CPM counts an impression the moment an ad loads, even if it sits below the fold and the user never scrolls to see it. vCPM solves this by ensuring you only pay when 1,000 impressions are officially clocked as viewable - typically defined as at least 50% of the ad being on screen for a minimum of one continuous second.</p>
+<p>vCPM is increasingly the default in programmatic buying and is generally a more accurate reflection of actual ad exposure than raw CPM.</p>
 
-<h2>How to execute a successful CPM campaign</h2>
-<p><strong>Set strict budget caps:</strong> Because impressions serve fast, costs accumulate quickly without spend limits. Define your ceiling before launching.</p>
-<p><strong>Factor in seasonality:</strong> CPM rates fluctuate significantly during Q4, major holidays, and peak retail seasons. Time campaigns when your audience is most receptive and competition is lower.</p>
-<p><strong>Choose the right environment:</strong> Google Display Network is a powerhouse for broad web reach. Social platforms offer CPM models optimised for native feeds with stronger audience targeting.</p>
-<p><strong>Track post-impression metrics:</strong> Impressions are the top of the funnel. Track view-through conversions, brand search lift, and direct traffic to understand the full downstream impact of your CPM spend.</p>
+<h3>Effective CPM (eCPM)</h3>
+<p>Publishers often sell inventory across different pricing models - CPC, CPA, or flat rates - and need a way to compare how much revenue each placement generates per thousand views. eCPM translates all those different earnings back into a CPM format for apples-to-apples comparison.</p>
 
-<div style="background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(99,102,241,0.05));border:1px solid rgba(99,102,241,0.35);border-radius:10px;padding:24px;margin:32px 0;">
-  <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;margin-bottom:16px;">Key takeaways</div>
-  <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-    <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--text-muted);"><span style="color:#6366F1;font-weight:700;flex-shrink:0;">-</span><span><strong style="color:var(--text);">Definition:</strong> CPM is the price paid per 1,000 ad impressions - the standard unit for awareness and reach campaigns.</span></li>
-    <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--text-muted);"><span style="color:#6366F1;font-weight:700;flex-shrink:0;">-</span><span><strong style="color:var(--text);">Impressions are not views:</strong> An impression tracks the ad loading. A page view tracks the user loading the host website. One page view can yield multiple impressions.</span></li>
-    <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--text-muted);"><span style="color:#6366F1;font-weight:700;flex-shrink:0;">-</span><span><strong style="color:var(--text);">Primary use case:</strong> Top-of-funnel brand awareness, audience scaling, and rapid creative data collection.</span></li>
-    <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--text-muted);"><span style="color:#6366F1;font-weight:700;flex-shrink:0;">-</span><span><strong style="color:var(--text);">The caveat:</strong> CPM does not guarantee clicks or conversions. Always monitor CTR and downstream metrics to assess true campaign health.</span></li>
-  </ul>
+<div class="formula-block">
+  <div class="formula-label">eCPM formula</div>
+  <div class="formula-main">eCPM = (Total Earnings &divide; Total Impressions) &times; 1,000</div>
 </div>
-"""
+
+<div class="calc-example">
+  <div class="calc-example-step">
+    <span class="calc-step-num">&#9432;</span>
+    <div>
+      <div class="calc-step-label">Publisher example</div>
+      <div class="calc-step-formula">A banner ad generates 100,000 impressions and earns EUR 500 through user clicks.</div>
+    </div>
+  </div>
+  <div class="calc-example-result">
+    eCPM = (EUR 500 &divide; 100,000) &times; 1,000 = <strong>EUR 5.00</strong>
+  </div>
+</div>
+
+<p>For a full breakdown of the differences, see our <a href="/guides/cpm-vs-ecpm">CPM vs eCPM guide</a>.</p>
+
+<h2>CPM compared to other key advertising metrics</h2>
+<p>CPM measures exposure. To understand the full picture of campaign performance, it helps to know how it compares to the other core metrics in digital advertising.</p>
+
+<div style="overflow-x:auto;margin:24px 0;">
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem;">
+  <thead>
+    <tr style="border-bottom:2px solid var(--border);">
+      <th style="text-align:left;padding:10px 12px;color:var(--text-muted);font-weight:600;">Metric</th>
+      <th style="text-align:left;padding:10px 12px;color:var(--text-muted);font-weight:600;">Full name</th>
+      <th style="text-align:left;padding:10px 12px;color:var(--text-muted);font-weight:600;">Focus area</th>
+      <th style="text-align:left;padding:10px 12px;color:var(--text-muted);font-weight:600;">Best used for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom:1px solid rgba(45,63,94,0.5);">
+      <td style="padding:10px 12px;font-weight:700;color:var(--accent);">CPM</td>
+      <td style="padding:10px 12px;color:var(--text);">Cost Per Mille</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Brand awareness and reach</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Measuring exposure and ad delivery volume</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(45,63,94,0.5);">
+      <td style="padding:10px 12px;font-weight:700;color:var(--text);"><a href="/cpc-calculator" style="color:var(--text);">CPC</a></td>
+      <td style="padding:10px 12px;color:var(--text);">Cost Per Click</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Traffic and engagement</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Driving users to a specific landing page</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(45,63,94,0.5);">
+      <td style="padding:10px 12px;font-weight:700;color:var(--text);">CPA</td>
+      <td style="padding:10px 12px;color:var(--text);">Cost Per Action</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Conversions and sales</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Direct response campaigns</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 12px;font-weight:700;color:var(--text);"><a href="/ctr-calculator" style="color:var(--text);">CTR</a></td>
+      <td style="padding:10px 12px;color:var(--text);">Click-Through Rate</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Ad relevancy</td>
+      <td style="padding:10px 12px;color:var(--text-muted);">Evaluating how engaging your ad creative is</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>See also: <a href="/cpc-calculator">CPC Calculator</a> - <a href="/ctr-calculator">CTR Calculator</a> - <a href="/cpl-calculator">CPL Calculator</a> - <a href="/roas-calculator">ROAS Calculator</a></p>
+
+""" + AFFILIATES['semrush']()
 
 CPM_GUIDE_FAQ = [
-    ("How do I calculate how many impressions I will get for my budget?",
-     "Impressions = (Budget / CPM) x 1,000. With a $1,000 budget and a $10 CPM, you can expect 100,000 impressions. Use the 'Find Impressions' mode in our CPM calculator to model this instantly."),
-    ("What is a good CPM for Facebook and Instagram ads?",
-     "For cold prospecting audiences, $6 to $14 is typical in most markets. Retargeting and high-intent audiences run $15 to $30+. Broad reach campaigns for video views can be lower - around $3 to $8 - depending on the market and creative format."),
-    ("What is the difference between CPM and eCPM?",
-     "CPM is what you agreed to pay. eCPM (effective CPM) is calculated retroactively from actual spend and impressions, regardless of how the media was bought. eCPM = (Total Cost / Impressions) x 1,000. It lets you compare CPC and CPM buys on equal footing."),
-    ("Why is my CPM increasing?",
-     "The most common causes are audience saturation (too much frequency on a small audience), rising auction competition, seasonal demand spikes, declining creative relevance scores, or narrowing your targeting mid-campaign. Refreshing creative and broadening targeting are the first things to try."),
-    ("Does a lower CPM always mean a better result?",
-     "No. A very low CPM usually means a broad, lower-quality audience. Always evaluate CPM alongside CTR and conversion rate. A $20 CPM with strong CTR can outperform a $4 CPM with negligible engagement if your goal is traffic or sales."),
-    ("How do CPM campaigns compare to CPC campaigns?",
-     "CPM charges per impression regardless of clicks. CPC charges only when someone clicks. For awareness and reach goals, CPM is typically more efficient. For traffic and conversion goals, CPC or CPA bidding is usually better. You can compare the two by calculating eCPM from any CPC campaign."),
-    ("How does audience size affect CPM?",
-     "Smaller audiences have higher CPMs because more advertisers compete for fewer impressions. A retargeting list of 10,000 people will almost always cost more per thousand impressions than a broad prospecting audience of 2 million."),
+    ("What is a good CPM in digital advertising?",
+     "A good CPM varies significantly by channel, audience, and market. As a rough benchmark: display advertising typically ranges from EUR 0.50 to EUR 5, social media (Meta, LinkedIn) from EUR 5 to EUR 25, and premium video placements on YouTube or connected TV from EUR 15 to EUR 50 or more. LinkedIn tends to have the highest CPMs due to its professional audience targeting. The right CPM for your campaign depends on your objective and what a conversion is worth to you."),
+    ("What is the difference between CPM and CPC?",
+     "CPM charges per 1,000 impressions regardless of whether anyone clicks. CPC charges only when someone clicks. CPM is better suited to brand awareness campaigns where the goal is reach and visibility. CPC is better for direct response campaigns where the goal is to drive traffic or conversions. Most platforms let you choose which model to use, and some optimise between the two automatically."),
+    ("What does CPM mean on YouTube?",
+     "On YouTube, CPM refers to the cost advertisers pay per 1,000 ad impressions shown to viewers. YouTube also shows creators a related metric called RPM (Revenue Per Mille), which represents earnings per 1,000 video views after YouTube takes its share. CPM on YouTube varies by content category, viewer location, and time of year - Q4 typically has the highest CPMs due to holiday advertiser spend."),
+    ("What is the difference between CPM and vCPM?",
+     "Standard CPM counts an impression as soon as the ad loads, even if it is never visible on screen. vCPM (viewable CPM) only counts an impression when at least 50% of the ad has been on screen for at least one continuous second. vCPM gives a more accurate picture of actual ad exposure and is generally the preferred metric for brand awareness campaigns."),
+    ("What is eCPM and how is it different from CPM?",
+     "CPM is what an advertiser pays per 1,000 impressions. eCPM (effective CPM) is what a publisher earns per 1,000 impressions, calculated by dividing total earnings by total impressions and multiplying by 1,000. Publishers use eCPM to compare the revenue efficiency of different ad placements and pricing models regardless of whether they were sold on a CPM, CPC, or CPA basis."),
+    ("How do I reduce my CPM?",
+     "The most effective ways to reduce CPM are: broadening your target audience (narrower audiences typically cost more to reach), improving your ad quality score (platforms reward high-quality ads with better auction prices), testing different ad formats and placements, reducing campaign frequency (high frequency inflates CPM as you exhaust the audience), and shifting spend toward off-peak periods where competition is lower."),
 ]

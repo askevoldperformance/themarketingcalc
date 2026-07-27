@@ -782,3 +782,44 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 }
 .rsa-locked-type { background: var(--bg3); color: var(--text-muted); font-size: 0.68rem; font-weight: 700; padding: 2px 6px; border-radius: 20px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.05em; }
 .rsa-locked-type.desc { background: rgba(99,102,241,0.15); color: var(--accent); }
+
+/* ── Formula blocks and calc examples ── */
+.formula-block {
+  background: var(--bg2); border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px; margin: 24px 0;
+}
+.formula-label {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px;
+}
+.formula-main {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 1.05rem; color: var(--text); font-weight: 500;
+}
+.calc-example {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px; margin: 24px 0;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.calc-example-step {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.calc-step-num {
+  background: var(--accent); color: #fff;
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+}
+.calc-step-label {
+  font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;
+}
+.calc-step-formula {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.95rem; color: var(--text);
+}
+.calc-example-result {
+  background: var(--bg3); border-radius: 8px;
+  padding: 12px 16px; font-size: 0.9rem; color: var(--text);
+  border-left: 2px solid var(--accent);
+}

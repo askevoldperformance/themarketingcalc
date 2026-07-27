@@ -823,3 +823,42 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   padding: 12px 16px; font-size: 0.9rem; color: var(--text);
   border-left: 2px solid var(--accent);
 }
+
+/* ── Channel benchmark cards ── */
+.channel-benchmark-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px 24px; margin-bottom: 16px;
+}
+.channel-benchmark-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+}
+.channel-badge {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.85rem; flex-shrink: 0; font-family: var(--font-display);
+}
+.channel-badge.google { background: #e8f0fe; color: #1a73e8; }
+.channel-badge.youtube { background: #fce8e6; color: #ea4335; }
+.channel-badge.meta { background: #e7f3ff; color: #1877f2; }
+.channel-badge.tiktok { background: #f0f0f0; color: #000; }
+.channel-badge.snap { background: #fff8e1; color: #ffca28; }
+.channel-badge.bing { background: #e3f2fd; color: #0078d4; }
+.channel-name { font-weight: 700; font-size: 1rem; color: var(--text); }
+.channel-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+.benchmark-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+}
+.benchmark-stat {
+  background: var(--bg2); border-radius: 8px; padding: 10px 12px;
+}
+.benchmark-label {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 5px;
+}
+.benchmark-value {
+  font-size: 0.875rem; font-weight: 600; color: var(--text); line-height: 1.4;
+}
+@media (max-width: 760px) {
+  .benchmark-grid { grid-template-columns: repeat(2, 1fr); }
+  .channel-benchmark-card { padding: 16px; }
+}

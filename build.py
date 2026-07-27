@@ -10,6 +10,7 @@ from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
 from ctr_guide_content import CTR_GUIDE_CONTENT, CTR_GUIDE_FAQ
 from cpm_vs_ecpm_content import CPM_VS_ECPM_CONTENT, CPM_VS_ECPM_FAQ
 from budget_guide_content import BUDGET_GUIDE_CONTENT, BUDGET_GUIDE_FAQ
+from benchmarks_guide_content import BENCHMARKS_GUIDE_CONTENT, BENCHMARKS_GUIDE_FAQ
 from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
 from pmax_guide_content import PMAX_GUIDE_CONTENT, PMAX_GUIDE_FAQ
 from budget_calculator_content import BUDGET_CALCULATOR_BODY
@@ -553,8 +554,8 @@ if __name__ == "__main__":
          CTR_GUIDE_CONTENT + faq(CTR_GUIDE_FAQ), "The Ultimate Guide to CTR: Meaning, Formula, and How to Improve It"),
         ("guides/what-is-poas.html", "The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit", "POAS", "/guides/what-is-poas",
          POAS_GUIDE_CONTENT, "The Ultimate Guide to POAS: Why POAS is the Metric That Actually Scales E-Commerce Profit"),
-        ("guides/marketing-budget-benchmarks.html", "Marketing Budget Benchmarks by Channel", "Budgets", "/guides/marketing-budget-benchmarks",
-         "<h2>CPM benchmarks (2024-2025)</h2><p>Meta: $6 to $14. Google Display: $2 to $5. LinkedIn: $30 to $80. TikTok: $8 to $15. Snapchat: $3 to $8. Reddit: $3 to $10. X: $4 to $9.</p><h2>CPC benchmarks</h2><p>Google Search: $1 to $6. Meta: $0.30 to $1.50. LinkedIn: $5 to $15. TikTok: $0.20 to $0.80.</p><h2>CTR benchmarks</h2><p>Google Search: 3 to 6%. Google Display: 0.1 to 0.3%. Meta Feed: 0.5 to 1.5%. LinkedIn: 0.3 to 0.7%.</p><h2>Note on benchmarks</h2><p>These are averages. Your numbers depend on audience, creative, industry, and bidding strategy. Use our <a href='/budget-calculator'>budget calculator</a> to model full campaigns with channel-specific benchmarks.</p>"),
+        ("guides/marketing-budget-benchmarks.html", "Marketing Budget Benchmarks by Channel 2025 - CTR, CPC, CPA and ROAS", "Budgets", "/guides/marketing-budget-benchmarks",
+         BENCHMARKS_GUIDE_CONTENT + faq(BENCHMARKS_GUIDE_FAQ), "Marketing Budget Benchmarks by Channel: CTR, CPC, CVR, CPA and ROAS for 2025"),
     ]
 
     for entry in guides:

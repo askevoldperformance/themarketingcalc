@@ -1,65 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marketing Budget Benchmarks by Channel 2025 - CTR, CPC, CPA and ROAS | TheMarketingCalc</title>
-  <meta name="description" content="Marketing Budget Benchmarks by Channel 2025 - CTR, CPC, CPA and ROAS">
-  <link rel="canonical" href="https://themarketingcalc.com/guides/marketing-budget-benchmarks">
-  <meta property="og:title" content="Marketing Budget Benchmarks by Channel 2025 - CTR, CPC, CPA and ROAS | TheMarketingCalc">
-  <meta property="og:description" content="Marketing Budget Benchmarks by Channel 2025 - CTR, CPC, CPA and ROAS">
-  <meta property="og:url" content="https://themarketingcalc.com/guides/marketing-budget-benchmarks">
-  <meta property="og:image" content="https://themarketingcalc.com/logo.png">
-  <meta name="google-adsense-account" content="ca-pub-4789906927045850">
-  <meta name="impact-site-verification" content="11b4deab-0282-498b-bf5a-89afaea16cf7">
-  <link rel="icon" href="/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-546VKQVR');</script>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-546VKQVR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png" alt="The Marketing Calc" width="36" height="36"><span>TheMarketingCalc</span></a>
-    <ul class="nav-links">
-      <li><a href="/" >Home</a></li>
-      <li><div class="nav-dropdown">
-      <a href="#" class="nav-calc-pill ">Calculators</a>
-      <div class="nav-dropdown-menu"><a href="/cpm-calculator">CPM Calculator</a><a href="/ctr-calculator">CTR Calculator</a><a href="/cpc-calculator">CPC Calculator</a><a href="/roas-calculator">ROAS Calculator</a><a href="/cpl-calculator">CPL Calculator</a><a href="/frequency-calculator">Frequency Calculator</a></div>
-    </div></li>
-      <li><a href="/budget-calculator">Marketing Budget Calculator</a></li>
-      <li><a href="/marketing-tools">Marketing Tools</a></li>
-      <li><div class="nav-dropdown">
-      <a href="/guides" class="active">Guides</a>
-      <div class="nav-dropdown-menu"><a href="/guides/what-is-cpm">What is CPM?</a><a href="/guides/what-is-roas">What is ROAS?</a><a href="/guides/what-is-poas">What is POAS?</a><a href="/guides/what-is-ctr">What is CTR?</a><a href="/guides/cpm-vs-ecpm">CPM vs eCPM</a><a href="/guides/how-to-calculate-campaign-budget">How to Calculate Campaign Budget</a><a href="/guides/marketing-budget-benchmarks"class="active">Marketing Budget Benchmarks</a><a href="/guides/responsive-search-ads-guide">Google Search Ads Guide</a><a href="/guides/performance-max-creative-specs">Performance Max Creative Specs</a><a href="/guides">All Guides</a></div>
-    </div></li>
-    </ul>
-    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
-  </div>
-</nav>
-<main>
-  <section class="page-hero"><div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="/">Home</a><span class="bc-sep">/</span><a href="/guides">Guides</a><span class="bc-sep">/</span><span class="bc-current">Marketing Budget Benchmarks by Channel: CTR, CPC, CVR, CPA and ROAS for 2025</span>
-</nav>
-    <span class="guide-tag">Budgets</span>
-    <h1>Marketing Budget Benchmarks by Channel: CTR, CPC, CVR, CPA and ROAS for 2025</h1>
-    
-<div class="author-box">
-  <img src="/images/robin-askevold.jpg" alt="Robin Askevold" class="author-avatar">
-  <div class="author-meta">
-    <span class="author-name">Robin Askevold</span>
-    <span class="author-title">Performance Marketing Specialist</span>
-    <span class="author-updated">Updated July 27, 2026</span>
-  </div>
-</div>
-  </div></section>
-  <section class="prose-section"><div class="container">
-    <div class="page-with-sidebar">
-      <div class="sidebar-left"><div class="ad-sidebar" aria-hidden="true"></div></div>
-      <div class="main-col prose">
+from build_helpers import faq, AD_INLINE, AFFILIATES
+
+BENCHMARKS_GUIDE_CONTENT = """
 <p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:32px;line-height:1.7;">Media fragmentation means every platform behaves differently. High-intent environments like search capture existing demand. Visual, algorithmically-driven platforms like short-form video excel at generating net-new demand. These cross-industry benchmarks provide the performance baselines needed to structure, evaluate, and scale paid media budgets. All figures are global averages converted to EUR.</p>
 
 <p>Use the <a href="/budget-calculator">Marketing Budget Calculator</a> to model your campaign spend across these channels, or jump directly to the individual calculators - <a href="/cpm-calculator">CPM</a>, <a href="/ctr-calculator">CTR</a>, <a href="/cpc-calculator">CPC</a>, <a href="/roas-calculator">ROAS</a>, <a href="/cpl-calculator">CPL</a> - to work with your own live account data.</p>
@@ -156,7 +97,7 @@
 </table>
 </div>
 
-<div class="ad-inline" aria-hidden="true"></div>
+""" + AD_INLINE + """
 
 <h2>Google Ads ecosystem</h2>
 <p>Google remains the cornerstone of capture-based marketing, but its network inventory varies widely depending on placement intent.</p>
@@ -343,49 +284,19 @@
 
 <p>Enter your own figures into the <a href="/budget-calculator">Marketing Budget Calculator</a> using the custom metrics toggle to turn these generic benchmarks into an accurate channel-specific forecasting model. See the <a href="/guides/how-to-calculate-campaign-budget">how to calculate a marketing campaign budget guide</a> for a step-by-step framework.</p>
 
+""" + AFFILIATES['supermetrics']()
 
-<div class="affiliate-box">
-  <div class="aff-body">
-    <div class="aff-label">Sponsored tool</div>
-    <div class="aff-title">Pull all your ad data into one place with Supermetrics</div>
-    <p class="aff-desc">Connect Meta, Google Ads, LinkedIn and more to Google Sheets, Looker Studio, or BigQuery. Stop copying numbers manually.</p>
-    <a href="https://www.supermetrics.com" class="aff-cta" rel="noopener sponsored" target="_blank">Try Supermetrics free</a>
-    <p class="affiliate-disclaimer">Affiliate link - we may earn a commission at no extra cost to you.</p>
-  </div>
-</div><div class="faq-section"><h2>Frequently asked questions</h2><div class="faq-item"><button class="faq-q">What is a good ROAS by channel?</button><div class="faq-a">Google Paid Search and Bing typically deliver the highest direct ROAS (3.5:1 to 4.5:1) because they capture existing demand from users already looking for your product. Performance Max averages 4.0:1 or higher on well-optimised product feeds. Social channels like Meta and TikTok often show lower immediate click-based ROAS (1.5:1 to 2.5:1) because they introduce products to users who were not actively shopping - their full value requires multi-touch attribution to measure correctly.</div></div><div class="faq-item"><button class="faq-q">Why is Google Search CPC so much higher than Display?</button><div class="faq-a">Google Search ads target active intent. Someone typing a commercial query is highly valuable, causing advertisers to bid aggressively and driving up the CPC. Display Network ads appear passively while users browse, resulting in lower intent, lower conversion rates, and a much lower CPC (around EUR 0.41). The trade-off is that Display CPA is significantly higher despite the lower CPC, because you need many more clicks to get a conversion.</div></div><div class="faq-item"><button class="faq-q">Why does Meta have such a low CPA for native lead forms?</button><div class="faq-a">Meta's native lead forms eliminate website landing page friction. Instead of navigating to an external site, users submit a pre-filled form directly inside the Facebook or Instagram app. This drives conversion rates to 7.5% to 8.5%, dropping the average CPL to EUR 21. The trade-off is lead quality - native form leads sometimes require additional qualification compared to leads who intentionally navigated to your website and completed a form there.</div></div><div class="faq-item"><button class="faq-q">What is the difference between CPA and CPL in these benchmarks?</button><div class="faq-a">CPA (Cost Per Acquisition) refers to a completed transaction or customer conversion, standard in e-commerce. CPL (Cost Per Lead) tracks top-of-funnel actions like sign-ups or form submissions, standard in B2B. When forecasting, always factor in your internal lead-to-customer conversion rate to ensure your pipeline remains profitable against your actual Customer Lifetime Value.</div></div><div class="faq-item"><button class="faq-q">Should I use TikTok for direct response campaigns?</button><div class="faq-a">TikTok can work for direct response with the right creative approach. The platform favours native, creator-style content over polished brand ads. Brands using UGC-style creative see CPA drop to EUR 13 to EUR 20 versus the EUR 30 platform median. TikTok works best for consumer products with a strong visual story and a young-to-mid-age audience. B2B and high-consideration purchases generally see poor results on the platform.</div></div><div class="faq-item"><button class="faq-q">Are these benchmarks accurate for my industry?</button><div class="faq-a">These are cross-industry averages for 2024-2025. Industry-specific benchmarks vary significantly - B2B software has much higher CPCs and CPLs than e-commerce, while industries like insurance and legal services can see Google Search CPCs of EUR 20 to EUR 50+. Use these figures as a starting point for initial planning, then replace them with your own account data once campaigns are live. The Marketing Budget Calculator supports custom metrics for exactly this purpose.</div></div></div></div>
-      <div class="sidebar-right"><div class="ad-sidebar" aria-hidden="true"></div></div>
-    </div>
-  </div></section>
-  <section class="tools-cta"><div class="container">
-    <h2>Try the calculators</h2>
-    <p>Put these formulas to work instantly.</p>
-    <a href="/" class="btn-primary">Open Calculators &rarr;</a>
-  </div></section>
-</main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="/logo.png" alt="The Marketing Calc" width="28" height="28">
-      <span>TheMarketingCalc.com</span>
-    </div>
-    <nav class="footer-links">
-      <a href="/cpm-calculator">CPM</a>
-      <a href="/ctr-calculator">CTR</a>
-      <a href="/cpc-calculator">CPC</a>
-      <a href="/roas-calculator">ROAS</a>
-      <a href="/cpl-calculator">CPL</a>
-      <a href="/frequency-calculator">Frequency</a>
-      <a href="/budget-calculator">Budget Calculator</a>
-      <a href="/guides">Guides</a>
-      <a href="/privacy-policy">Privacy Policy</a>
-    </nav>
-    <p class="footer-copy">&copy; 2026 TheMarketingCalc.com</p>
-  </div>
-</footer>
-<script src="/cookie_banner.js" defer></script>
-<script src="/main.js" defer></script>
-<script src="/budget_calculator.js" defer></script>
-<script src="/keyword_tools.js" defer></script>
-<script src="/rsa_preview.js" defer></script>
-</body>
-</html>
+BENCHMARKS_GUIDE_FAQ = [
+    ("What is a good ROAS by channel?",
+     "Google Paid Search and Bing typically deliver the highest direct ROAS (3.5:1 to 4.5:1) because they capture existing demand from users already looking for your product. Performance Max averages 4.0:1 or higher on well-optimised product feeds. Social channels like Meta and TikTok often show lower immediate click-based ROAS (1.5:1 to 2.5:1) because they introduce products to users who were not actively shopping - their full value requires multi-touch attribution to measure correctly."),
+    ("Why is Google Search CPC so much higher than Display?",
+     "Google Search ads target active intent. Someone typing a commercial query is highly valuable, causing advertisers to bid aggressively and driving up the CPC. Display Network ads appear passively while users browse, resulting in lower intent, lower conversion rates, and a much lower CPC (around EUR 0.41). The trade-off is that Display CPA is significantly higher despite the lower CPC, because you need many more clicks to get a conversion."),
+    ("Why does Meta have such a low CPA for native lead forms?",
+     "Meta's native lead forms eliminate website landing page friction. Instead of navigating to an external site, users submit a pre-filled form directly inside the Facebook or Instagram app. This drives conversion rates to 7.5% to 8.5%, dropping the average CPL to EUR 21. The trade-off is lead quality - native form leads sometimes require additional qualification compared to leads who intentionally navigated to your website and completed a form there."),
+    ("What is the difference between CPA and CPL in these benchmarks?",
+     "CPA (Cost Per Acquisition) refers to a completed transaction or customer conversion, standard in e-commerce. CPL (Cost Per Lead) tracks top-of-funnel actions like sign-ups or form submissions, standard in B2B. When forecasting, always factor in your internal lead-to-customer conversion rate to ensure your pipeline remains profitable against your actual Customer Lifetime Value."),
+    ("Should I use TikTok for direct response campaigns?",
+     "TikTok can work for direct response with the right creative approach. The platform favours native, creator-style content over polished brand ads. Brands using UGC-style creative see CPA drop to EUR 13 to EUR 20 versus the EUR 30 platform median. TikTok works best for consumer products with a strong visual story and a young-to-mid-age audience. B2B and high-consideration purchases generally see poor results on the platform."),
+    ("Are these benchmarks accurate for my industry?",
+     "These are cross-industry averages for 2024-2025. Industry-specific benchmarks vary significantly - B2B software has much higher CPCs and CPLs than e-commerce, while industries like insurance and legal services can see Google Search CPCs of EUR 20 to EUR 50+. Use these figures as a starting point for initial planning, then replace them with your own account data once campaigns are live. The Marketing Budget Calculator supports custom metrics for exactly this purpose."),
+]

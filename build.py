@@ -8,6 +8,7 @@ from poas_guide_content import POAS_GUIDE_CONTENT
 from roas_guide_content import ROAS_GUIDE_CONTENT, ROAS_GUIDE_FAQ
 from cpm_guide_content import CPM_GUIDE_CONTENT, CPM_GUIDE_FAQ
 from ctr_guide_content import CTR_GUIDE_CONTENT, CTR_GUIDE_FAQ
+from cpm_vs_ecpm_content import CPM_VS_ECPM_CONTENT, CPM_VS_ECPM_FAQ
 from rsa_guide_content import RSA_GUIDE_CONTENT, RSA_GUIDE_FAQ
 from pmax_guide_content import PMAX_GUIDE_CONTENT, PMAX_GUIDE_FAQ
 from budget_calculator_content import BUDGET_CALCULATOR_BODY
@@ -545,8 +546,8 @@ if __name__ == "__main__":
          CPM_GUIDE_CONTENT + faq(CPM_GUIDE_FAQ), "The Marketer's Guide to CPM: What It Means and Why It Drives Brand Growth"),
         ("guides/what-is-roas.html", "The Ultimate Guide to ROAS - Measuring the True Efficiency of Your Ad Spend", "ROAS", "/guides/what-is-roas",
          ROAS_GUIDE_CONTENT + faq(ROAS_GUIDE_FAQ), "The Ultimate Guide to ROAS: Measuring the True Efficiency of Your Ad Spend"),
-        ("guides/cpm-vs-ecpm.html", "CPM vs eCPM - What is the Difference?", "CPM", "/guides/cpm-vs-ecpm",
-         "<h2>CPM - what you pay</h2><p>CPM is the rate you agreed to pay per 1,000 impressions.</p><h2>eCPM - what you effectively pay</h2><p>eCPM normalises performance across buying models: eCPM = (Total Cost / Impressions) x 1,000. Use it to compare CPC and CPM buys on equal footing.</p><p>Use our <a href='/cpm-calculator'>CPM calculator</a> to calculate eCPM from any campaign spend and impression data.</p>"),
+        ("guides/cpm-vs-ecpm.html", "eCPM vs CPM - What is the Difference and How to Calculate Both", "CPM", "/guides/cpm-vs-ecpm",
+         CPM_VS_ECPM_CONTENT + faq(CPM_VS_ECPM_FAQ), "eCPM vs CPM: Understanding the Differences and How to Calculate Both"),
         ("guides/what-is-ctr.html", "What is CTR? Click-Through Rate Meaning, Formula and Benchmarks", "CTR", "/guides/what-is-ctr",
          CTR_GUIDE_CONTENT + faq(CTR_GUIDE_FAQ), "The Ultimate Guide to CTR: Meaning, Formula, and How to Improve It"),
         ("guides/what-is-poas.html", "The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit", "POAS", "/guides/what-is-poas",

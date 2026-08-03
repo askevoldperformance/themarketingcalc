@@ -205,8 +205,7 @@ def calc_card(calc_id, title, desc, modes, fields, formula, icon=None):
     return f'''
 <div class="calc-card">
   <div class="calc-header">
-    <h1>{title}</h1>
-    {icon_html}
+    <div class="calc-header-top">{icon_html}<h1>{title}</h1></div>
     <p class="calc-desc">{desc}</p>
   </div>
   <div class="calc-mode-toggle">{mode_btns}</div>

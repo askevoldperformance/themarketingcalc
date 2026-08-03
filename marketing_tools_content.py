@@ -144,8 +144,7 @@ KEYWORD_TOOLS_BODY = f'''
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="bc-sep">/</span><a href="/marketing-tools">Marketing Tools</a><span class="bc-sep">/</span><span class="bc-current">Free Keyword Tools</span>
     </nav>
-    <h1>Free <span class="accent">Keyword Tools</span></h1>
-    <img src="/images/icon-keyword-match.png" alt="" class="tool-page-icon">
+    <div class="page-hero-title"><img src="/images/icon-keyword-match.png" alt="" class="tool-page-icon"><h1>Free <span class="accent">Keyword Tools</span></h1></div>
     <p class="hero-sub">Format keyword match types and generate keyword combinations for Google Ads and Microsoft Ads campaigns - free, instant, no sign-up.</p>
   </div></section>
 

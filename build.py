@@ -356,12 +356,12 @@ INDEX_BODY = '''
     <div class="container">
       <h2>Marketing Guides</h2>
       <div class="guide-grid">
-        <a href="/guides/what-is-cpm" class="guide-card"><img src="/images/guides_cpm.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>What is CPM?</h3><p>Understand cost per mille and when to optimise for it.</p></a>
-        <a href="/guides/what-is-roas" class="guide-card"><img src="/images/guides_roas.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">ROAS</span><h3>What is ROAS?</h3><p>Return on Ad Spend explained - and how to benchmark it.</p></a>
-        <a href="/guides/what-is-poas" class="guide-card"><img src="/images/guides_poas.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">POAS</span><h3>What is POAS?</h3><p>Why profit-based optimisation beats revenue ROAS.</p></a>
-        <a href="/guides/what-is-ctr" class="guide-card"><img src="/images/guides_ctr.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CTR</span><h3>What is CTR?</h3><p>Click-through rate benchmarks by channel and ad format.</p></a>
-        <a href="/guides/cpm-vs-ecpm" class="guide-card"><img src="/images/guides_cpm_vs_ecpm.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>CPM vs eCPM</h3><p>The difference between bought and effective CPM.</p></a>
-        <a href="/guides/marketing-budget-benchmarks" class="guide-card"><img src="/images/guides_budget_benchmarks.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Budgets</span><h3>Marketing Budget Benchmarks</h3><p>CPM, CPC, CTR and ROAS benchmarks by channel.</p></a>
+        <a href="/guides/what-is-cpm" class="guide-card"><img src="/images/guides_cpm.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>What is CPM?</h3><p>Understand cost per mille and when to optimise for it.</p></a>
+        <a href="/guides/what-is-roas" class="guide-card"><img src="/images/guides_roas.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">ROAS</span><h3>What is ROAS?</h3><p>Return on Ad Spend explained - and how to benchmark it.</p></a>
+        <a href="/guides/what-is-poas" class="guide-card"><img src="/images/guides_poas.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">POAS</span><h3>What is POAS?</h3><p>Why profit-based optimisation beats revenue ROAS.</p></a>
+        <a href="/guides/what-is-ctr" class="guide-card"><img src="/images/guides_ctr.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CTR</span><h3>What is CTR?</h3><p>Click-through rate benchmarks by channel and ad format.</p></a>
+        <a href="/guides/cpm-vs-ecpm" class="guide-card"><img src="/images/guides_cpm_vs_ecpm.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>CPM vs eCPM</h3><p>The difference between bought and effective CPM.</p></a>
+        <a href="/guides/marketing-budget-benchmarks" class="guide-card"><img src="/images/guides_budget_benchmarks.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Budgets</span><h3>Marketing Budget Benchmarks</h3><p>CPM, CPC, CTR and ROAS benchmarks by channel.</p></a>
       </div>
       <a href="/guides" class="btn-secondary">View all guides &rarr;</a>
     </div>
@@ -394,15 +394,15 @@ GUIDES_BODY = '''
   </div></section>
   <section class="guides-full"><div class="container">
     <div class="guide-grid guide-grid-full">
-      <a href="/guides/performance-max-creative-specs" class="guide-card"><img src="/images/guides_pmax_specs.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Google Ads</span><h3>Performance Max Creative Specs</h3><p>Image sizes, video formats, character limits, and dead zones for PMax asset groups.</p></a>
-      <a href="/guides/responsive-search-ads-guide" class="guide-card"><img src="/images/guides_search_ads_guide.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Google Ads</span><h3>The Ultimate Google Search Ads Guide</h3><p>How to write winning responsive search ads using the science of the Messy Middle.</p></a>
-      <a href="/guides/how-to-calculate-campaign-budget" class="guide-card"><img src="/images/guides_campaign_budget.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Budgets</span><h3>How to Calculate a Campaign Budget</h3><p>A step-by-step framework for estimating ad budgets across channels.</p></a>
-      <a href="/guides/what-is-cpm" class="guide-card"><img src="/images/guides_cpm.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>What is CPM?</h3><p>Cost per mille explained - with channel benchmarks and examples.</p></a>
-      <a href="/guides/what-is-roas" class="guide-card"><img src="/images/guides_roas.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">ROAS</span><h3>What is ROAS?</h3><p>Return on Ad Spend: how to calculate, benchmark, and improve it.</p></a>
-      <a href="/guides/cpm-vs-ecpm" class="guide-card"><img src="/images/guides_cpm_vs_ecpm.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>CPM vs eCPM</h3><p>The difference between bought CPM and effective CPM.</p></a>
-      <a href="/guides/what-is-ctr" class="guide-card"><img src="/images/guides_ctr.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CTR</span><h3>What is CTR?</h3><p>Click-through rate benchmarks by platform, format, and industry.</p></a>
-      <a href="/guides/what-is-poas" class="guide-card"><img src="/images/guides_poas.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">POAS</span><h3>What is POAS?</h3><p>Profit on Ad Spend - why it is more actionable than ROAS.</p></a>
-      <a href="/guides/marketing-budget-benchmarks" class="guide-card"><img src="/images/guides_budget_benchmarks.png" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Budgets</span><h3>Marketing Budget Benchmarks</h3><p>CPM, CPC, CTR, and ROAS benchmarks across channels and markets.</p></a>
+      <a href="/guides/performance-max-creative-specs" class="guide-card"><img src="/images/guides_pmax_specs.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Google Ads</span><h3>Performance Max Creative Specs</h3><p>Image sizes, video formats, character limits, and dead zones for PMax asset groups.</p></a>
+      <a href="/guides/responsive-search-ads-guide" class="guide-card"><img src="/images/guides_search_ads_guide.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Google Ads</span><h3>The Ultimate Google Search Ads Guide</h3><p>How to write winning responsive search ads using the science of the Messy Middle.</p></a>
+      <a href="/guides/how-to-calculate-campaign-budget" class="guide-card"><img src="/images/guides_campaign_budget.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Budgets</span><h3>How to Calculate a Campaign Budget</h3><p>A step-by-step framework for estimating ad budgets across channels.</p></a>
+      <a href="/guides/what-is-cpm" class="guide-card"><img src="/images/guides_cpm.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>What is CPM?</h3><p>Cost per mille explained - with channel benchmarks and examples.</p></a>
+      <a href="/guides/what-is-roas" class="guide-card"><img src="/images/guides_roas.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">ROAS</span><h3>What is ROAS?</h3><p>Return on Ad Spend: how to calculate, benchmark, and improve it.</p></a>
+      <a href="/guides/cpm-vs-ecpm" class="guide-card"><img src="/images/guides_cpm_vs_ecpm.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CPM</span><h3>CPM vs eCPM</h3><p>The difference between bought CPM and effective CPM.</p></a>
+      <a href="/guides/what-is-ctr" class="guide-card"><img src="/images/guides_ctr.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">CTR</span><h3>What is CTR?</h3><p>Click-through rate benchmarks by platform, format, and industry.</p></a>
+      <a href="/guides/what-is-poas" class="guide-card"><img src="/images/guides_poas.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">POAS</span><h3>What is POAS?</h3><p>Profit on Ad Spend - why it is more actionable than ROAS.</p></a>
+      <a href="/guides/marketing-budget-benchmarks" class="guide-card"><img src="/images/guides_budget_benchmarks.jpg" alt="" class="guide-card-img" loading="lazy"><span class="guide-tag">Budgets</span><h3>Marketing Budget Benchmarks</h3><p>CPM, CPC, CTR, and ROAS benchmarks across channels and markets.</p></a>
     </div>
   </div></section>
 </main>'''
@@ -541,23 +541,23 @@ if __name__ == "__main__":
 
     guides = [
         ("guides/performance-max-creative-specs.html", "Performance Max Creative Specs - Image Sizes, Video Formats and Dead Zones", "Google Ads", "/guides/performance-max-creative-specs",
-         PMAX_GUIDE_CONTENT + faq(PMAX_GUIDE_FAQ), "Mastering Google Ads Performance Max Formats: Specs, Dead Zones, and Creative Best Practices", "guides_pmax_specs.png"),
+         PMAX_GUIDE_CONTENT + faq(PMAX_GUIDE_FAQ), "Mastering Google Ads Performance Max Formats: Specs, Dead Zones, and Creative Best Practices", "guides_pmax_specs.jpg"),
         ("guides/responsive-search-ads-guide.html", "The Ultimate Google Search Ads Guide - Writing Winning Responsive Search Ads", "Google Ads", "/guides/responsive-search-ads-guide",
-         RSA_GUIDE_CONTENT + faq(RSA_GUIDE_FAQ), "The Ultimate Google Search Ads Guide: Learn How to Write Winning Responsive Search Ads", "guides_search_ads_guide.png"),
+         RSA_GUIDE_CONTENT + faq(RSA_GUIDE_FAQ), "The Ultimate Google Search Ads Guide: Learn How to Write Winning Responsive Search Ads", "guides_search_ads_guide.jpg"),
         ("guides/how-to-calculate-campaign-budget.html", "How to Calculate a Marketing Campaign Budget - Step-by-Step Guide", "Budgets", "/guides/how-to-calculate-campaign-budget",
-         BUDGET_GUIDE_CONTENT + faq(BUDGET_GUIDE_FAQ), "How to Calculate a Marketing Campaign Budget: A Step-by-Step Guide", "guides_campaign_budget.png"),
+         BUDGET_GUIDE_CONTENT + faq(BUDGET_GUIDE_FAQ), "How to Calculate a Marketing Campaign Budget: A Step-by-Step Guide", "guides_campaign_budget.jpg"),
         ("guides/what-is-cpm.html", "The Marketer's Guide to CPM - What It Means and Why It Drives Brand Growth", "CPM", "/guides/what-is-cpm",
-         CPM_GUIDE_CONTENT + faq(CPM_GUIDE_FAQ), "The Marketer's Guide to CPM: What It Means and Why It Drives Brand Growth", "guides_cpm.png"),
+         CPM_GUIDE_CONTENT + faq(CPM_GUIDE_FAQ), "The Marketer's Guide to CPM: What It Means and Why It Drives Brand Growth", "guides_cpm.jpg"),
         ("guides/what-is-roas.html", "The Ultimate Guide to ROAS - Measuring the True Efficiency of Your Ad Spend", "ROAS", "/guides/what-is-roas",
-         ROAS_GUIDE_CONTENT + faq(ROAS_GUIDE_FAQ), "The Ultimate Guide to ROAS: Measuring the True Efficiency of Your Ad Spend", "guides_roas.png"),
+         ROAS_GUIDE_CONTENT + faq(ROAS_GUIDE_FAQ), "The Ultimate Guide to ROAS: Measuring the True Efficiency of Your Ad Spend", "guides_roas.jpg"),
         ("guides/cpm-vs-ecpm.html", "eCPM vs CPM - What is the Difference and How to Calculate Both", "CPM", "/guides/cpm-vs-ecpm",
-         CPM_VS_ECPM_CONTENT + faq(CPM_VS_ECPM_FAQ), "eCPM vs CPM: Understanding the Differences and How to Calculate Both", "guides_cpm_vs_ecpm.png"),
+         CPM_VS_ECPM_CONTENT + faq(CPM_VS_ECPM_FAQ), "eCPM vs CPM: Understanding the Differences and How to Calculate Both", "guides_cpm_vs_ecpm.jpg"),
         ("guides/what-is-ctr.html", "What is CTR? Click-Through Rate Meaning, Formula and Benchmarks", "CTR", "/guides/what-is-ctr",
-         CTR_GUIDE_CONTENT + faq(CTR_GUIDE_FAQ), "The Ultimate Guide to CTR: Meaning, Formula, and How to Improve It", "guides_ctr.png"),
+         CTR_GUIDE_CONTENT + faq(CTR_GUIDE_FAQ), "The Ultimate Guide to CTR: Meaning, Formula, and How to Improve It", "guides_ctr.jpg"),
         ("guides/what-is-poas.html", "The Ultimate Guide to POAS - Why POAS Scales E-Commerce Profit", "POAS", "/guides/what-is-poas",
-         POAS_GUIDE_CONTENT, "The Ultimate Guide to POAS: Why POAS is the Metric That Actually Scales E-Commerce Profit", "guides_poas.png"),
+         POAS_GUIDE_CONTENT, "The Ultimate Guide to POAS: Why POAS is the Metric That Actually Scales E-Commerce Profit", "guides_poas.jpg"),
         ("guides/marketing-budget-benchmarks.html", "Marketing Budget Benchmarks by Channel 2025 - CTR, CPC, CPA and ROAS", "Budgets", "/guides/marketing-budget-benchmarks",
-         BENCHMARKS_GUIDE_CONTENT + faq(BENCHMARKS_GUIDE_FAQ), "Marketing Budget Benchmarks by Channel: CTR, CPC, CVR, CPA and ROAS for 2025", "guides_budget_benchmarks.png"),
+         BENCHMARKS_GUIDE_CONTENT + faq(BENCHMARKS_GUIDE_FAQ), "Marketing Budget Benchmarks by Channel: CTR, CPC, CVR, CPA and ROAS for 2025", "guides_budget_benchmarks.jpg"),
     ]
 
     for entry in guides:

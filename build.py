@@ -164,13 +164,11 @@ def page(filepath, title, description, canonical_path, body_html):
 
 
 def calc_page(filepath, canonical_path, title, meta_desc, calc_html, editorial, faq_html, icon=None):
-    icon_html = f'<img src="/images/{icon}" alt="" class="calc-page-icon">' if icon else ''
     body = f'''
 <main>
   <section class="calc-hero">
     <div class="container">
       {AD_LEADERBOARD}
-      {icon_html}
       {calc_html}
     </div>
   </section>
@@ -190,7 +188,7 @@ def calc_page(filepath, canonical_path, title, meta_desc, calc_html, editorial, 
     page(filepath, title, meta_desc, canonical_path, body)
 
 
-def calc_card(calc_id, title, desc, modes, fields, formula):
+def calc_card(calc_id, title, desc, modes, fields, formula, icon=None):
     mode_btns = ""
     for i, (label, mode) in enumerate(modes):
         active = " active" if i == 0 else ""
@@ -203,10 +201,12 @@ def calc_card(calc_id, title, desc, modes, fields, formula):
           <label>{flabel}</label>
           <input type="number" id="{fid}" placeholder="{placeholder}" min="0">
         </div>'''
+    icon_html = f'<img src="/images/{icon}" alt="" class="calc-card-icon">' if icon else ''
     return f'''
 <div class="calc-card">
   <div class="calc-header">
     <h1>{title}</h1>
+    {icon_html}
     <p class="calc-desc">{desc}</p>
   </div>
   <div class="calc-mode-toggle">{mode_btns}</div>
@@ -227,7 +227,7 @@ CPM_CALC = calc_card(
     "Calculate CPM, total cost, or impressions. Enter any two values to find the third.",
     [("Find CPM", "cpm-cpm"), ("Find Cost", "cpm-cost"), ("Find Impressions", "cpm-imp")],
     [("cpm-cost","Total Cost","e.g. 500",False), ("cpm-impressions","Impressions","e.g. 100000",False), ("cpm-cpm-val","CPM","e.g. 5.00",True)],
-    "CPM = (Cost / Impressions) x 1,000"
+    "CPM = (Cost / Impressions) x 1,000", icon="icon-cpm.png"
 )
 
 CTR_CALC = calc_card(
@@ -235,7 +235,7 @@ CTR_CALC = calc_card(
     "Calculate click-through rate, total clicks, or impressions. Enter any two values to find the third.",
     [("Find CTR", "ctr-ctr"), ("Find Clicks", "ctr-clicks"), ("Find Impressions", "ctr-imp")],
     [("ctr-clicks","Clicks","e.g. 250",False), ("ctr-impressions","Impressions","e.g. 10000",False), ("ctr-ctr-val","CTR (%)","e.g. 2.5",True)],
-    "CTR = (Clicks / Impressions) x 100"
+    "CTR = (Clicks / Impressions) x 100", icon="icon-ctr.png"
 )
 
 CPC_CALC = calc_card(
@@ -243,7 +243,7 @@ CPC_CALC = calc_card(
     "Calculate cost per click, total cost, or number of clicks. Enter any two values to find the third.",
     [("Find CPC", "cpc-cpc"), ("Find Cost", "cpc-cost"), ("Find Clicks", "cpc-clicks")],
     [("cpc-cost","Total Cost","e.g. 500",False), ("cpc-clicks","Clicks","e.g. 1000",False), ("cpc-cpc-val","CPC","e.g. 0.50",True)],
-    "CPC = Cost / Clicks"
+    "CPC = Cost / Clicks", icon="icon-cpc.png"
 )
 
 ROAS_CALC = '''
@@ -303,7 +303,7 @@ CPL_CALC = calc_card(
     "Calculate cost per lead, total budget, or number of leads. Enter any two values to find the third.",
     [("Find CPL", "cpl-cpl"), ("Find Cost", "cpl-cost"), ("Find Leads", "cpl-leads")],
     [("cpl-cost","Total Cost","e.g. 1000",False), ("cpl-leads","Leads","e.g. 50",False), ("cpl-cpl-val","CPL","e.g. 20",True)],
-    "CPL = Cost / Leads"
+    "CPL = Cost / Leads", icon="icon-cpl.png"
 )
 
 FREQ_CALC = calc_card(
@@ -311,7 +311,7 @@ FREQ_CALC = calc_card(
     "Calculate ad frequency, total impressions, or unique reach. Enter any two values to find the third.",
     [("Find Frequency", "freq-freq"), ("Find Impressions", "freq-imp"), ("Find Reach", "freq-reach")],
     [("freq-imp","Impressions","e.g. 500000",False), ("freq-reach","Reach (unique people)","e.g. 100000",False), ("freq-freq-val","Frequency","e.g. 5",True)],
-    "Frequency = Impressions / Reach"
+    "Frequency = Impressions / Reach", icon="icon-frequency.png"
 )
 
 # ── INDEX ─────────────────────────────────────────────────────────────────────
@@ -486,32 +486,32 @@ if __name__ == "__main__":
     calc_page("cpm-calculator.html", "/cpm-calculator",
               "CPM Calculator - Calculate Cost Per Mille, Impressions and Budget | TheMarketingCalc",
               "Free CPM calculator. Calculate CPM, total campaign cost, or impressions from any two values. Benchmarks, formulas, and FAQs.",
-              CPM_CALC, CPM_EDITORIAL, CPM_FAQ, icon="icon-cpm.png")
+              CPM_CALC, CPM_EDITORIAL, CPM_FAQ)
 
     calc_page("ctr-calculator.html", "/ctr-calculator",
               "CTR Calculator - Calculate Click-Through Rate, Clicks and Impressions | TheMarketingCalc",
               "Free CTR calculator. Calculate click-through rate, total clicks, or impressions. Benchmarks by channel and practical guidance.",
-              CTR_CALC, CTR_EDITORIAL, CTR_FAQ, icon="icon-ctr.png")
+              CTR_CALC, CTR_EDITORIAL, CTR_FAQ)
 
     calc_page("cpc-calculator.html", "/cpc-calculator",
               "CPC Calculator - Calculate Cost Per Click, Budget and Clicks | TheMarketingCalc",
               "Free CPC calculator. Calculate cost per click, total campaign cost, or number of clicks. Channel benchmarks and max CPC guidance.",
-              CPC_CALC, CPC_EDITORIAL, CPC_FAQ, icon="icon-cpc.png")
+              CPC_CALC, CPC_EDITORIAL, CPC_FAQ)
 
     calc_page("roas-calculator.html", "/roas-calculator",
               "ROAS Calculator - ROAS, POAS and Break-even ROAS | TheMarketingCalc",
               "Free ROAS, POAS and break-even ROAS calculator. Understand the difference between revenue and profit-based optimisation.",
-              ROAS_CALC, ROAS_EDITORIAL, ROAS_FAQ, icon="icon-roas.png")
+              ROAS_CALC, ROAS_EDITORIAL, ROAS_FAQ)
 
     calc_page("cpl-calculator.html", "/cpl-calculator",
               "CPL Calculator - Calculate Cost Per Lead, Budget and Leads | TheMarketingCalc",
               "Free CPL calculator. Calculate cost per lead, total budget, or number of leads. Benchmarks by channel and max CPL guidance.",
-              CPL_CALC, CPL_EDITORIAL, CPL_FAQ, icon="icon-cpl.png")
+              CPL_CALC, CPL_EDITORIAL, CPL_FAQ)
 
     calc_page("frequency-calculator.html", "/frequency-calculator",
               "Frequency Calculator - Calculate Ad Frequency, Reach and Impressions | TheMarketingCalc",
               "Free ad frequency calculator. Calculate frequency, impressions, or reach. Guidance on optimal frequency and avoiding ad fatigue.",
-              FREQ_CALC, FREQ_EDITORIAL, FREQ_FAQ, icon="icon-frequency.png")
+              FREQ_CALC, FREQ_EDITORIAL, FREQ_FAQ)
 
     page("budget-calculator.html",
          "Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc",

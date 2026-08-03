@@ -141,6 +141,7 @@ RSA_PREVIEW_BODY = f'''
       <span class="bc-current">Free RSA Preview Tool</span>
     </nav>
     <h1>Free <span class="accent">RSA Preview Tool</span></h1>
+    <img src="/images/icon-rsa-preview.png" alt="" class="tool-page-icon">
     <p class="hero-sub">Visualize your Google Responsive Search Ads before you go live. Test combinations, lock positions, and share ad mockups with your team or clients.</p>
   </div></section>
 

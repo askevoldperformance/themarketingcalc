@@ -876,14 +876,21 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   margin-top: 28px;
 }
 
-/* ── Calculator page icon ── */
-.calc-page-icon {
-  display: block; height: 72px; width: auto;
-  margin: 0 0 16px 0; opacity: 0.9;
+/* ── Calculator card icon (after h1, before desc) ── */
+.calc-card-icon {
+  display: block; height: 64px; width: auto;
+  margin: 12px 0 16px 0; opacity: 0.9;
 }
 
-/* ── Tool card icon ── */
+/* ── Tool card icon (after h2, before p) ── */
 .tool-card-icon {
-  height: 56px; width: auto;
-  display: block; margin-bottom: 12px; opacity: 0.9;
+  height: 52px; width: auto;
+  display: block; margin: 10px 0 14px 0; opacity: 0.9;
+  object-fit: contain;
+}
+
+/* ── Tool page hero icon ── */
+.tool-page-icon {
+  display: block; height: 64px; width: auto;
+  margin: 12px 0 0 0; opacity: 0.9;
 }

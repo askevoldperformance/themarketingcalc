@@ -21,16 +21,16 @@ MARKETING_TOOLS_BODY = '''
 
     <div class="tool-category-grid">
       <a href="/marketing-tools/rsa-preview-tool" class="tool-category-card">
-        <img src="/images/icon-rsa-preview.png" alt="" class="tool-card-icon">
         <span class="tool-category-tag">Google Ads</span>
         <h2>RSA Preview Tool</h2>
+        <img src="/images/icon-rsa-preview.png" alt="" class="tool-card-icon">
         <p>Visualize your Responsive Search Ad combinations, lock headline positions, and test every variation before uploading to Google Ads.</p>
         <span class="tool-category-link">Open tool &rarr;</span>
       </a>
       <a href="/marketing-tools/free-keyword-tools" class="tool-category-card">
-        <img src="/images/icon-keyword-match.png" alt="" class="tool-card-icon">
         <span class="tool-category-tag">PPC &amp; SEO</span>
         <h2>Free Keyword Tools</h2>
+        <img src="/images/icon-keyword-match.png" alt="" class="tool-card-icon">
         <p>Format keyword lists into Google Ads and Microsoft Ads match types, or combine word lists into hundreds of long-tail keyword combinations in seconds.</p>
         <span class="tool-category-link">Open tools &rarr;</span>
       </a>
@@ -145,6 +145,7 @@ KEYWORD_TOOLS_BODY = f'''
       <a href="/">Home</a><span class="bc-sep">/</span><a href="/marketing-tools">Marketing Tools</a><span class="bc-sep">/</span><span class="bc-current">Free Keyword Tools</span>
     </nav>
     <h1>Free <span class="accent">Keyword Tools</span></h1>
+    <img src="/images/icon-keyword-match.png" alt="" class="tool-page-icon">
     <p class="hero-sub">Format keyword match types and generate keyword combinations for Google Ads and Microsoft Ads campaigns - free, instant, no sign-up.</p>
   </div></section>
 

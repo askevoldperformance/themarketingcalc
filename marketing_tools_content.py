@@ -21,12 +21,14 @@ MARKETING_TOOLS_BODY = '''
 
     <div class="tool-category-grid">
       <a href="/marketing-tools/rsa-preview-tool" class="tool-category-card">
+        <img src="/images/icon-rsa-preview.png" alt="" class="tool-card-icon">
         <span class="tool-category-tag">Google Ads</span>
         <h2>RSA Preview Tool</h2>
         <p>Visualize your Responsive Search Ad combinations, lock headline positions, and test every variation before uploading to Google Ads.</p>
         <span class="tool-category-link">Open tool &rarr;</span>
       </a>
       <a href="/marketing-tools/free-keyword-tools" class="tool-category-card">
+        <img src="/images/icon-keyword-match.png" alt="" class="tool-card-icon">
         <span class="tool-category-tag">PPC &amp; SEO</span>
         <h2>Free Keyword Tools</h2>
         <p>Format keyword lists into Google Ads and Microsoft Ads match types, or combine word lists into hundreds of long-tail keyword combinations in seconds.</p>

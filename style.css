@@ -875,3 +875,15 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   border-radius: var(--radius-lg); display: block;
   margin-top: 28px;
 }
+
+/* ── Calculator page icon ── */
+.calc-page-icon {
+  display: block; height: 72px; width: auto;
+  margin: 0 0 16px 0; opacity: 0.9;
+}
+
+/* ── Tool card icon ── */
+.tool-card-icon {
+  height: 56px; width: auto;
+  display: block; margin-bottom: 12px; opacity: 0.9;
+}

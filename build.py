@@ -163,12 +163,14 @@ def page(filepath, title, description, canonical_path, body_html):
     print(f"  Built: {filepath}")
 
 
-def calc_page(filepath, canonical_path, title, meta_desc, calc_html, editorial, faq_html):
+def calc_page(filepath, canonical_path, title, meta_desc, calc_html, editorial, faq_html, icon=None):
+    icon_html = f'<img src="/images/{icon}" alt="" class="calc-page-icon">' if icon else ''
     body = f'''
 <main>
   <section class="calc-hero">
     <div class="container">
       {AD_LEADERBOARD}
+      {icon_html}
       {calc_html}
     </div>
   </section>
@@ -484,32 +486,32 @@ if __name__ == "__main__":
     calc_page("cpm-calculator.html", "/cpm-calculator",
               "CPM Calculator - Calculate Cost Per Mille, Impressions and Budget | TheMarketingCalc",
               "Free CPM calculator. Calculate CPM, total campaign cost, or impressions from any two values. Benchmarks, formulas, and FAQs.",
-              CPM_CALC, CPM_EDITORIAL, CPM_FAQ)
+              CPM_CALC, CPM_EDITORIAL, CPM_FAQ, icon="icon-cpm.png")
 
     calc_page("ctr-calculator.html", "/ctr-calculator",
               "CTR Calculator - Calculate Click-Through Rate, Clicks and Impressions | TheMarketingCalc",
               "Free CTR calculator. Calculate click-through rate, total clicks, or impressions. Benchmarks by channel and practical guidance.",
-              CTR_CALC, CTR_EDITORIAL, CTR_FAQ)
+              CTR_CALC, CTR_EDITORIAL, CTR_FAQ, icon="icon-ctr.png")
 
     calc_page("cpc-calculator.html", "/cpc-calculator",
               "CPC Calculator - Calculate Cost Per Click, Budget and Clicks | TheMarketingCalc",
               "Free CPC calculator. Calculate cost per click, total campaign cost, or number of clicks. Channel benchmarks and max CPC guidance.",
-              CPC_CALC, CPC_EDITORIAL, CPC_FAQ)
+              CPC_CALC, CPC_EDITORIAL, CPC_FAQ, icon="icon-cpc.png")
 
     calc_page("roas-calculator.html", "/roas-calculator",
               "ROAS Calculator - ROAS, POAS and Break-even ROAS | TheMarketingCalc",
               "Free ROAS, POAS and break-even ROAS calculator. Understand the difference between revenue and profit-based optimisation.",
-              ROAS_CALC, ROAS_EDITORIAL, ROAS_FAQ)
+              ROAS_CALC, ROAS_EDITORIAL, ROAS_FAQ, icon="icon-roas.png")
 
     calc_page("cpl-calculator.html", "/cpl-calculator",
               "CPL Calculator - Calculate Cost Per Lead, Budget and Leads | TheMarketingCalc",
               "Free CPL calculator. Calculate cost per lead, total budget, or number of leads. Benchmarks by channel and max CPL guidance.",
-              CPL_CALC, CPL_EDITORIAL, CPL_FAQ)
+              CPL_CALC, CPL_EDITORIAL, CPL_FAQ, icon="icon-cpl.png")
 
     calc_page("frequency-calculator.html", "/frequency-calculator",
               "Frequency Calculator - Calculate Ad Frequency, Reach and Impressions | TheMarketingCalc",
               "Free ad frequency calculator. Calculate frequency, impressions, or reach. Guidance on optimal frequency and avoiding ad fatigue.",
-              FREQ_CALC, FREQ_EDITORIAL, FREQ_FAQ)
+              FREQ_CALC, FREQ_EDITORIAL, FREQ_FAQ, icon="icon-frequency.png")
 
     page("budget-calculator.html",
          "Marketing Budget Calculator - Estimate Reach, Clicks and Conversions | TheMarketingCalc",

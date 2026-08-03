@@ -862,3 +862,16 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   .benchmark-grid { grid-template-columns: repeat(2, 1fr); }
   .channel-benchmark-card { padding: 16px; }
 }
+
+/* ── Guide card image ── */
+.guide-card-img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  border-radius: 8px; display: block; margin-bottom: 16px;
+}
+
+/* ── Guide hero image ── */
+.guide-hero-img {
+  width: 100%; max-height: 420px; object-fit: cover;
+  border-radius: var(--radius-lg); display: block;
+  margin-top: 28px;
+}

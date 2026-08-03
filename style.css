@@ -907,3 +907,10 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
 }
 .calc-header-top h1 { margin: 0; }
 .calc-header-top .calc-card-icon { height: 52px; width: auto; flex-shrink: 0; margin: 0; }
+
+/* ── Metric card icon ── */
+.metric-card { display: flex; flex-direction: column; align-items: flex-start; }
+.metric-card-icon {
+  height: 40px; width: auto; object-fit: contain;
+  margin-bottom: 10px; opacity: 0.9; flex-shrink: 0;
+}

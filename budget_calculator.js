@@ -180,6 +180,7 @@ function renderMarkets() {
       document.getElementById('benchmark-market').textContent = state.market;
       renderBenchmarkTable();
       renderCustomPanel();
+      updateAudienceDisplay();
     });
   });
 }
@@ -295,10 +296,28 @@ function initFilters() {
     cb.addEventListener('change', () => {
       if (cb.checked) state.ageFilters.add(cb.value);
       else state.ageFilters.delete(cb.value);
+      updateAudienceDisplay();
     });
   });
   const genderEl = document.getElementById('gender-filter');
-  if (genderEl) genderEl.addEventListener('change', () => { state.genderFilter = genderEl.value; });
+  if (genderEl) genderEl.addEventListener('change', () => {
+    state.genderFilter = genderEl.value;
+    updateAudienceDisplay();
+  });
+  updateAudienceDisplay();
+}
+
+function updateAudienceDisplay() {
+  const el = document.getElementById('audience-size-display');
+  if (!el) return;
+  const pop = getPopulationCeiling();
+  if (pop > 0) {
+    el.innerHTML = '<span class="audience-size-label">Estimated addressable audience:</span> <strong>' + fmtInt(pop) + '</strong> people';
+    el.classList.add('visible');
+  } else {
+    el.innerHTML = '';
+    el.classList.remove('visible');
+  }
 }
 
 // ── Get effective metric for a channel (custom override or benchmark) ──
@@ -372,21 +391,21 @@ function calcBudget() {
       totalBudget += channelBudget;
     });
   } else if (state.direction === 'audience-to-budget') {
-    // audience-to-budget: estimate cost to reach the full addressable population once per channel
+    const targetFreq = parseFloat(document.getElementById('target-frequency')?.value) || 3;
     channels.forEach(ch => {
       const penetration = CHANNEL_PENETRATION[ch][state.market] || 0.3;
       const channelTargetReach = Math.round(popCeiling * penetration);
+      const totalImpressionsNeeded = channelTargetReach * targetFreq;
       const cpm = getMetric(ch, 'cpm');
       const cpc = getMetric(ch, 'cpc');
       const meta = CHANNEL_META[ch];
       let channelBudget = 0;
       if (meta.type === 'cpc') {
         const ctr = getMetric(ch, 'ctr');
-        const impressionsNeeded = channelTargetReach; // 1x frequency assumption
-        const clicksNeeded = impressionsNeeded * (ctr / 100);
+        const clicksNeeded = totalImpressionsNeeded * (ctr / 100);
         channelBudget = clicksNeeded * cpc;
       } else {
-        channelBudget = (channelTargetReach / 1000) * cpm;
+        channelBudget = (totalImpressionsNeeded / 1000) * cpm;
       }
       totalBudget += channelBudget;
     });
@@ -428,9 +447,24 @@ function calcBudget() {
 
 function renderResults(rows, totalBudget, sym, popCeiling) {
   const panel = document.getElementById('budget-result-panel');
+  const totalClicks = rows.reduce((s, r) => s + r.clicks, 0);
+  const aov = parseFloat(document.getElementById('aov-input')?.value) || 0;
+  const cvr = parseFloat(document.getElementById('cvr-input')?.value) || 0;
+  const fx = FX_FROM_USD[MARKETS[state.market].currency];
+  let roasHtml = '';
+  if (state.objective === 'conversions' && aov > 0 && cvr > 0) {
+    const conversions = totalClicks * (cvr / 100);
+    const revenue = conversions * aov * fx;
+    const roas = revenue / totalBudget;
+    roasHtml = `
+    <div class="result-summary-item"><span class="rs-label">Est. conversions</span><span class="rs-value">${fmtInt(conversions)}</span></div>
+    <div class="result-summary-item"><span class="rs-label">Est. revenue</span><span class="rs-value">${sym}${fmtNum(revenue)}</span></div>
+    <div class="result-summary-item"><span class="rs-label">Est. ROAS</span><span class="rs-value">${fmtNum(roas, 2)}x</span></div>`;
+  }
   let html = `<div class="result-summary">
     <div class="result-summary-item"><span class="rs-label">Total budget</span><span class="rs-value">${sym}${fmtNum(totalBudget)}</span></div>
     <div class="result-summary-item"><span class="rs-label">Addressable population</span><span class="rs-value">${fmtInt(popCeiling)}</span></div>
+    ${roasHtml}
   </div>
   <div class="mix-table-wrap">
   <table class="mix-table">

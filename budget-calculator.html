@@ -50,12 +50,41 @@
     <div class="budget-card">
 
       <div class="budget-step">
-        <h3>1. Market</h3>
+        <h3>1. Calculation mode</h3>
+        <div class="calc-direction-toggle">
+          <button class="dir-btn active" data-dir="budget-to-results">Budget to Results</button>
+          <button class="dir-btn" data-dir="goals-to-budget">Goals to Budget</button>
+          <button class="dir-btn" data-dir="audience-to-budget">Reach My Audience</button>
+        </div>
+        <div id="budget-to-results-inputs" style="margin-top:12px;">
+          <div class="input-group"><label>Total Budget (<span class="currency-label">USD</span>)</label><input type="number" id="b2r-budget" placeholder="e.g. 5000" min="0"></div>
+        </div>
+        <div id="goals-to-budget-inputs" class="hidden" style="margin-top:12px;">
+          <div class="input-group"><label id="goal-label">Target Impressions</label><input type="number" id="g2b-goal" placeholder="e.g. 500000" min="0"></div>
+        </div>
+        <div id="audience-to-budget-inputs" class="hidden" style="margin-top:12px;">
+          <p class="audience-mode-hint">No targets needed. We will estimate the budget required to reach your selected age groups at the frequency you choose on each selected channel.</p>
+          <div class="audience-mode-fields">
+            <div class="input-group">
+              <label>Campaign length (weeks)</label>
+              <input type="number" id="campaign-weeks" value="4" min="1" max="52" placeholder="4">
+            </div>
+            <div class="input-group">
+              <label>Target frequency per person</label>
+              <input type="number" id="target-frequency" value="3" min="1" max="20" placeholder="3">
+              <span class="step-hint" style="display:block;margin-top:4px;">How many times each person sees your ad. 3-5x is a common awareness target.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="budget-step">
+        <h3>2. Market</h3>
         <div class="market-grid" id="market-grid"></div>
       </div>
 
       <div class="budget-step">
-        <h3>2. Audience filter <span class="step-hint">optional - narrows population and reach estimates</span></h3>
+        <h3>3. Audience filter <span class="step-hint">optional</span></h3>
         <div class="audience-filter-row">
           <div class="input-group">
             <label>Age range <span class="step-hint">select one or more</span></label>
@@ -77,46 +106,45 @@
             </select>
           </div>
         </div>
-        <p class="filter-disclaimer">Population and reach estimates use national demographic distribution averages. Your actual addressable audience may differ - especially once you apply customer lists, lookalikes, or interest-based targeting. Treat these numbers as a planning ceiling, not a guarantee.</p>
+        <div class="audience-size-display" id="audience-size-display"></div>
+        <p class="filter-disclaimer">Population and reach estimates use national demographic distribution averages. Treat these as a planning ceiling, not a guarantee.</p>
       </div>
 
       <div class="budget-step">
-        <h3>3. Channels <span class="step-hint">select all that apply - budget will be split across them</span></h3>
+        <h3>4. Channels <span class="step-hint">budget will be split across selected channels</span></h3>
         <div class="channel-grid" id="channel-grid"></div>
       </div>
 
       <div class="budget-step">
-        <h3>4. Objective</h3>
+        <h3>5. Objective</h3>
         <div class="objective-toggle" id="objective-toggle"></div>
+        <div id="conversions-extra" class="hidden" style="margin-top:16px;">
+          <p class="step-hint" style="margin-bottom:10px;">Optional: enter these to get estimated revenue and ROAS in results.</p>
+          <div class="audience-mode-fields">
+            <div class="input-group">
+              <label>Average Order Value (<span class="currency-label">USD</span>)</label>
+              <input type="number" id="aov-input" placeholder="e.g. 85" min="0">
+            </div>
+            <div class="input-group">
+              <label>Website Conversion Rate (%)</label>
+              <input type="number" id="cvr-input" placeholder="e.g. 2.5" min="0" max="100" step="0.1">
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="budget-step">
-        <h3>5. Use your own metrics <span class="step-hint">optional - overrides benchmark data per channel</span></h3>
+        <h3>6. Custom metrics <span class="step-hint">optional - overrides benchmark data per channel</span></h3>
         <div class="custom-toggle-row">
           <label class="switch-label">
             <span class="switch-track" id="custom-toggle-track"><span class="switch-thumb" id="custom-toggle-thumb"></span></span>
-            <span>Enable custom CPM / CPC / CTR</span>
+            <span>Use your own CPM / CPC / CTR</span>
           </label>
         </div>
         <div id="custom-metrics-panel" class="custom-metrics-panel hidden"></div>
       </div>
 
       <div class="budget-step">
-        <h3>6. Calculate</h3>
-        <div class="calc-direction-toggle">
-          <button class="dir-btn active" data-dir="budget-to-results">Budget to Results</button>
-          <button class="dir-btn" data-dir="goals-to-budget">Goals to Budget</button>
-          <button class="dir-btn" data-dir="audience-to-budget">Reach My Audience</button>
-        </div>
-        <div id="budget-to-results-inputs">
-          <div class="input-group"><label>Total Budget (<span class="currency-label">USD</span>)</label><input type="number" id="b2r-budget" placeholder="e.g. 5000" min="0"></div>
-        </div>
-        <div id="goals-to-budget-inputs" class="hidden">
-          <div class="input-group"><label id="goal-label">Target Impressions</label><input type="number" id="g2b-goal" placeholder="e.g. 500000" min="0"></div>
-        </div>
-        <div id="audience-to-budget-inputs" class="hidden">
-          <p class="audience-mode-hint">No targets needed. We will estimate the budget required to reach your selected age groups at least once on each selected channel, based on market population and channel penetration.</p>
-        </div>
         <button class="calc-btn" onclick="calcBudget()">Calculate channel mix</button>
       </div>
 

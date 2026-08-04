@@ -638,13 +638,6 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   color: var(--accent); background: rgba(99,102,241,0.1);
 }
 
-/* Calculators pill - accent styled */
-.nav-calc-pill {
-  background: var(--accent) !important; color: #fff !important;
-  border-radius: 20px; padding: 6px 14px; font-weight: 600;
-}
-.nav-calc-pill:hover { background: var(--accent-h) !important; color: #fff !important; }
-
 /* Dropdown */
 .nav-dropdown { position: relative; }
 .nav-dropdown-menu {
@@ -929,3 +922,18 @@ input[type=number] { -moz-appearance: textfield; appearance: textfield; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;
 }
 @media (max-width: 640px) { .audience-mode-fields { grid-template-columns: 1fr; } }
+
+/* ── Guide filter tabs ── */
+.guide-filter-tabs {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
+}
+.guide-filter-btn {
+  padding: 7px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
+  border: 1px solid var(--border); background: var(--bg2);
+  color: var(--text-muted); cursor: pointer; transition: all 0.15s;
+  font-family: var(--font-body);
+}
+.guide-filter-btn:hover { color: var(--text); border-color: var(--accent); }
+.guide-filter-btn.active {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}

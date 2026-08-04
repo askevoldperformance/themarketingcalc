@@ -224,3 +224,16 @@ document.addEventListener('click', function(e) {
     navLinks.classList.remove('open');
   }
 });
+
+// ── Guide filter tabs ─────────────────────────────────────────────────────────
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.guide-filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.guide-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const filter = btn.dataset.filter;
+  document.querySelectorAll('#guide-grid-full .guide-card').forEach(card => {
+    const match = filter === 'all' || card.dataset.category === filter;
+    card.style.display = match ? '' : 'none';
+  });
+});

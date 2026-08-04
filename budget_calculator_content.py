@@ -8,45 +8,52 @@ from build_helpers import AD_SIDEBAR_L, AD_SIDEBAR_R, faq
 
 BUDGET_EDITORIAL = """
 <h2>What is a marketing budget calculator?</h2>
-<p>A marketing budget calculator estimates how much you need to spend - or what results you can expect from a given spend - across paid advertising channels like Meta, Google Search, YouTube, LinkedIn, and TikTok. The calculator above goes a step further than a simple cost-per-click multiplier: it builds an actual channel mix, weighting your budget across the channels you select based on each channel's reach in your chosen market and how well that channel fits your campaign objective.</p>
+<p>A marketing budget calculator estimates how much you need to spend - or what results you can expect from a given spend - across paid advertising channels like Meta, Google Search, YouTube, LinkedIn, and TikTok. The calculator above goes further than a simple cost-per-click multiplier: it builds a channel mix weighted by market reach penetration, applies auction pricing adjustments based on your campaign objective, and automatically recommends the right channels to start with.</p>
 
-<h2>How to calculate your marketing budget</h2>
-<p>There are three ways to approach a marketing budget calculation, and the tool above supports all three.</p>
-<p><strong>Budget to Results:</strong> you know what you can spend, and want to know what that spend will deliver - impressions, reach, frequency, and clicks - split sensibly across your selected channels.</p>
-<p><strong>Goals to Budget:</strong> you have a target outcome - a specific number of impressions, clicks, or conversions - and want to know what budget is required to hit it.</p>
-<p><strong>Reach My Audience:</strong> you do not have a specific number in mind at all. You simply want to know what it costs to reach your target age groups at least once across your selected channels in a given market. This is the fastest way to get a rough budget figure when you are still in the early planning stage of a media plan and have not yet defined hard KPI targets.</p>
+<h2>The three calculation modes</h2>
+<p><strong>Budget to Results:</strong> enter a total budget and get a full breakdown of expected impressions, reach, frequency, and clicks across your selected channels.</p>
+<p><strong>Goals to Budget:</strong> enter a target outcome - impressions, clicks, or conversions - and the calculator works backwards to tell you what budget is required to hit it.</p>
+<p><strong>Reach My Audience:</strong> skip the numbers entirely. Set a campaign length and target frequency, and the calculator estimates what it costs to reach your audience the chosen number of times across your selected channels. The default is 3 exposures per person, which is a common awareness planning target.</p>
 
-<h2>How the channel mix is calculated</h2>
-<p>Rather than showing you a single blended number, the calculator splits your budget across each channel you select using two factors combined: market penetration (what percentage of the population in your chosen country that channel can realistically reach) and objective fit (channels that suit your stated goal - Reach, Traffic, or Conversions - are weighted more heavily). A Search-heavy mix for a Conversions objective will allocate more budget to Google and Bing than to TikTok, for example, while a Reach objective shifts more budget toward YouTube, Performance Max, Demand Gen, and social placements.</p>
+<h2>How objective affects cost: the auction multiplier</h2>
+<p>Choosing your campaign objective does more than filter channels - it adjusts the benchmark CPM and CPC figures used in every calculation. Campaigns optimised for conversions compete in more expensive auctions than reach campaigns, because every advertiser bidding for the same conversion is willing to pay more per impression. The calculator reflects this with three multipliers: Reach applies a 1.0x baseline, Traffic applies 1.35x, and Conversions applies 1.80x to all CPM and CPC benchmarks. This means a conversions campaign on the same budget delivers fewer impressions but higher-quality traffic than a reach campaign - which is how the platforms actually work.</p>
 
-<h2>Why population and demographic filters matter for budget planning</h2>
-<p>Reach can never exceed the number of people who actually exist in your target demographic within a market. The calculator uses national population and internet penetration data, filtered by your selected age groups, to set a hard ceiling on reach estimates per channel. Impressions and frequency are not capped the same way - if your budget is large relative to your audience size, the tool will show a high frequency instead of an impossible reach number, which mirrors how delivery actually behaves in platforms like Meta Ads Manager and Google Ads.</p>
+<h2>Automatic channel selection</h2>
+<p>When you select an objective, the calculator automatically recommends the standard channel mix for that goal. Reach campaigns default to Meta, TikTok, Snapchat, and YouTube - the platforms where cost-per-impression is lowest and reach is widest. Traffic campaigns default to Meta, Google Search, LinkedIn, and Demand Gen. Conversions campaigns default to Google Search, Performance Max, and Meta. You can override any of these selections freely - the auto-selection is a starting point, not a constraint.</p>
+
+<h2>How the channel budget split is calculated</h2>
+<p>Budget is distributed across your selected channels proportionally to each channel's market reach penetration - the percentage of your target market's population that the platform can realistically reach. A channel that reaches 90% of your market gets a larger share of budget than one that reaches 35%. This weighting reflects where your money will find the most audience, rather than splitting evenly across channels regardless of their actual reach.</p>
+
+<h2>Why population and demographic filters matter</h2>
+<p>Reach can never exceed the number of people who actually exist in your target demographic within a market. The calculator uses national population and internet penetration data, filtered by your selected age groups, to set a hard ceiling on reach per channel. If your budget is large relative to your audience size, the tool shows a rising frequency instead of an impossible reach number - which is exactly how delivery behaves in Meta Ads Manager and Google Ads when you exhaust your audience.</p>
+
+<h2>Estimating revenue and ROAS</h2>
+<p>When Conversions is selected as your objective, two optional fields appear: average order value and website conversion rate. Enter these and the calculator adds estimated total conversions, revenue, and ROAS to the results. This turns the tool from a media planning calculator into a full campaign ROI model - useful for setting budget floors based on target return rather than on a fixed spend.</p>
+
+<h2>Using your own account data</h2>
+<p>The benchmark CPM, CPC, and CTR figures are 2026 cross-industry averages and will not match your specific account, industry, or creative quality. Once you have live campaign data, enable custom metrics and enter your own numbers per channel directly from your ads manager. The fields are pre-filled with the objective-adjusted benchmark so you only need to change the values that differ from your actual performance.</p>
 
 <h2>Planning budget across multiple markets</h2>
-<p>Channel penetration and cost benchmarks vary significantly by country. Meta's reach as a percentage of population is meaningfully higher in Nordic markets like Norway, Sweden, and Denmark than in larger markets like Germany or the United States, while Google Search CPCs vary by a factor of three or more between markets depending on local competition. Always recalculate your marketing budget per market rather than applying a single global average - a budget that delivers strong reach in the UK will behave very differently in Germany using the exact same spend.</p>
-
-<h2>Using your own account data instead of benchmarks</h2>
-<p>Public benchmark data is a useful starting point, but it will never match your specific account, industry, or audience exactly. Once you have live campaign data, switch on custom metrics and enter your own CPM, CPC, and CTR per channel directly from your ads manager. This turns the calculator from a generic planning tool into an accurate forecasting model based on your actual account performance, while still using the channel mix and population logic to plan how to scale.</p>
-
-<h2>Marketing budget allocation by channel</h2>
-<p>A common question when planning a digital marketing budget is how much to allocate to each channel. There is no universal split that works for every business - it depends on your market, your objective, and your existing channel performance. As a general planning principle: Search (Google and Bing) typically deserves a larger share of budget when the objective is conversions, since it captures existing demand. Social and push channels (Meta, YouTube, TikTok, Performance Max, Demand Gen) typically deserve a larger share when the objective is reach or awareness, since they create new demand rather than capturing it. Use the calculator above to model this trade-off directly for your market rather than relying on generic rules of thumb.</p>
+<p>Benchmarks in this calculator are stored per currency and market, not as USD with a conversion rate applied. Norwegian CPMs, for example, are higher in absolute terms than German CPMs even after accounting for currency - because Norwegian auction competition and purchasing power differ structurally. Always run the calculator separately per market when planning cross-border campaigns rather than applying a single blended number.</p>
 """
 
 BUDGET_FAQ_ITEMS = [
     ("How much should I budget for digital marketing?",
-     "There is no fixed percentage that applies to every business - it depends on your margins, growth stage, and customer acquisition cost. As a planning starting point, use the calculator above with your target market, channels, and objective to see what budget is required to reach a meaningful portion of your addressable audience, then adjust based on your own conversion and margin data."),
-    ("How is the channel mix split calculated?",
-     "The split is based on two combined factors: each channel's market penetration (what percentage of the population in your selected country that channel can reach) and how well the channel fits your selected objective. Channels that align with your objective - for example Search and Performance Max for a Conversions goal - receive a larger share of the budget."),
-    ("Can I calculate budget without knowing my target impressions or clicks?",
-     "Yes - use the Reach My Audience mode. Select your market, age groups, and channels, and the calculator estimates the budget required to reach your audience at least once across those channels, without requiring you to specify a target number upfront."),
-    ("Why does reach have a maximum but impressions do not?",
-     "Reach counts unique people, and a market only has a finite population. Impressions count total ad views, including repeat views by the same person, so they can climb indefinitely as your budget increases - this shows up as a rising frequency rather than impossible reach."),
-    ("Should I use the same marketing budget split in every country?",
-     "No. Channel penetration and cost per result vary significantly by market. The same budget split that works well in the UK may underperform in Germany or overperform in Norway, simply because channel usage and competition differ by country. Recalculate your channel mix per market rather than applying one global split."),
-    ("How accurate are the benchmark CPM, CPC, and CTR figures?",
-     "They are blended industry averages intended as a starting point for planning, not a guarantee of your account's actual performance. Your real numbers depend on your industry, creative quality, audience targeting, and bidding strategy. Once you have live campaign data, switch on custom metrics and enter your own figures per channel for a more accurate forecast."),
-    ("What is the difference between reach and frequency in budget planning?",
-     "Reach is how many unique people you reach. Frequency is the average number of times each person sees your ad. When planning budget, a high frequency on a small audience often signals you should either broaden targeting or reduce spend on that channel, since additional budget is going toward repeat views rather than new reach."),
+     "There is no fixed percentage that works for every business. The right budget depends on your margins, growth stage, and target customer acquisition cost. Use the Reach My Audience mode to get a rough figure based on your market, objective, and channels - then adjust based on your own conversion data and CAC targets."),
+    ("What does the objective multiplier do?",
+     "Campaigns optimised for conversions compete in more expensive ad auctions than reach campaigns. The calculator applies a 1.0x multiplier for Reach, 1.35x for Traffic, and 1.80x for Conversions to all CPM and CPC benchmarks. This reflects the real difference in auction pricing between campaign types - not just a label change."),
+    ("Why does the calculator auto-select channels when I choose an objective?",
+     "Each objective has a standard channel mix that most advertisers use as a starting point. Reach campaigns favour social and video platforms with low CPMs. Conversions campaigns favour search and Performance Max, which capture existing intent. The auto-selection is a recommendation you can override - add or remove any channel freely."),
+    ("What is Reach My Audience mode?",
+     "Instead of entering a budget or target, you set a campaign length and a target frequency - how many times each person in your audience should see your ad. The calculator estimates the total budget required to reach your addressable audience that many times across your selected channels. The default frequency of 3x is a common awareness planning target."),
+    ("How is the channel budget split decided?",
+     "Budget is allocated proportionally to each channel's market reach penetration - the percentage of your target market's population that channel can realistically reach. A channel reaching 90% of the market gets a larger share than one reaching 35%. This weighting means your budget finds the most audience, rather than splitting evenly regardless of platform scale."),
+    ("Can I calculate expected revenue and ROAS?",
+     "Yes - select Conversions as your objective and two optional fields appear: average order value and website conversion rate. Enter these and the results include estimated conversions, total revenue, and ROAS. This lets you set budget based on a target return rather than a fixed spend."),
+    ("How accurate are the benchmark figures?",
+     "The benchmarks are 2026 cross-industry averages stored per currency and market. They are a starting point for planning, not a guarantee. Your actual CPM and CPC depend on your industry, creative quality, audience targeting, and competition. Enable custom metrics and enter your own account data to turn the calculator into an accurate forecasting model for your specific campaigns."),
+    ("Why are the benchmarks different per market rather than just converting from USD?",
+     "Because auction prices differ structurally between markets, not just by exchange rate. Norwegian Google Search CPCs are genuinely higher than German ones even accounting for currency, because local competition, purchasing power, and platform usage patterns differ. Applying a single global rate and converting it would give misleading results for campaign planning in specific markets."),
 ]
 
 BUDGET_FAQ = faq(BUDGET_FAQ_ITEMS)

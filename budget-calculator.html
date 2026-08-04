@@ -63,28 +63,46 @@
           <div class="input-group"><label id="goal-label">Target Impressions</label><input type="number" id="g2b-goal" placeholder="e.g. 500000" min="0"></div>
         </div>
         <div id="audience-to-budget-inputs" class="hidden" style="margin-top:12px;">
-          <p class="audience-mode-hint">No targets needed. We will estimate the budget required to reach your selected age groups at the frequency you choose on each selected channel.</p>
+          <p class="audience-mode-hint">No targets needed. We estimate the budget to reach your audience at your chosen frequency across selected channels.</p>
           <div class="audience-mode-fields">
             <div class="input-group">
               <label>Campaign length (weeks)</label>
-              <input type="number" id="campaign-weeks" value="4" min="1" max="52" placeholder="4">
+              <input type="number" id="campaign-weeks" value="4" min="1" max="52">
             </div>
             <div class="input-group">
               <label>Target frequency per person</label>
-              <input type="number" id="target-frequency" value="3" min="1" max="20" placeholder="3">
-              <span class="step-hint" style="display:block;margin-top:4px;">How many times each person sees your ad. 3-5x is a common awareness target.</span>
+              <input type="number" id="target-frequency" value="3" min="1" max="20">
+              <span class="step-hint" style="display:block;margin-top:4px;">3-5x is a common awareness target</span>
             </div>
           </div>
         </div>
       </div>
 
       <div class="budget-step">
-        <h3>2. Market</h3>
+        <h3>2. Objective</h3>
+        <div class="objective-toggle" id="objective-toggle"></div>
+        <div id="conversions-extra" class="hidden" style="margin-top:16px;">
+          <p class="step-hint" style="margin-bottom:10px;">Optional: enter these to get estimated revenue and ROAS in results.</p>
+          <div class="audience-mode-fields">
+            <div class="input-group">
+              <label>Average Order Value (<span class="currency-label">USD</span>)</label>
+              <input type="number" id="aov-input" placeholder="e.g. 85" min="0">
+            </div>
+            <div class="input-group">
+              <label>Website Conversion Rate (%)</label>
+              <input type="number" id="cvr-input" placeholder="e.g. 2.5" min="0" step="0.1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="budget-step">
+        <h3>3. Market</h3>
         <div class="market-grid" id="market-grid"></div>
       </div>
 
       <div class="budget-step">
-        <h3>3. Audience filter <span class="step-hint">optional</span></h3>
+        <h3>4. Audience filter <span class="step-hint">optional</span></h3>
         <div class="audience-filter-row">
           <div class="input-group">
             <label>Age range <span class="step-hint">select one or more</span></label>
@@ -107,34 +125,16 @@
           </div>
         </div>
         <div class="audience-size-display" id="audience-size-display"></div>
-        <p class="filter-disclaimer">Population and reach estimates use national demographic distribution averages. Treat these as a planning ceiling, not a guarantee.</p>
+        <p class="filter-disclaimer">Population estimates use national demographic averages. Treat as a planning ceiling.</p>
       </div>
 
       <div class="budget-step">
-        <h3>4. Channels <span class="step-hint">budget will be split across selected channels</span></h3>
+        <h3>5. Channels <span class="step-hint">auto-selected for your objective - override freely</span></h3>
         <div class="channel-grid" id="channel-grid"></div>
       </div>
 
       <div class="budget-step">
-        <h3>5. Objective</h3>
-        <div class="objective-toggle" id="objective-toggle"></div>
-        <div id="conversions-extra" class="hidden" style="margin-top:16px;">
-          <p class="step-hint" style="margin-bottom:10px;">Optional: enter these to get estimated revenue and ROAS in results.</p>
-          <div class="audience-mode-fields">
-            <div class="input-group">
-              <label>Average Order Value (<span class="currency-label">USD</span>)</label>
-              <input type="number" id="aov-input" placeholder="e.g. 85" min="0">
-            </div>
-            <div class="input-group">
-              <label>Website Conversion Rate (%)</label>
-              <input type="number" id="cvr-input" placeholder="e.g. 2.5" min="0" max="100" step="0.1">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="budget-step">
-        <h3>6. Custom metrics <span class="step-hint">optional - overrides benchmark data per channel</span></h3>
+        <h3>6. Custom metrics <span class="step-hint">optional - overrides benchmarks per channel</span></h3>
         <div class="custom-toggle-row">
           <label class="switch-label">
             <span class="switch-track" id="custom-toggle-track"><span class="switch-thumb" id="custom-toggle-thumb"></span></span>
@@ -148,7 +148,7 @@
         <button class="calc-btn" onclick="calcBudget()">Calculate channel mix</button>
       </div>
 
-      <div id="budget-result-panel" class="budget-result-panel hidden"></div>
+            <div id="budget-result-panel" class="budget-result-panel hidden"></div>
 
       <div class="budget-benchmarks">
         <h3>Reference benchmarks <span class="badge" id="benchmark-market">US</span></h3>

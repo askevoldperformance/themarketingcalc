@@ -68,7 +68,7 @@ def nav_html(active_path="/"):
 
     calc_class = "active" if calc_active else ""
     calc_dropdown = f'''<div class="nav-dropdown">
-      <a href="#" class="nav-calc-pill {calc_class}">Calculators</a>
+      <a href="/cpm-calculator" class="nav-calc-pill {calc_class}" onclick="return handleCalcNav(event)">Calculators</a>
       <div class="nav-dropdown-menu">{calc_items}</div>
     </div>'''
 

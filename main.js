@@ -205,6 +205,19 @@ document.addEventListener('click', e => {
   q.closest('.faq-item').classList.toggle('open');
 });
 
+// ── Calculators nav handler ───────────────────────────────────────────────────
+function handleCalcNav(e) {
+  // On desktop, toggle dropdown and prevent navigation
+  if (window.innerWidth > 640) {
+    e.preventDefault();
+    var menu = e.target.closest('.nav-dropdown').querySelector('.nav-dropdown-menu');
+    if (menu) menu.classList.toggle('open');
+    return false;
+  }
+  // On mobile, let the href navigate to /cpm-calculator
+  return true;
+}
+
 // ── Mobile nav + dropdown ─────────────────────────────────────────────────────
 document.addEventListener('click', function(e) {
   // Hamburger toggle
